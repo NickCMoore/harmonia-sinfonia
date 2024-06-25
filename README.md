@@ -22,7 +22,7 @@ Welcome to [](h)
 
 ## User Stories
 
-### New Visitors
+### New Visitors (EPIC A)
 
 1. **Sign Up:**
 
@@ -31,7 +31,7 @@ Welcome to [](h)
 2. **Site Purpose Clarity:**
    - _Explanation:_ As a new site user, I would like to clearly see the site's purpose, so that I can decide whether or not to sign up. `(MUST HAVE)`
 
-### Registered Users
+### Registered Users (EPIC B)
 
 1. **Log In:**
 
@@ -96,7 +96,7 @@ Welcome to [](h)
 16. **Reporting/Flagging:**
     - _Explanation:_ As a registered user, I can report or flag inappropriate content so that it can be reviewed by admins for action. `(COULD HAVE)`
 
-### Admin Users
+### Admin Users (EPIC C)
 
 1. **Delete Posts and Comments:**
 
