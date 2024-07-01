@@ -123,9 +123,67 @@ Welcome to [](h)
 
 ## Libraries
 
-# Current Features
+# Features
 
-# Future Features
+## Current Features
+
+**Homepage**
+
+- Acts as the landing page with navigation links, login/sign-up options, and a brief introduction to the platform.
+- Features: Dynamic feed displaying recent posts, upcoming events, and featured content from users.
+
+**Authentication Pages**
+
+- Login Page: Secure login form for returning users.
+- Registration Page: Sign-up form for new users, including necessary fields for profile information.
+- Password Reset: Links and forms to assist users in resetting forgotten passwords.
+
+**Profiles**
+
+- User Profile Page: Displays user details, their posts, and interactions.
+- Edit Profile: Allows users to update their profile information and manage settings.
+
+**Posts and Interactions**
+
+- Posts Page: A list of posts made by users with options to create, edit, or delete posts if the user has the necessary permissions.
+- Single Post View: Detailed view of each post with comments, likes, and sharing options.
+- Create/Edit Post: Pages/forms where users can add new posts or edit existing ones.
+
+**Comments**
+
+- Linked on Post Pages: Users can view comments related to a post and add their own; editable if posted by the user.
+
+**Search**
+
+- Search Page: Allows users to search for posts, other users, or content within the site.
+- Advanced Search Options: Filters to refine search results based on categories, date, relevance, etc.
+
+**Messaging**
+
+- Inbox: A private messaging system where users can view conversations.
+- Compose Message: Form to send new messages to other users.
+- Message View: Detailed view of conversation threads.
+
+**Notifications**
+
+- Notifications Dropdown/Bar: Real-time updates on interactions like new messages, post likes, comments, or other relevant user activities.
+
+**Feed**
+
+- Dynamic Feed: Aggregates content from followed users and groups, showing recent posts, comments, and perhaps highlights of popular discussions or trending topics.
+
+**Admin**
+
+- Dashboard: For administrators to manage users, content, settings, and view analytics.
+- User Management: Admin tools for managing user accounts, permissions, and roles.
+- Content Moderation: Tools to review and manage posts, comments, and user submissions.
+
+## Future Features
+
+- About Page: Information about the site, its purpose, and the organisation behind it.
+- Contact Page: Form to contact site administrators or support.
+- FAQs/Help Section: Helps users understand how to use different aspects of the platform.
+- Event Pages: For orchestra to post upcoming events or rehearsals with RSVP functionality.
 
 # Technologies used
 
