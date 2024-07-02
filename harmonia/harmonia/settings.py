@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4qu)&5vmpe&yi*wv0#r85wux=8!6kf=^$w1=bqdn9_$tk1gc-#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['harmonia-sinfonia.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
