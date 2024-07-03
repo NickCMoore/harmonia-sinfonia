@@ -42,7 +42,9 @@ SECRET_KEY = get_env_variable("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['harmonia-sinfonia.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'harmonia-sinfonia-ec3a4797e71d.herokuapp.com', 'localhost', '127.0.0.1']
+
 
 # Application definition
 
