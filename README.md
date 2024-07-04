@@ -101,6 +101,19 @@ Below are the wireframes for key sections, illustrating my commitment to a user-
 
 ## User Stories
 
+To ensure Harmonia Sinfonia meets the needs of its users, I have developed a series of user stories that capture the key functionalities and interactions required by different user groups. These user stories help guide the development process, ensuring that the platform remains user-centered and delivers a valuable experience for all members.
+
+The user stories are prioritised using the MoSCoW method, which categorises features into four groups:
+
+- **Must Have:** Essential features that are fundamental to the platform's functionality and must be included in the initial release.
+- **Should Have:** Important features that significantly enhance the user experience but are not critical for the platform's basic operation.
+- **Could Have:** Desirable features that improve the user experience but can be deferred to a later release if necessary.
+- **Won't Have:** Features that are not considered for the current scope but might be included in future updates.
+
+This prioritisation ensures a clear focus on delivering the most critical features first while allowing for iterative improvements based on user feedback and evolving needs.
+
+Below are the categorised user stories for Harmonia Sinfonia:
+
 ### New Visitors (EPIC A)
 
 1. **Sign Up:**
