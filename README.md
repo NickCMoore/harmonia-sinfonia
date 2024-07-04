@@ -1,14 +1,23 @@
 # **_Harmonia Sinfonia_**
 
+**Overview**
+
 Welcome to [](h)
 
-# Table of Contents - Readme
+# Table of Contents
 
-- [**User Experience UX**](#user-experience-ux)
+- [**Overview**](#background)
+  - [Background](#overview)
+  - [Agile Approach](#agile-approach)
+  - [Problem Statement](#problem-statement)
+  - [Wireframes](#wireframes)
+  - [Design](#design)
+  - [Database structure](database-design)
+- [**User Experience**](#user-experience)
   - [User Stories](#user-stories)
-  - [Game Design](#game-design)
-- [**Current Features**](#current-features)
-- [**Future Features**](#future-features)
+- [**Features**](#features)
+  - [Current Features](#current-features)
+  - [Future Features](#future-features)
 - [**Technologies Used**](#technologies-used)
 - [**Bugs**](#bugs)
 - [**Testing**](#testing)
@@ -18,7 +27,19 @@ Welcome to [](h)
   - [**Design**](#design)
 - [**Acknowledgements**](#acknowledgements)
 
-# User Experience (UX)
+## Background
+
+## Agile Approach
+
+## Problem Statement
+
+## Wireframes
+
+## Design
+
+## Database structure
+
+# User Experience
 
 ## User Stories
 
