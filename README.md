@@ -37,6 +37,17 @@ Feel free to view the project [here](https://harmonia-sinfonia-ec3a4797e71d.hero
 
 ## Problem Statement
 
+Orchestra members often face challenges in staying connected and informed outside of rehearsals and performances. Traditional methods of communication, such as email or sporadic meetings, can be inefficient and don't create a sense of community. Also, there is no centralised platform for members to share content, discuss music, or coordinate events effectively.
+
+Harmonia Sinfonia aims to address these issues by providing a dedicated platform where orchestra members can:
+
+- Stay Connected: Promote continuous and streamlined communication among members.
+- Share Content: Easily share posts, music pieces, and other relevant content within the community.
+- Engage and Collaborate: Generate discussions, likes, and comments to enhance member interaction.
+- Coordinate Activities: Efficiently organise and manage events, rehearsals, and performances.
+
+By solving these problems, Harmonia Sinfonia aims to enhance the overall experience for orchestra members, ensuring they remain engaged, informed, and connected.
+
 ## Wireframes
 
 Creating the wireframes for Harmonia Sinfonia was important in bringing the project to life. These blueprints helped me visualise the platform's structure and flow, ensuring an intuitive user experience.
