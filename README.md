@@ -35,7 +35,42 @@ Welcome to [](h)
 
 ## Wireframes
 
+### Homepage
+
 ![Homepage (Desktop)](/documentation/wireframes/homepage-desktop.png)
+![Homepage (Mobile)](/documentation/wireframes/homepage-mobile.png)
+
+### Posts
+
+![Posts (Desktop)](/documentation/wireframes/posts-desktop.png)
+![Posts (Mobile)](/documentation/wireframes/posts-mobile.png)
+
+### Messaging
+
+![Messaging (Desktop)](/documentation/wireframes/messaging-desktop.png)
+![Messaging (Mobile)](/documentation/wireframes/messaging-mobile.png)
+
+### Profile
+
+![Profile (Desktop)](/documentation/wireframes/profile-desktop.png)
+![Profile (Mobile)](/documentation/wireframes/profile-mobile.png)
+
+### Sign Up
+
+![Sign Up 1 (Desktop)](/documentation/wireframes/signup1-desktop.png)
+![Sign Up 2 (Desktop)](/documentation/wireframes/signup2-desktop.png)
+![Sign Up (Mobile)](/documentation/wireframes/signup-mobile.png)
+
+### Sign In
+
+![Sign In 1 (Desktop)](/documentation/wireframes/signin1-desktop.png)
+![Sign In 2 (Desktop)](/documentation/wireframes/signin2-desktop.png)
+![Sign In (Mobile)](/documentation/wireframes/signin-mobile.png)
+
+### Admin
+
+![Admin (Desktop)](/documentation/wireframes/admin-desktop.png)
+![Admin (Mobile)](/documentation/wireframes/admin-mobile.png)
 
 ## Design
 
