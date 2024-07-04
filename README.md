@@ -35,6 +35,8 @@ Welcome to [](h)
 
 ## Wireframes
 
+![Homepage (Desktop)](/documentation/wireframes/homepage-desktop.png)
+
 ## Design
 
 ## Database structure
