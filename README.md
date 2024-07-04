@@ -1,17 +1,21 @@
 # **_Harmonia Sinfonia_**
 
-**Overview**
+**Background**
 
-Welcome to [](h)
+Welcome to [Harmonia Sinfonia](https://harmonia-sinfonia-ec3a4797e71d.herokuapp.com/), a dedicated platform designed to connect orchestra members in a seamless and engaging way. As a musician, I understand the importance of staying connected and informed outside of rehearsals and performances. Harmonia Sinfonia aims to bridge this gap by providing a space where members can share content, communicate privately, and stay updated on all orchestra-related activities.
+
+This project combines my passion for music and technology, aiming to foster a vibrant community where members can collaborate, support each other, and enhance their musical journey. Whether members want to share the latest performance, discuss music pieces, or simply stay in touch with fellow musicians, Harmonia Sinfonia is here to support them.
+
+Feel free to view the project [here](https://harmonia-sinfonia-ec3a4797e71d.herokuapp.com/).
 
 # Table of Contents
 
-- [**Overview**](#background)
-  - [Background](#overview)
-  - [Agile Approach](#agile-approach)
+- [**Overview**](#overview)
+  - [Background](#background)
   - [Problem Statement](#problem-statement)
   - [Wireframes](#wireframes)
   - [Design](#design)
+  - [Agile Approach](#agile-approach)
   - [Database structure](database-design)
 - [**User Experience**](#user-experience)
   - [User Stories](#user-stories)
@@ -34,6 +38,12 @@ Welcome to [](h)
 ## Problem Statement
 
 ## Wireframes
+
+Creating the wireframes for Harmonia Sinfonia was important in bringing the project to life. These blueprints helped me visualise the platform's structure and flow, ensuring an intuitive user experience.
+
+For me, it was about more than just placing elements on a page. I imagined how you would navigate, create posts, send messages, and engage with other members. By focusing on both desktop and mobile versions, I aimed to make sure the user experience is smooth and enjoyable on any device.
+
+Below are the wireframes for key sections, illustrating my commitment to a user-friendly and responsive design.
 
 ### Homepage
 
