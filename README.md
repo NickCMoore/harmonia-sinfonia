@@ -16,7 +16,7 @@ Feel free to view the project [here](https://harmonia-sinfonia-ec3a4797e71d.hero
   - [Wireframes](#wireframes)
   - [Design](#design)
   - [Agile Approach](#agile-approach)
-  - [Database structure](database-design)
+  - [Database structure](#database-structure)
 - [**User Experience**](#user-experience)
   - [User Stories](#user-stories)
 - [**Features**](#features)
@@ -96,6 +96,139 @@ Below are the wireframes for key sections, illustrating my commitment to a user-
 ## Design
 
 ## Database structure
+
+### Models
+
+In this project, I used Django's built in Allauth library to handle user authentication, registration, and account management. Allauth is an authentication solution that supports aspects such as email verification and social authentication. Also, the use of the Cloudinary library was designed to manage and optimise media assets such as images and videos.
+
+## Users (Allauth User Model)
+
+The `Users` model represents the registered users of the platform. Allauth handles the creation and management of this model.
+
+| PK  | id (unique) | Type       | Notes |
+| --- | ----------- | ---------- | ----- |
+|     | username    | CharField  |       |
+|     | email       | EmailField |       |
+|     | password    | CharField  |       |
+|     | first_name  | CharField  |       |
+|     | last_name   | CharField  |       |
+
+## Profile
+
+The `Profile` model extends the user model to include additional information specific to each user, such as display name, bio, and profile pictures managed via Cloudinary.
+
+| PK  | id (unique)  | Type       | Notes               |
+| --- | ------------ | ---------- | ------------------- |
+| FK  | user_id      | OneToOne   | FK to Users model   |
+|     | display_name | CharField  |                     |
+|     | bio          | TextField  |                     |
+|     | profile_pic  | URLField   | URL from Cloudinary |
+|     | bg_pic       | URLField   | URL from Cloudinary |
+|     | followers    | ManyToMany | M2M to Users model  |
+
+## Posts
+
+The `Posts` model represents the content shared by users. It includes fields for the post content, optional images managed via Cloudinary, and metadata such as the posting time and like relationships.
+
+| PK  | id (unique) | Type          | Notes                          |
+| --- | ----------- | ------------- | ------------------------------ |
+| FK  | user_id     | ForeignKey    | FK to Users model              |
+|     | content     | TextField     |                                |
+|     | posted_on   | DateTimeField |                                |
+|     | image       | URLField      | URL from Cloudinary (optional) |
+|     | likes       | ManyToMany    | M2M to Users model             |
+|     | is_flagged  | BooleanField  |                                |
+
+## Comments
+
+The `Comments` model allows users to comment on posts. Each comment is linked to a user and a post, and can also receive likes.
+
+| PK  | id (unique) | Type          | Notes              |
+| --- | ----------- | ------------- | ------------------ |
+| FK  | user_id     | ForeignKey    | FK to Users model  |
+|     | comment     | TextField     |                    |
+|     | posted_on   | DateTimeField |                    |
+|     | likes       | ManyToMany    | M2M to Users model |
+| FK  | post_id     | ForeignKey    | FK to Posts model  |
+
+## Likes
+
+The `Likes` model represents the likes on posts and comments, linking them to users.
+
+| PK  | id (unique) | Type       | Notes                |
+| --- | ----------- | ---------- | -------------------- |
+| FK  | user_id     | ForeignKey | FK to Users model    |
+| FK  | post_id     | ForeignKey | FK to Posts model    |
+| FK  | comment_id  | ForeignKey | FK to Comments model |
+
+## Follows
+
+The `Follows` model captures the follow relationships between users, indicating who follows whom.
+
+| PK  | id (unique) | Type       | Notes             |
+| --- | ----------- | ---------- | ----------------- |
+| FK  | follower_id | ForeignKey | FK to Users model |
+| FK  | followed_id | ForeignKey | FK to Users model |
+
+## Messages
+
+The `Messages` model handles private messaging between users, including the content of the messages and the timestamps.
+
+| PK  | id (unique) | Type          | Notes             |
+| --- | ----------- | ------------- | ----------------- |
+| FK  | sender_id   | ForeignKey    | FK to Users model |
+| FK  | receiver_id | ForeignKey    | FK to Users model |
+|     | content     | TextField     |                   |
+|     | sent_at     | DateTimeField |                   |
+
+## Notifications
+
+The `Notifications` model manages notifications sent to users, such as likes, comments, and new messages.
+
+| PK  | id (unique)       | Type          | Notes                |
+| --- | ----------------- | ------------- | -------------------- |
+|     | notification_type | IntegerField  |                      |
+| FK  | to_user           | ForeignKey    | FK to Users model    |
+| FK  | from_user         | ForeignKey    | FK to Users model    |
+| FK  | post_id           | ForeignKey    | FK to Posts model    |
+| FK  | comment_id        | ForeignKey    | FK to Comments model |
+| FK  | message_id        | ForeignKey    | FK to Messages model |
+|     | date              | DateTimeField |                      |
+|     | user_has_seen     | BooleanField  |                      |
+
+## Flags
+
+The `Flags` model allows users to flag posts and comments for review, including the reason for flagging and the timestamp.
+
+| PK  | id (unique) | Type          | Notes                |
+| --- | ----------- | ------------- | -------------------- |
+| FK  | user_id     | ForeignKey    | FK to Users model    |
+| FK  | post_id     | ForeignKey    | FK to Posts model    |
+| FK  | comment_id  | ForeignKey    | FK to Comments model |
+|     | reason      | TextField     |                      |
+|     | flagged_on  | DateTimeField |                      |
+
+## Admins
+
+The `Admins` model extends the user model to include additional permissions specific to admin users.
+
+| PK  | id (unique) | Type       | Notes             |
+| --- | ----------- | ---------- | ----------------- |
+| FK  | user_id     | ForeignKey | FK to Users model |
+|     | permissions | TextField  |                   |
+
+## Events
+
+The `Events` model represents events or rehearsals posted by the orchestra, including optional images managed via Cloudinary.
+
+| PK  | id (unique) | Type       | Notes                          |
+| --- | ----------- | ---------- | ------------------------------ |
+| FK  | user_id     | ForeignKey | FK to Users model              |
+|     | title       | CharField  |                                |
+|     | description | TextField  |                                |
+|     | date        | DateField  |                                |
+|     | time        | TimeField  |                                |
+|     | image       | URLField   | URL from Cloudinary (optional) |
 
 # User Experience
 
