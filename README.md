@@ -1,6 +1,6 @@
 # **_Harmonia Sinfonia_**
 
-**Background**
+## Background
 
 Welcome to [Harmonia Sinfonia](https://harmonia-sinfonia-ec3a4797e71d.herokuapp.com/), a dedicated platform designed to connect orchestra members in a seamless and engaging way. As a musician, I understand the importance of staying connected and informed outside of rehearsals and performances. Harmonia Sinfonia aims to bridge this gap by providing a space where members can share content, communicate privately, and stay updated on all orchestra-related activities.
 
@@ -27,11 +27,9 @@ Feel free to view the project [here](https://harmonia-sinfonia-ec3a4797e71d.hero
 - [**Testing**](#testing)
 - [**Deployment**](#deployment)
 - [**Credits**](#credits)
-  - [**Code**](#code)
-  - [**Design**](#design)
+  - [Code](#code)
+  - [Design](#design)
 - [**Acknowledgements**](#acknowledgements)
-
-## Background
 
 ## Agile Approach
 
@@ -47,7 +45,7 @@ User stories were crucial in mapping out the development progress. They were cat
 
 **Kanban Board**
 
-The basic Kanban board in GitHub Projects helped visualize the workflow and track the progress of tasks. Tasks moved across columns from the backlog, through development stages, to testing, and finally to completion. This setup provided clarity on the workload and helped in managing the project efficiently.
+The basic Kanban board in GitHub Projects helped visualise the workflow and track the progress of tasks. Tasks moved across columns from the backlog, through development stages, to testing, and finally to completion. This setup provided clarity on the workload and helped in managing the project efficiently.
 
 **Continuous Improvement**
 
