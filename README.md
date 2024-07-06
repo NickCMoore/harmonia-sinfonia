@@ -95,7 +95,11 @@ Below are the wireframes for key sections, illustrating my commitment to a user-
 
 ## Design
 
-## Database structure
+## Data Model
+
+The structure of the database is illustrated using an Entity-Relationship Diagram (ERD). This diagram demonstrates how different entities within the Harmonia Sinfonia platform are interrelated, providing an overview of the data flow and the connections between various models.
+
+[Entity Relationship Diagram](/documentation/entity-relationship-diagram.png)
 
 ### Models
 
