@@ -35,6 +35,26 @@ Feel free to view the project [here](https://harmonia-sinfonia-ec3a4797e71d.hero
 
 ## Agile Approach
 
+The development process for Harmonia Sinfonia followed Agile methodology, emphasising continuous improvement throughout the development lifecycle.
+
+**Project Management**
+
+GitHub Projects served as the primary Agile tool for managing the development tasks. While GitHub Projects isn't a specialised Agile tool, it was used with the right tags, project creation, and issue assignments to fit the needs of the project.
+
+**User Stories**
+
+User stories were crucial in mapping out the development progress. They were categorised into EPICs A, B, C, D, E, and F based on user types and content specificity. The user stories were organised on a Kanban board, providing a visual representation of the backlog and the current status of tasks. The MoSCoW method was used to prioritise these stories, categorising them into Must have, Should have, Could have, and Won't have, ensuring that the most critical features were developed first.
+
+**Kanban Board**
+
+The basic Kanban board in GitHub Projects helped visualize the workflow and track the progress of tasks. Tasks moved across columns from the backlog, through development stages, to testing, and finally to completion. This setup provided clarity on the workload and helped in managing the project efficiently.
+
+**Continuous Improvement**
+
+Despite working solo on this project, continuous improvement was a key focus. Regular retrospectives allowed reflection on past work, identification of areas for improvement, and brainstorming of solutions. This practice ensured that the development processes and product quality were consistently enhanced.
+
+For a detailed view of the project management and task progression, refer to the [GitHub Project board](https://github.com/users/NickCMoore/projects/2).
+
 ## Problem Statement
 
 Orchestra members often face challenges in staying connected and informed outside of rehearsals and performances. Traditional methods of communication, such as email or sporadic meetings, can be inefficient and don't create a sense of community. Also, there is no centralised platform for members to share content, discuss music, or coordinate events effectively.
@@ -95,11 +115,11 @@ Below are the wireframes for key sections, illustrating my commitment to a user-
 
 ## Design
 
-## Data Model
+### Data Model Overview
 
 The structure of the database is illustrated using an Entity-Relationship Diagram (ERD). This diagram demonstrates how different entities within the Harmonia Sinfonia platform are interrelated, providing an overview of the data flow and the connections between various models.
 
-[Entity Relationship Diagram](/documentation/entity-relationship-diagram.png)
+![Entity Relationship Diagram](/documentation/entity-relationship-diagram.png)
 
 ### Models
 
