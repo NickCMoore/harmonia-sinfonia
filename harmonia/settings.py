@@ -65,9 +65,12 @@ INSTALLED_APPS = [
     'posts',
     'profiles',
     'search',
+    'events',
     'cloudinary',
     'cloudinary_storage',
+    'home',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
