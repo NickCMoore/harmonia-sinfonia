@@ -13,6 +13,7 @@ class Profile(models.Model):
     profile_pic = CloudinaryField('image')
     bg_pic = CloudinaryField('image', blank=True, null=True)
     followers = models.ManyToManyField(User, related_name='following')
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
 
     def __str__(self):
         return self.user.username
