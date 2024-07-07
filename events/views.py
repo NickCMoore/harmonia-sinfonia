@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Event
 
 
-def events_list(request):
-    return render(request, 'events/events_list.html')
+class EventListView(ListView):
+    model = Event
+    template_name = 'events/event_list.html'
+    context_object_name = 'events'

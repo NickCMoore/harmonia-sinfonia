@@ -3,15 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - Harmonia Sinfonia</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+    <title>Home</title>
   </head>
   <body>
     <div class="container">
@@ -21,30 +13,27 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'posts_list' %}">Posts</a>
+              <a class="nav-link" href="{% url 'posts:posts_list' %}">Posts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'event_list' %}">Events</a>
+              <a class="nav-link" href="{% url 'events:event_list' %}"
+                >Events</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'profile_list' %}">Profile</a>
+              <a class="nav-link" href="{% url 'profiles:profile_list' %}"
+                >Profile</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
             </li>
           </ul>
         </div>
       </nav>
       <div class="mt-4">
-        <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
-        <a href="{% url 'signup' %}" class="btn btn-secondary">Sign Up</a>
-      </div>
+        <a href="{% url 'authentication:login' %}" class="btn btn-primary">Login</a>
+        <a href="{% url 'authentication:signup' %}" class="btn btn-secondary">Sign Up</a>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -53,12 +42,7 @@
     ></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-      integrity="sha384-T0JbXr3GpGf1rPJGr3n5mDa1zLME5dKd1x6jIQa7rCfjw7Tx1+p3WCRy7r20tqF4"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      integrity="sha384-6jsr2v34P8YT9Mlu8vzO33+9eKFNh/cKPSF5mFghlO/rFVh+7LOXvN+v7pdT8t2x"
       crossorigin="anonymous"
     ></script>
   </body>
