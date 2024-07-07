@@ -5,5 +5,5 @@ from .models import Post
 
 
 def posts_list(request):
-    posts = Post.objects.all().order_by('-date')
-    return render(request, 'posts/posts_list.html', {'posts: posts'})
+    posts = Post.objects.all().order_by('-posted_on')
+    return render(request, 'posts/posts_list.html', {'posts': posts})
