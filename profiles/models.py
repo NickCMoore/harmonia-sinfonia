@@ -19,7 +19,8 @@ class Profile(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.content[:50]) + '-' + get_random_string(6)
+            self.slug = slugify(
+                self.display_name[:50]) + '-' + get_random_string(6)
         super(Profile, self).save(*args, **kwargs)
 
     def __str__(self):
