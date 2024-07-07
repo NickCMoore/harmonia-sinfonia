@@ -85,6 +85,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'harmonia.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -100,6 +101,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'harmonia.wsgi.application'
 
