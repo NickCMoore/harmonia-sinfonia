@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Harmonia Sinfonia</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Harmonia Sinfonia</h1>
+      <nav>
+        <ul>
+          <li><a href="{% url 'posts:posts_list' %}">Posts</a></li>
+          <li><a href="{% url 'events:events_list' %}">Events</a></li>
+          <li><a href="{% url 'profiles:profile_list' %}">Profile</a></li>
+          <li><a href="{% url 'admin:index' %}">Admin</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          <li><a href="{% url 'home:learn_more' %}">Learn More</a></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
