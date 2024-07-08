@@ -1,40 +1,33 @@
-{% extends 'base.html' %} {% block title %}Home - Harmonia Sinfonia{% endblock
-%} {% block content %}
-<!-- Hero Section -->
-<header class="hero-section">
-  <div class="overlay"></div>
-  <div class="container text-center text-white">
-    <h2 class="subheading">Cheshire's Premier Amateur Orchestra</h2>
-    <h1 class="display-3">Harmonia Sinfonia</h1>
-    <a href="{% url 'home:learn_more' %}" class="btn btn-primary mt-4"
-      >Learn More</a
-    >
-  </div>
-</header>
+{% extends 'base.html' %}
 
-<!-- Newsletter Section -->
-<section class="newsletter-section py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="mb-4">Subscribe to Our Newsletter</h2>
-    <form
-      method="post"
-      action="{% url 'newsletter:subscribe' %}"
-      class="row g-3 justify-content-center"
-    >
-      {% csrf_token %}
-      <div class="col-auto">
-        <input
-          type="email"
-          name="email"
-          class="form-control"
-          placeholder="Enter your email"
-          required
-        />
-      </div>
-      <div class="col-auto">
-        <button type="submit" class="btn btn-primary">Subscribe</button>
-      </div>
-    </form>
-  </div>
-</section>
+{% block title %}Home - Harmonia Sinfonia{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="overlay"></div>
+    <div class="container text-center text-white">
+      <h2 class="subheading">Cheshire's Premier Amateur Orchestra</h2>
+      <h1 class="display-3">Harmonia Sinfonia</h1>
+      <a href="{% url 'home:learn_more' %}" class="btn btn-primary mt-4">Learn More</a>
+    </div>
+  </header>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">Subscribe to Our Newsletter</h2>
+      <form method="post" action="{% url 'newsletter:subscribe' %}" class="row g-3 justify-content-center">
+        {% csrf_token %}
+        <div class="col-auto">
+          <input type="email" name="email" class="form-control" placeholder="Enter your email" required />
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </section>
 {% endblock %}
+
+
