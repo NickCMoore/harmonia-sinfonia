@@ -3,15 +3,25 @@
 {% block title %}Events - Harmonia Sinfonia{% endblock %}
 
 {% block content %}
-  <div class="container">
+  <div class="hero-section">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Our Events</h1>
+      <h2>Cheshire's Premier Amateur Orchestra</h2>
+      <a href="{% url 'home:learn_more' %}" class="btn btn-primary mt-4">Learn More</a>
+    </div>
+  </div>
+
+  <div class="container event-list-container">
     <h1>Events</h1>
-    <ul>
+    <ul class="list-group">
       {% for event in events %}
-        <li>
-          <a href="{% url 'event_detail' event.pk %}">{{ event.title }}</a>
+        <li class="list-group-item">
+          <a href="{% url 'events:event_detail' event.pk %}">{{ event.title }}</a>
         </li>
       {% endfor %}
     </ul>
   </div>
 {% endblock %}
+
 
