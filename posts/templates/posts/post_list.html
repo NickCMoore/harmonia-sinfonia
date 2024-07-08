@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Posts List</title>
-  </head>
-  <body>
-    <h1>Posts List</h1>
-    <ul>
-      {% for post in posts %}
-      <li>{{ post.content }} - {{ post.posted_on }}</li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% extends 'base.html' %} {% block title %}Posts - Harmonia Sinfonia{% endblock
+%} {% block content %}
+<div class="container mt-5">
+  <h1>Posts</h1>
+  <ul>
+    {% for post in posts %}
+    <li>{{ post.content }} - {{ post.posted_on }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -9,4 +9,5 @@ urlpatterns = [
     path('profiles/', include(('profiles.urls', 'profiles'), namespace='profiles')),
     path('authentication/', include(('authentication.urls',
          'authentication'), namespace='authentication')),
+    path('newsletter/', include('newsletter.urls', namespace='newsletter')),
 ]
