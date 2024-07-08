@@ -83,12 +83,14 @@ footer {
     color: var(--cream);
 }
 
-.btn-primary {
+.btn-custom {
     background-color: var(--golden-yellow);
     border-color: var(--golden-yellow);
+    color: var(--deep-blue);
 }
 
-.btn-primary:hover {
+.btn-custom:hover {
     background-color: var(--dark-burgundy);
     border-color: var(--dark-burgundy);
+    color: var(--cream);
 }
