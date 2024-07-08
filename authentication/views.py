@@ -10,7 +10,7 @@ def login_view(request):
             return redirect("home:home")
     else:
         form = AuthenticationForm()
-    return render(request, 'authentication/login.html', {"form": form})
+    return render(request, "authentication/login.html", {"form": form})
 
 
 def signup_view(request):

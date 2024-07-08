@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Event Detail - Harmonia Sinfonia{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>{{ event.title }}</h1>
+    <p>{{ event.description }}</p>
+    <p><strong>Date:</strong> {{ event.date }}</p>
+    <p><strong>Location:</strong> {{ event.location }}</p>
+  </div>
+{% endblock %}
