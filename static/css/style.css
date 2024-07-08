@@ -32,7 +32,6 @@ footer {
     padding: 10px 0;
 }
 
-/* Custom CSS for Harmonia Sinfonia */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -88,28 +87,18 @@ footer {
 .btn-primary {
     background-color: var(--golden-yellow);
     border-color: var(--golden-yellow);
-    color: var(--dark-burgundy);
+    margin-right: 10px;
 }
 
 .btn-primary:hover {
     background-color: var(--dark-burgundy);
     border-color: var(--dark-burgundy);
-    color: var(--cream);
 }
 
 .btn-secondary {
-    background-color: var(--dark-burgundy);
-    border-color: var(--dark-burgundy);
-    color: var(--cream);
+    margin-left: 10px;
 }
 
-.btn-secondary:hover {
-    background-color: var(--golden-yellow);
-    border-color: var(--golden-yellow);
-    color: var(--dark-burgundy);
-}
-
-/* Form Container */
 .form-container {
     max-width: 400px;
     margin: 50px auto;
