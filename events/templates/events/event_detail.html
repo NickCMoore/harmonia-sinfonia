@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %}Event Detail - Harmonia Sinfonia{% endblock %}
+{% block title %}{{ event.title }} - Harmonia Sinfonia{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <h1>{{ event.title }}</h1>
-    <p>{{ event.description }}</p>
-    <p><strong>Date:</strong> {{ event.date }}</p>
-    <p><strong>Location:</strong> {{ event.location }}</p>
-  </div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>{{ event.title }}</h1>
+            <p>{{ event.date }} at {{ event.time }}</p>
+            {% if event.image %}
+            <img src="{{ event.image.url }}" class="img-fluid mb-4" alt="{{ event.title }}">
+            {% endif %}
+            <p>{{ event.description }}</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

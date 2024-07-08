@@ -15,7 +15,6 @@ import sys
 from pathlib import Path
 import dj_database_url
 from django.core.exceptions import ImproperlyConfigured
-import cloudinary
 
 # Load environment variables from env.py
 env_path = os.path.join(Path(__file__).resolve().parent.parent, 'env.py')
@@ -66,8 +65,6 @@ INSTALLED_APPS = [
     'profiles',
     'search',
     'events',
-    'cloudinary',
-    'cloudinary_storage',
     'home',
     'newsletter',
 ]
@@ -170,17 +167,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# Cloudinary settings
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dwgtce0rh',
-    'API_KEY': '529154848741312',
-    'API_SECRET': get_env_variable('CLOUDINARY_API_SECRET'),
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 # Media files
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -188,11 +178,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Cloudinary configuration
-cloudinary.config(
-    cloud_name='dwgtce0rh',
-    api_key='529154848741312',
-    api_secret=get_env_variable('CLOUDINARY_API_SECRET'),
-    secure=True
-)
