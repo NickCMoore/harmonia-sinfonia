@@ -1,9 +1,9 @@
 from django.shortcuts import render
 
 
-def home(request):
+def home_view(request):
     return render(request, 'home/home.html')
 
 
-def learn_more(request):
+def learn_more_view(request):
     return render(request, 'home/learn_more.html')

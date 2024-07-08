@@ -1,20 +1,33 @@
-<!-- home/templates/home/learn_more.html -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Learn More - Harmonia Sinfonia</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Learn More About Harmonia Sinfonia</h1>
-    </div>
-  </body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Learn More - Harmonia Sinfonia{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h1>Learn More About Harmonia Sinfonia</h1>
+    <p>Welcome to Harmonia Sinfonia, Cheshire's premier amateur orchestra. Our mission is to create a vibrant and inclusive community where musicians of all levels can come together to share their passion for music, improve their skills, and perform beautiful orchestral works.</p>
+    
+    <h2>Background</h2>
+    <p>Founded in 2005, Harmonia Sinfonia has grown into a dedicated group of musicians who are committed to bringing classical music to life. We hold regular rehearsals and performances throughout the year, featuring a diverse repertoire that spans from the Baroque period to contemporary compositions.</p>
+    
+    <h2>Our Mission</h2>
+    <p>At Harmonia Sinfonia, we believe in the power of music to unite and inspire. Our mission is to:</p>
+    <ul>
+      <li><strong>Foster a love of music:</strong> Provide opportunities for musicians to explore and perform a wide range of orchestral works.</li>
+      <li><strong>Encourage musical growth:</strong> Offer a supportive environment where members can improve their skills through regular rehearsals and professional guidance.</li>
+      <li><strong>Engage with the community:</strong> Share our passion for music through public performances, educational outreach, and community events.</li>
+      <li><strong>Promote inclusivity:</strong> Welcome musicians of all backgrounds and skill levels to join us in our musical journey.</li>
+    </ul>
+
+    <h2>Join Us</h2>
+    <p>We are always looking for new members to join our orchestra. Whether you are a seasoned musician or just starting out, Harmonia Sinfonia offers a place for you to grow and perform. Our members range from students and amateur musicians to retired professionals, all united by a common love for orchestral music.</p>
+    
+    <p>If you are interested in joining Harmonia Sinfonia, please <a href="{% url 'authentication:signup' %}">sign up</a> for more information about auditions and membership.</p>
+    
+    <h2>Upcoming Events</h2>
+    <p>We host a variety of events throughout the year, including seasonal concerts, community performances, and special workshops. Check our <a href="{% url 'events:event_list' %}">events page</a> for the latest updates and join us for an upcoming performance.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions or would like more information about Harmonia Sinfonia, please <a href="{% url 'authentication:signup' %}">sign up</a>. We look forward to hearing from you!</p>
+  </div>
+{% endblock %}
