@@ -36,8 +36,7 @@ footer {
 .hero-section {
     position: relative;
     height: 100vh;
-    width: 100%;
-    background: url('../images/orchestra.png') no-repeat center center/cover;
+    background: url("../images/orchestra.556706d76bc7.png") no-repeat center center/cover;
 }
 
 .hero-section .overlay {
@@ -84,32 +83,18 @@ footer {
     color: var(--cream);
 }
 
-/* Button Styles */
-.btn-primary {
+.btn-custom {
     background-color: var(--golden-yellow);
     border-color: var(--golden-yellow);
-    color: var(--dark-burgundy);
+    color: var(--deep-blue);
 }
 
-.btn-primary:hover {
+.btn-custom:hover {
     background-color: var(--dark-burgundy);
     border-color: var(--dark-burgundy);
     color: var(--cream);
 }
 
-.btn-secondary {
-    background-color: var(--dark-burgundy);
-    border-color: var(--dark-burgundy);
-    color: var(--cream);
-}
-
-.btn-secondary:hover {
-    background-color: var(--golden-yellow);
-    border-color: var(--golden-yellow);
-    color: var(--dark-burgundy);
-}
-
-/* Form Container */
 .form-container {
     max-width: 400px;
     margin: 50px auto;
