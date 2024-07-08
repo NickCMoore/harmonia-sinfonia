@@ -36,7 +36,7 @@ footer {
 .hero-section {
     position: relative;
     height: 100vh;
-    background: url('../images/orchestra.png') no-repeat center center/cover;
+    background: url("../images/orchestra.556706d76bc7.png") no-repeat center center/cover;
 }
 
 .hero-section .overlay {
