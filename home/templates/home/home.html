@@ -37,26 +37,8 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'posts:post_list' %}">Posts</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="{% url 'events:event_list' %}"
                 >Events</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="{% url 'profiles:profile_detail' user_id=request.user.id %}"
-                >Profile</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-primary ms-3" href="{% url 'login' %}"
-                >Login / Sign Up</a
               >
             </li>
           </ul>
@@ -70,7 +52,9 @@
       <div class="container text-center text-white">
         <h2 class="subheading">Cheshire's Premier Amateur Orchestra</h2>
         <h1 class="display-3">Harmonia Sinfonia</h1>
-        <a href="#" class="btn btn-primary mt-4">Learn More</a>
+        <a href="{% url 'home:learn_more' %}" class="btn btn-primary mt-4"
+          >Learn More</a
+        >
       </div>
     </header>
 

@@ -1,28 +1,27 @@
-# authentication/views.py
-from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.contrib.auth import login
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.views.generic.edit import FormView, CreateView
 
 
-def login_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('home')
-    else:
-        form = AuthenticationForm()
-    return render(request, 'authentication/login.html', {'form': form})
+class LoginView(FormView):
+    template_name = 'authentication/login.html'
+    form_class = AuthenticationForm
+    success_url = reverse_lazy('home:home.html')
+
+    def form_valid(self, form):
+        user = form.get_user()
+        login(self.request, user)
+        return super().form_valid(form)
 
 
-def signup_view(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('home')
-    else:
-        form = UserCreationForm()
-    return render(request, 'authentication/signup.html', {'form': form})
+class SignupView(CreateView):
+    template_name = 'authentication/signup.html'
+    form_class = UserCreationForm
+    success_url = reverse_lazy('home:home.html')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        user = self.object
+        login(self.request, user)
+        return response

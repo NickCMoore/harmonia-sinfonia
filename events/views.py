@@ -1,5 +1,11 @@
-from django.views.generic import ListView
+from django.views.generic import DetailView, ListView
 from .models import Event
+
+
+class EventDetailView(DetailView):
+    model = Event
+    template_name = 'events/event_detail.html'
+    context_object_name = 'event'
 
 
 class EventListView(ListView):
