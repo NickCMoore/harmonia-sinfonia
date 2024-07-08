@@ -1,14 +1,26 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
-{% block title %}Posts - Harmonia Sinfonia{% endblock %} 
+{% block title %}Posts - Harmonia Sinfonia{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
-  <h1>Posts</h1>
-  <ul>
+  <h1 class="mb-4">Posts</h1>
+  <div class="list-group">
     {% for post in posts %}
-    <li>{{ post.content }} - {{ post.posted_on }}</li>
+    <div class="list-group-item mb-3">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ post.content }}</h5>
+        <small class="text-muted">{{ post.posted_on }}</small>
+      </div>
+      {% if post.image %}
+      <img src="{{ post.image.url }}" class="img-fluid mt-2" alt="Post Image">
+      {% endif %}
+      <div class="mt-3">
+        <span class="badge bg-secondary">{{ post.likes.count }} likes</span>
+      </div>
+    </div>
     {% endfor %}
-  </ul>
+  </div>
 </div>
 {% endblock %}
+
