@@ -9,15 +9,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="{% url 'home:home' %}">
-            <img src="{% static 'images/logo.png' %}" alt="Harmonia Sinfonia Logo" width="50" height="50">
+            <img src="{% static 'images/logo.png' %}" alt="Harmonia Sinfonia Logo" width="30" height="30" class="d-inline-block align-top">
+            Harmonia Sinfonia
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+        <div class="navbar-nav ml-auto d-flex align-items-center">
+            <ul class="navbar-nav">
                 {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'events:event_list' %}">Events</a>
@@ -36,7 +34,7 @@
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="btn btn-primary" href="{% url 'authentication:login' %}">Member Login</a>
+                        <a class="btn btn-primary mr-2" href="{% url 'authentication:login' %}">Member Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-secondary" href="{% url 'authentication:signup' %}">Join Us</a>
@@ -57,3 +55,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

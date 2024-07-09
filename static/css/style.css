@@ -38,8 +38,9 @@ footer {
     background-size: cover;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 50px;
 }
 
 .hero-section .overlay {
