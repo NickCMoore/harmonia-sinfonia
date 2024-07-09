@@ -51,9 +51,16 @@ footer {
     background: rgba(0, 0, 0, 0.5);
 }
 
-.hero-section .container-fluid {
+.hero-section .hero-content {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: var(--cream);
 }
 
 .navbar-light .navbar-brand img {
@@ -79,7 +86,6 @@ footer {
     font-size: 4.5rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
-    color: var(--cream);
 }
 
 /* Button Styles */
