@@ -20,6 +20,7 @@ h1 {
     margin-bottom: 20px;
     border-bottom: 2px solid var(--dark-burgundy);
     padding-bottom: 10px;
+    text-align: center;
 }
 
 footer {
@@ -32,30 +33,21 @@ footer {
     padding: 10px 0;
 }
 
-/* Custom CSS for Harmonia Sinfonia */
 .hero-section {
     position: relative;
+    background: url('/static/images/orchestra.png') no-repeat center center;
+    background-size: cover;
     height: 100vh;
-    width: 100%;
-    background: url('../images/orchestra.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-section .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.hero-section .container {
+.hero-section .hero-content {
     position: relative;
     z-index: 2;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 15px;
     text-align: center;
+    color: var(--cream);
 }
 
 .navbar-light .navbar-brand img {
@@ -81,35 +73,24 @@ footer {
     font-size: 4.5rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
-    color: var(--cream);
 }
 
 /* Button Styles */
 .btn-primary {
     background-color: var(--golden-yellow);
     border-color: var(--golden-yellow);
-    color: var(--dark-burgundy);
+    margin-right: 10px;
 }
 
 .btn-primary:hover {
     background-color: var(--dark-burgundy);
     border-color: var(--dark-burgundy);
-    color: var(--cream);
 }
 
 .btn-secondary {
-    background-color: var(--dark-burgundy);
-    border-color: var(--dark-burgundy);
-    color: var(--cream);
+    margin-left: 10px;
 }
 
-.btn-secondary:hover {
-    background-color: var(--golden-yellow);
-    border-color: var(--golden-yellow);
-    color: var(--dark-burgundy);
-}
-
-/* Form Container */
 .form-container {
     max-width: 400px;
     margin: 50px auto;

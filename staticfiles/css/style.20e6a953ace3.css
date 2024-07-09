@@ -35,7 +35,7 @@ footer {
 
 .hero-section {
     position: relative;
-    background: url('/static/images/orchestra.png') no-repeat center center;
+    background: url("/static/images/orchestra.556706d76bc7.png") no-repeat center center;
     background-size: cover;
     height: 100vh;
     display: flex;
