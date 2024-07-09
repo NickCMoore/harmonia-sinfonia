@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'posts',
     'profiles',
     'search',
+    'crispy forms'
     'events',
     'home',
     'newsletter',
