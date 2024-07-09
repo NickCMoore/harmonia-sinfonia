@@ -36,5 +36,17 @@ def delete_post_view(request, pk):
         post.delete()
         messages.success(request, 'Post deleted successfully.')
     else:
-        messages.error(request, 'You are not authorized to delete this post.')
+        messages.error(request, 'You are not authorised to delete this post.')
     return redirect('post_list')
+
+
+@login_required
+def toggle_like_view(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        messages.success(request, 'You unliked the post.')
+    else:
+        post.likes.add(request.user)
+        messages.success(request, 'You liked the post.')
+    return redirect('post_detail', pk=pk)
