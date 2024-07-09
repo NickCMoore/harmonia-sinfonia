@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container mt-5">
-  <h1 class="mb-4">Profile Detail</h1>
+  <h1 class="mb-4">Profile</h1>
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">{{ profile.display_name }}</h5>
@@ -13,7 +13,7 @@
       <img src="{{ profile.profile_pic.url }}" class="img-fluid mt-2" alt="Profile Picture">
       {% endif %}
       <div class="mt-3">
-        <span class="badge bg-secondary">{{ profile.followers.count }} followers</span>
+        <span class="badge bg-success">{{ profile.followers.count }} followers</span>
       </div>
     </div>
     <div class="card-footer text-muted">
