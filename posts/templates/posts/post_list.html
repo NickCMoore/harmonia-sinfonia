@@ -9,9 +9,10 @@
     {% for post in posts %}
     <div class="list-group-item list-group-item-action mb-3">
       <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{ post.content }}</h5>
+        <h5 class="mb-1">{{ post.title }}</h5>
         <small class="text-muted">{{ post.posted_on }}</small>
       </div>
+      <p>{{ post.content }}</p>
       {% if post.image %}
       <img src="{{ post.image.url }}" class="img-fluid mt-2" alt="Post Image">
       {% endif %}

@@ -3,7 +3,7 @@ from .models import Post
 
 
 def post_list_view(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-posted_on')
     return render(request, 'posts/post_list.html', {'posts': posts})
 
 
