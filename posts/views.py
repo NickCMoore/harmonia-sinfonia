@@ -23,7 +23,7 @@ def create_post_view(request):
             post = form.save(commit=False)
             post.user = request.user
             post.save()
-            return redirect('post_list')
+            return redirect('posts:post_list')
     else:
         form = PostForm()
     return render(request, 'posts/create_post.html', {'form': form})
@@ -36,8 +36,8 @@ def delete_post_view(request, pk):
         post.delete()
         messages.success(request, 'Post deleted successfully.')
     else:
-        messages.error(request, 'You are not authorised to delete this post.')
-    return redirect('post_list')
+        messages.error(request, 'You are not authorized to delete this post.')
+    return redirect('posts:post_list')
 
 
 @login_required
@@ -49,4 +49,4 @@ def toggle_like_view(request, pk):
     else:
         post.likes.add(request.user)
         messages.success(request, 'You liked the post.')
-    return redirect('post_detail', pk=pk)
+    return redirect('posts:post_detail', pk=pk)

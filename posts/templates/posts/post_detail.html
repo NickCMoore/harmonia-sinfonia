@@ -7,8 +7,8 @@
   <h1 class="mb-4">Post Detail</h1>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">{{ post.title }}</h5>  <!-- Updated to display the post title -->
-      <p class="card-text">{{ post.content }}</p>  <!-- Updated to display the post content -->
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text">{{ post.content }}</p>
       {% if post.image %}
       <img src="{{ post.image.url }}" class="img-fluid mt-2" alt="Post Image">
       {% endif %}
