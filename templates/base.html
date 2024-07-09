@@ -18,15 +18,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'events:event_list' %}">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'posts:post_list' %}">Posts</a>
-                </li>
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'profiles:profile_detail' user.id %}">Profile</a>
+                        <a class="nav-link" href="{% url 'events:event_list' %}">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'posts:post_list' %}">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profiles:profile_list' %}">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
@@ -36,7 +36,7 @@
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="btn btn-primary mr-2" href="{% url 'authentication:login' %}">Login</a>
+                        <a class="btn btn-primary" href="{% url 'authentication:login' %}">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-secondary" href="{% url 'authentication:signup' %}">Sign Up</a>
@@ -57,4 +57,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
