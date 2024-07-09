@@ -4,11 +4,12 @@
 
 {% block content %}
   <!-- Hero Section -->
-  <header class="hero-section">
-    <div class="container-fluid hero-content">
+  <header class="hero-section d-flex align-items-center justify-content-center">
+    <div class="container text-center hero-content">
       <h2 class="subheading">Cheshire's Premier Amateur Orchestra</h2>
       <h1 class="display-3">Harmonia Sinfonia</h1>
       <a href="{% url 'home:learn_more' %}" class="btn btn-primary mt-4">Learn More</a>
+    </div>
   </header>
 
   <!-- Newsletter Section -->
@@ -37,3 +38,4 @@
     </div>
   </section>
 {% endblock %}
+
