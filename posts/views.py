@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Post
 from .forms import PostForm
 
@@ -26,3 +27,14 @@ def create_post_view(request):
     else:
         form = PostForm()
     return render(request, 'posts/create_post.html', {'form': form})
+
+
+@login_required
+def delete_post_view(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if post.user == request.user:
+        post.delete()
+        messages.success(request, 'Post deleted successfully.')
+    else:
+        messages.error(request, 'You are not authorized to delete this post.')
+    return redirect('post_list')

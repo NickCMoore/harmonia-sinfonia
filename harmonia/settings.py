@@ -64,11 +64,15 @@ INSTALLED_APPS = [
     'posts',
     'profiles',
     'search',
-    'crispy forms'
+    'crispy_forms',
+    'crispy_bootstrap4',
     'events',
     'home',
     'newsletter',
 ]
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 MIDDLEWARE = [
