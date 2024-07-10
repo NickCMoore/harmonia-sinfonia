@@ -3,39 +3,78 @@
 {% block title %}Home - Harmonia Sinfonia{% endblock %}
 
 {% block content %}
-  <!-- Hero Section -->
-  <header class="hero-section d-flex align-items-center justify-content-center">
-    <div class="container text-center hero-content">
+  <div class="main-content">
+    <!-- Main Heading and Subheading -->
+    <div class="container text-center my-5">
       <h2 class="subheading">Cheshire's Premier Amateur Orchestra</h2>
       <h1 class="display-3">Harmonia Sinfonia</h1>
-      <a href="{% url 'home:learn_more' %}" class="btn btn-primary mt-4">Learn More</a>
     </div>
-  </header>
 
-  <!-- Newsletter Section -->
-  <section class="newsletter-section py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="mb-4">Subscribe to Our Newsletter</h2>
-      <form method="post" action="{% url 'newsletter:subscribe' %}" class="row g-3 justify-content-center">
-        {% csrf_token %}
-        <div class="col-auto">
-          <input type="email" name="email" class="form-control" placeholder="Enter your email" required />
-        </div>
-        <div class="col-auto">
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </div>
-      </form>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <header class="hero-section d-flex align-items-center justify-content-center">
+      <div class="container text-center hero-content">
+      </div>
+    </header>
 
-  <!-- Learn More Section -->
-  <section class="learn-more-section py-5 text-center">
-    <div class="container">
-      <h1>Welcome to Harmonia Sinfonia</h1>
-      <p>Harmonia Sinfonia is Cheshire's premier amateur orchestra, bringing together musicians of all levels to share their passion for music, improve their skills, and perform beautiful orchestral works.</p>
-      <p>Our mission is to foster a love of music, encourage musical growth, engage with the community, and promote inclusivity.</p>
-      <a href="{% url 'home:learn_more' %}" class="btn btn-primary mt-4">Learn More About Us</a>
-    </div>
-  </section>
+    <!-- Learn More Section -->
+    <section class="learn-more-section py-5 text-center">
+      <div class="container">
+        <h1>Welcome to Harmonia Sinfonia</h1>
+        <p>Harmonia Sinfonia is Cheshire's premier amateur orchestra, bringing together musicians of all levels to share their passion for music, improve their skills, and perform beautiful orchestral works.</p>
+        <p>Our mission is to foster a love of music, encourage musical growth, engage with the community, and promote inclusivity.</p>
+        <a href="{% url 'home:learn_more' %}" class="btn btn-primary mt-4">Learn More About Us</a>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="mb-4">Subscribe to Our Newsletter</h2>
+        <form method="post" action="{% url 'newsletter:subscribe' %}" class="row g-3 justify-content-center">
+          {% csrf_token %}
+          <div class="col-auto">
+            <input type="email" name="email" class="form-control" placeholder="Enter your email" required />
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
 {% endblock %}
 
+{% block footer %}
+  <!-- Footer Section -->
+  <footer class="footer bg-dark text-white py-3 mt-auto w-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>About Us</h5>
+          <p>Harmonia Sinfonia is Cheshire's premier amateur orchestra, bringing together musicians of all levels to share their passion for music.</p>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="{% url 'home:learn_more' %}" class="text-white">About Us</a></li>
+            <li><a href="{% url 'events:event_list' %}" class="text-white">Events</a></li>
+            <li><a href="" class="text-white">Contact</a></li>
+            <li><a href="" class="text-white">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <div class="d-flex">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p>&copy; 2024 Harmonia Sinfonia. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+{% endblock %}
