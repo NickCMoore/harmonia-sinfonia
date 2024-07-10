@@ -72,10 +72,10 @@
     </div>
     
     <div class="mt-3">
-        <a href="{% url 'posts:create_post' %}" class="btn btn-primary">Create a New Post</a>
+        <a href="{% url 'create_post' %}" class="btn btn-primary">Create a New Post</a>
         {% if post.user == request.user %}
-            <a href="{% url 'posts:edit_post' post.pk %}" class="btn btn-secondary">Edit Post</a>
-            <form method="post" action="{% url 'posts:delete_post' post.pk %}" style="display:inline;">
+            <a href="{% url 'edit_post' post.pk %}" class="btn btn-secondary">Edit Post</a>
+            <form method="post" action="{% url 'delete_post' post.pk %}" style="display:inline;">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-danger">Delete Post</button>
             </form>
@@ -83,4 +83,3 @@
     </div>
 </div>
 {% endblock %}
-

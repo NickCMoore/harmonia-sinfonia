@@ -71,7 +71,7 @@ def delete_comment_view(request, pk):
     if request.user == comment.user:
         comment.delete()
         messages.success(request, 'Your comment has been deleted.')
-        return redirect('post_detail', pk=comment.post.pk)
+        return redirect('posts:post_detail', pk=comment.post.pk)
     else:
         return HttpResponseForbidden("You are not allowed to delete this comment.")
 
@@ -83,4 +83,20 @@ def toggle_upvote_comment(request, pk):
         comment.upvotes.remove(request.user)
     else:
         comment.upvotes.add(request.user)
-    return redirect('post_detail', pk=comment.post.pk)
+    return redirect('posts:post_detail', pk=comment.post.pk)
+
+
+@login_required
+def edit_post_view(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if post.user != request.user:
+        return HttpResponseForbidden("You are not allowed to edit this post.")
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Post updated successfully.')
+            return redirect('posts:post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'posts/edit_post.html', {'form': form})
