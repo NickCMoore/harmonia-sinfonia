@@ -6,6 +6,12 @@ from .models import Profile, Notification
 
 
 @login_required
+def profile_list_view(request):
+    profiles = Profile.objects.all()
+    return render(request, 'profiles/profile_list.html', {'profiles': profiles})
+
+
+@login_required
 def profile_detail_view(request, identifier):
     user = get_object_or_404(User, username=identifier)
 
