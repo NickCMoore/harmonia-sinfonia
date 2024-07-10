@@ -10,4 +10,8 @@ urlpatterns = [
     path('follow/<str:username>/', views.follow_unfollow, name='follow_unfollow'),
     path('following/', views.following_list, name='following_list'),
     path('notifications/', views.notifications_list, name='notifications_list'),
+    path('notifications/mark_as_read/<int:notification_id>/',
+         views.mark_notification_as_read, name='mark_notification_as_read'),
+    path('notifications/delete/<int:notification_id>/',
+         views.delete_notification, name='delete_notification'),
 ]

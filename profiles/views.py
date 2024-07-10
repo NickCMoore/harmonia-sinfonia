@@ -57,3 +57,20 @@ def following_list(request):
 def notifications_list(request):
     notifications = request.user.notifications.all()
     return render(request, 'profiles/notifications_list.html', {'notifications': notifications})
+
+
+@login_required
+def mark_notification_as_read(request, notification_id):
+    notification = get_object_or_404(
+        Notification, id=notification_id, recipient=request.user)
+    notification.read = True
+    notification.save()
+    return redirect('profiles:notifications_list')
+
+
+@login_required
+def delete_notification(request, notification_id):
+    notification = get_object_or_404(
+        Notification, id=notification_id, recipient=request.user)
+    notification.delete()
+    return redirect('profiles:notifications_list')
