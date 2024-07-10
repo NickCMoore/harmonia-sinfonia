@@ -8,19 +8,31 @@ admin.site.register(Notification)
 
 def synchronize_profile_ids(modeladmin, request, queryset):
     for user in queryset:
-        if Profile.objects.filter(id=user.id).exists():
-            conflicting_profile = Profile.objects.get(id=user.id)
-            temp_id = Profile.objects.latest('id').id + 1
-            conflicting_profile.id = temp_id
-            conflicting_profile.save()
-
         try:
             profile = user.profile
             if profile.id != user.id:
+                try:
+                    conflicting_profile = Profile.objects.get(id=user.id)
+                    conflicting_profile.delete()
+                except Profile.DoesNotExist:
+                    pass
                 profile.id = user.id
                 profile.save()
         except Profile.DoesNotExist:
             Profile.objects.create(user=user, id=user.id)
+        except Profile.MultipleObjectsReturned:
+            profiles = Profile.objects.filter(user=user)
+            main_profile = profiles[0]
+            for profile in profiles[1:]:
+                profile.delete()
+            if main_profile.id != user.id:
+                try:
+                    conflicting_profile = Profile.objects.get(id=user.id)
+                    conflicting_profile.delete()
+                except Profile.DoesNotExist:
+                    pass
+                main_profile.id = user.id
+                main_profile.save()
 
 
 synchronize_profile_ids.short_description = "Synchronize Profile IDs with User IDs"
