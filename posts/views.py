@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
+from django.http import HttpResponseForbidden
 
 
 def post_list_view(request):
@@ -62,3 +63,14 @@ def toggle_like_view(request, pk):
         post.likes.add(request.user)
         messages.success(request, 'You liked the post.')
     return redirect('posts:post_detail', pk=pk)
+
+
+@login_required
+def delete_comment_view(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    if request.user == comment.user:
+        comment.delete()
+        messages.success(request, 'Your comment has been deleted.')
+        return redirect('post_detail', pk=comment.post.pk)
+    else:
+        return HttpResponseForbidden("You are not allowed to delete this comment.")
