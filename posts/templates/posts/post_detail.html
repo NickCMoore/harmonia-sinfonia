@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}Post Detail{% endblock %}
+{% block title %}Post{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
@@ -35,12 +35,25 @@
             <div class="border p-2 my-2">
                 <strong>{{ comment.user.username }}</strong> on {{ comment.created_on }}<br>
                 {{ comment.content }}
-                {% if request.user == comment.user %}
-                    <form method="post" action="{% url 'delete_comment' comment.pk %}" style="display: inline;">
+                <div>
+                    <form method="post" action="{% url 'toggle_upvote_comment' comment.pk %}" style="display: inline;">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        <button type="submit" class="btn btn-secondary btn-sm">
+                            {% if request.user in comment.upvotes.all %}
+                                Remove Upvote
+                            {% else %}
+                                Upvote
+                            {% endif %}
+                        </button>
+                        <span>{{ comment.total_upvotes }}</span>
                     </form>
-                {% endif %}
+                    {% if request.user == comment.user %}
+                        <form method="post" action="{% url 'delete_comment' comment.pk %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    {% endif %}
+                </div>
             </div>
         {% empty %}
             <p>No comments yet.</p>
@@ -70,5 +83,4 @@
     </div>
 </div>
 {% endblock %}
-
 

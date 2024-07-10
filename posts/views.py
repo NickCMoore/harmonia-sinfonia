@@ -74,3 +74,13 @@ def delete_comment_view(request, pk):
         return redirect('post_detail', pk=comment.post.pk)
     else:
         return HttpResponseForbidden("You are not allowed to delete this comment.")
+
+
+@login_required
+def toggle_upvote_comment(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    if request.user in comment.upvotes.all():
+        comment.upvotes.remove(request.user)
+    else:
+        comment.upvotes.add(request.user)
+    return redirect('post_detail', pk=comment.post.pk)

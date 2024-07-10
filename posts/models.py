@@ -22,6 +22,11 @@ class Comment(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     is_deleted = models.BooleanField(default=False)
+    upvotes = models.ManyToManyField(
+        User, related_name='comment_upvotes', blank=True)
+
+    def total_upvotes(self):
+        return self.upvotes.count()
 
     def __str__(self):
         return f'Comment by {self.user.username} on {self.post.title}'
