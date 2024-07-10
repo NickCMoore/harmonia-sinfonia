@@ -1,5 +1,3 @@
-# profiles/views.py
-
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -20,6 +18,7 @@ def profile_detail_view(request, identifier):
         user = get_object_or_404(User, id=user_id)
     except ValueError:
         user = get_object_or_404(User, username=identifier)
+
     if not hasattr(user, 'profile'):
         Profile.objects.create(user=user)
 
@@ -45,12 +44,12 @@ def follow_unfollow(request, username):
         message = 'You are now following this user.'
 
     messages.success(request, message)
-    return redirect('profiles:profile_detail', identifier=username)
+    return redirect('profile_detail', identifier=username)
 
 
 @login_required
 def following_list(request):
-    following = request.user.profile.following.all()
+    following = request.user.following.all()
     return render(request, 'profiles/following_list.html', {'following': following})
 
 
