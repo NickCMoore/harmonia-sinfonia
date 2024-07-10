@@ -1,67 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Harmonia Sinfonia{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
-    <link rel="icon" href="{% static 'images/icon.ico' %}" type="image/x-icon">
-    <link rel="shortcut icon" href="{% static 'images/icon.ico' %}" type="image/x-icon">
-</head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- Other navbar content -->
-        {% if user.is_authenticated %}
-        <ul class="navbar-nav ml-auto">
-          <!-- Other nav items -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Notifications
-              {% with user.notifications.filter(read=False).count as unread_count %}
-                {% if unread_count > 0 %}
-                  <span class="badge bg-danger">{{ unread_count }}</span>
-                {% endif %}
-              {% endwith %}
+        <div class="container-fluid">
+            <!-- Navbar Brand -->
+            <a class="navbar-brand" href="{% url 'home:home' %}">
+                <img src="{% static 'images/icon.png' %}" alt="Harmonia Sinfonia">
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              {% for notification in user.notifications.all|slice:":5" %}
-              <li>
-                <a class="dropdown-item {% if not notification.read %}font-weight-bold{% endif %}" href="{% url 'profiles:notifications_list' %}">
-                  {{ notification.message }}
-                </a>
-              </li>
-              {% endfor %}
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{% url 'profiles:notifications_list' %}">View all notifications</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-          </li>
-        </ul>
-        {% else %}
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
-          </li>
-        </ul>
-        {% endif %}
-      </nav>
-      
-      
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Collapse -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Nav Items -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profiles:profile_list' %}">Profiles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'events:event_list' %}">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'posts:post_list' %}">Posts</a>
+                    </li>
+                    <!-- Admin Link -->
+                    {% if user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin:index' %}" target="_blank">Admin</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <!-- Conditional Authenticated User Links -->
+                {% if user.is_authenticated %}
+                <ul class="navbar-nav ml-auto">
+                    <!-- Notifications Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Notifications
+                            {% if unread_count > 0 %}
+                                <span class="badge bg-danger">{{ unread_count }}</span>
+                            {% endif %}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% if user.notifications.exists %}
+                                {% for notification in user.notifications.all|slice:":5" %}
+                                    <li>
+                                        <a class="dropdown-item {% if not notification.read %}font-weight-bold{% endif %}" href="{% url 'profiles:notifications_list' %}">
+                                            {{ notification.message }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            {% else %}
+                                <li><a class="dropdown-item" href="#">No notifications</a></li>
+                            {% endif %}
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'profiles:notifications_list' %}">View all notifications</a></li>
+                        </ul>
+                    </li>
+                    <!-- User Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ user.username }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="{% url 'profiles:profile_detail' username=user.username %}">Profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'profiles:following_list' %}">Following</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form action="{% url 'authentication:logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="dropdown-item">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                {% else %}
+                <!-- Non-authenticated User Links -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'authentication:login' %}">Login</a>
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
 
-    <div class="container mt-4">
-        {% block content %}
-        {% endblock %}
+    <!-- Main Content Area -->
+    <div class="container main-content">
+        {% block content %}{% endblock %}
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Harmonia Sinfonia. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
 </body>
 </html>

@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import Profile, Notification
+from .forms import UserProfileForm
 
 
 @login_required
@@ -12,18 +13,9 @@ def profile_list_view(request):
 
 
 @login_required
-def profile_detail_view(request, identifier):
-    try:
-        user_id = int(identifier)
-        user = get_object_or_404(User, id=user_id)
-    except ValueError:
-        user = get_object_or_404(User, username=identifier)
-
-    if not hasattr(user, 'profile'):
-        Profile.objects.create(user=user)
-
-    profile = user.profile
-    return render(request, 'profiles/profile_detail.html', {'profile': profile})
+def profile_detail_view(request, username):
+    profile = get_object_or_404(Profile, user__username=username)
+    return render(request, 'profiles/profile_detail.html', {'user_profile': profile})
 
 
 @login_required
@@ -44,12 +36,12 @@ def follow_unfollow(request, username):
         message = 'You are now following this user.'
 
     messages.success(request, message)
-    return redirect('profile_detail', identifier=username)
+    return redirect('profiles:profile_detail', username=username)
 
 
 @login_required
 def following_list(request):
-    following = request.user.following.all()
+    following = request.user.profile.followers.all()
     return render(request, 'profiles/following_list.html', {'following': following})
 
 
@@ -74,3 +66,19 @@ def delete_notification(request, notification_id):
         Notification, id=notification_id, recipient=request.user)
     notification.delete()
     return redirect('profiles:notifications_list')
+
+
+@login_required
+def edit_profile(request, username):
+    user_profile = get_object_or_404(Profile, user__username=username)
+
+    if request.method == 'POST':
+        form = UserProfileForm(
+            request.POST, request.FILES, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profiles:profile_detail', username=username)
+    else:
+        form = UserProfileForm(instance=user_profile)
+
+    return render(request, 'profiles/edit_profile.html', {'form': form})

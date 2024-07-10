@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}Home - Harmonia Sinfonia{% endblock %}
-
+{% load static %}
 {% block content %}
   <div class="main-content">
     <!-- Main Heading and Subheading -->
@@ -13,6 +13,7 @@
     <!-- Hero Section -->
     <header class="hero-section d-flex align-items-center justify-content-center">
       <div class="container text-center hero-content">
+        <img src="{% static 'images/orchestra.png' %}" class="img-fluid" alt="Orchestra Image">
       </div>
     </header>
 
@@ -42,39 +43,4 @@
       </div>
     </section>
   </div>
-{% endblock %}
-
-{% block footer %}
-  <!-- Footer Section -->
-  <footer class="footer bg-dark text-white py-3 mt-auto w-100">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-4 mb-md-0">
-          <h5>About Us</h5>
-          <p>Harmonia Sinfonia is Cheshire's premier amateur orchestra, bringing together musicians of all levels to share their passion for music.</p>
-        </div>
-        <div class="col-md-4 mb-4 mb-md-0">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="{% url 'home:learn_more' %}" class="text-white">About Us</a></li>
-            <li><a href="{% url 'events:event_list' %}" class="text-white">Events</a></li>
-            <li><a href="" class="text-white">Contact</a></li>
-            <li><a href="" class="text-white">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h5>Follow Us</h5>
-          <div class="d-flex">
-            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-3">
-        <p>&copy; 2024 Harmonia Sinfonia. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
 {% endblock %}

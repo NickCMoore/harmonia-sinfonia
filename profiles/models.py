@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.utils.crypto import get_random_string
 
+# Profile model
+
 
 class Profile(models.Model):
     user = models.OneToOneField(
@@ -18,12 +20,14 @@ class Profile(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(
-                self.display_name[:50]) + '-' + get_random_string(6)
+            self.slug = slugify(self.display_name)[
+                :50] + '-' + get_random_string(6)
         super(Profile, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.user.username
+
+# Notification model
 
 
 class Notification(models.Model):
