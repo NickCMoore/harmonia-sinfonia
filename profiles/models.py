@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.utils.crypto import get_random_string
-from django.db.models.signals import post_save, m2m_changed
-from django.dispatch import receiver
 
 
 class Profile(models.Model):
