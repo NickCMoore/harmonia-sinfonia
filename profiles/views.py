@@ -1,17 +1,18 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib import messages
 from .models import Profile, Notification
 
 
-def profile_list_view(request):
-    profiles = Profile.objects.all()
-    return render(request, 'profiles/profile_list.html', {'profiles': profiles})
+@login_required
+def profile_detail_view(request, identifier):
+    user = get_object_or_404(User, username=identifier)
 
+    if not hasattr(user, 'profile'):
+        Profile.objects.create(user=user)
 
-def profile_detail_view(request, pk):
-    profile = get_object_or_404(Profile, pk=pk)
+    profile = user.profile
     return render(request, 'profiles/profile_detail.html', {'profile': profile})
 
 
@@ -33,12 +34,12 @@ def follow_unfollow(request, username):
         message = 'You are now following this user.'
 
     messages.success(request, message)
-    return redirect('profile_detail', username=username)
+    return redirect('profiles:profile_detail', identifier=username)
 
 
 @login_required
 def following_list(request):
-    following = request.user.following.all()
+    following = request.user.profile.following.all()
     return render(request, 'profiles/following_list.html', {'following': following})
 
 
