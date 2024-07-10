@@ -1,3 +1,5 @@
+# profiles/views.py
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -13,8 +15,11 @@ def profile_list_view(request):
 
 @login_required
 def profile_detail_view(request, identifier):
-    user = get_object_or_404(User, username=identifier)
-
+    try:
+        user_id = int(identifier)
+        user = get_object_or_404(User, id=user_id)
+    except ValueError:
+        user = get_object_or_404(User, username=identifier)
     if not hasattr(user, 'profile'):
         Profile.objects.create(user=user)
 
