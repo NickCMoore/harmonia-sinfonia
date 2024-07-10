@@ -8,6 +8,12 @@ admin.site.register(Notification)
 
 def synchronize_profile_ids(modeladmin, request, queryset):
     for user in queryset:
+        if Profile.objects.filter(id=user.id).exists():
+            conflicting_profile = Profile.objects.get(id=user.id)
+            temp_id = Profile.objects.latest('id').id + 1
+            conflicting_profile.id = temp_id
+            conflicting_profile.save()
+
         try:
             profile = user.profile
             if profile.id != user.id:
