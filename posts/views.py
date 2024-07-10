@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Post
-from .forms import PostForm
+from .models import Post, Comment
+from .forms import PostForm, CommentForm
 
 
 def post_list_view(request):
@@ -12,7 +12,19 @@ def post_list_view(request):
 
 def post_detail_view(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'posts/post_detail.html', {'post': post})
+    comments = post.comments.all()
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.user = request.user
+            comment.save()
+            messages.success(request, 'Your comment was added!')
+            return redirect('posts:post_detail', pk=pk)
+    else:
+        comment_form = CommentForm()
+    return render(request, 'posts/post_detail.html', {'post': post, 'comments': comments, 'comment_form': comment_form})
 
 
 @login_required
