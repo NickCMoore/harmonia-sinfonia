@@ -106,8 +106,8 @@ footer {
 }
 
 /* Separator Styles */
-.navbar-nav .nav-item+.nav-item {
-    border-left: 1px solid #ccc;
+.navbar-nav .nav-item {
+    border-left: 1px solid #0b0101;
     padding-left: 15px;
     margin-left: 15px;
 }
