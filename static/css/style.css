@@ -104,3 +104,14 @@ footer {
     margin-bottom: 20px;
     color: var(--deep-blue);
 }
+
+/* Separator Styles */
+.navbar-nav .nav-item+.nav-item {
+    border-left: 1px solid #ccc;
+    padding-left: 15px;
+    margin-left: 15px;
+}
+
+.navbar-nav .navbar-text {
+    margin-left: 15px;
+}

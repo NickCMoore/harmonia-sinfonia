@@ -9,8 +9,7 @@
     <div class="card mb-4">
         <div class="card-body">
             <h5 class="card-title">{{ post.user.username }}</h5>
-            <!-- Remove or comment out the line displaying post content -->
-            <!-- <p class="card-text">{{ post.content }}</p> -->
+            <p class="card-text">{{ post.content }}</p>
             {% if post.image %}
                 <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}">
             {% endif %}
@@ -36,8 +35,7 @@
             <div class="border p-2 my-2 position-relative">
                 <div>
                     <strong>{{ comment.user.username }}</strong> on {{ comment.created_on }}<br>
-                    <!-- Remove or comment out the line displaying comment content -->
-                    <!-- {{ comment.content }} -->
+                    <p>{{ comment.content }}</p>
                     <div>
                         <form method="post" action="{% url 'posts:toggle_upvote_comment' comment.pk %}" style="display: inline;">
                             {% csrf_token %}
@@ -86,4 +84,3 @@
     </div>
 </div>
 {% endblock %}
-
