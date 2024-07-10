@@ -60,7 +60,6 @@ INSTALLED_APPS = [
     'feed',
     'interactions',
     'messaging',
-    'notifications',
     'posts',
     'profiles',
     'search',
