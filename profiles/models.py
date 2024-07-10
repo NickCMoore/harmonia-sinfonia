@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.utils.crypto import get_random_string
+from django.db.models.signals import post_save, m2m_changed
+from django.dispatch import receiver
 
 
 class Profile(models.Model):
@@ -12,7 +14,8 @@ class Profile(models.Model):
     profile_pic = models.ImageField(upload_to='profiles/images/')
     bg_pic = models.ImageField(
         upload_to='profiles/bg_images/', blank=True, null=True)
-    followers = models.ManyToManyField(User, related_name='following')
+    followers = models.ManyToManyField(
+        User, related_name='following', blank=True)
     slug = models.SlugField(max_length=255, blank=True)
 
     def save(self, *args, **kwargs):
@@ -23,3 +26,16 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Notification(models.Model):
+    recipient = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='notifications')
+    sender = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='sent_notifications')
+    message = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    read = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'Notification from {self.sender} to {self.recipient}'
