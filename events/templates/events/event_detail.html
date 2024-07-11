@@ -27,7 +27,7 @@
       </button>
     </form>
     {% else %}
-    <p><a href="{% url 'login' %}">Log in</a> to like this event.</p>
+    <p><a href="{% url 'authentication:login' %}">Log in</a> to like this event.</p>
     {% endif %}
   </div>
   <a href="{% url 'events:event_list' %}" class="btn btn-secondary mt-4">Back to Events</a>
