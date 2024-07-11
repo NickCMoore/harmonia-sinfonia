@@ -100,6 +100,7 @@ h1 {
 .btn-primary {
     background-color: var(--golden-yellow);
     border-color: var(--golden-yellow);
+    color: #2E4057;
     margin-right: 10px;
 }
 
