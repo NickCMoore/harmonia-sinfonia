@@ -11,6 +11,7 @@ urlpatterns = [
     path('profiles/', include(('profiles.urls', 'profiles'), namespace='profiles')),
     path('authentication/', include('authentication.urls')),
     path('newsletter/', include('newsletter.urls', namespace='newsletter')),
+
 ]
 
 if settings.DEBUG:

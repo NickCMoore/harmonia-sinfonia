@@ -60,10 +60,14 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% if user.notifications.exists %}
                                 {% for notification in user.notifications.all|slice:":5" %}
-                                    <li>
+                                    <li class="d-flex justify-content-between align-items-center">
                                         <a class="dropdown-item {% if not notification.read %}font-weight-bold{% endif %}" href="{% url 'profiles:notifications_list' %}">
                                             {{ notification.message }}
                                         </a>
+                                        <form method="post" action="{% url 'delete_notification' notification.id %}">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                        </form>
                                     </li>
                                 {% endfor %}
                             {% else %}
@@ -118,3 +122,4 @@
     {% block extra_js %}{% endblock %}
 </body>
 </html>
+
