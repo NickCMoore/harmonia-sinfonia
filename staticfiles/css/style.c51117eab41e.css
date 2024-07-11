@@ -47,7 +47,7 @@ h1 {
 
 .hero-section {
     position: relative;
-    background: url('/static/images/orchestra.png') center center no-repeat;
+    background: url("/static/images/orchestra.556706d76bc7.png") center center no-repeat;
     background-size: contain;
     width: 100%;
     height: 50vh;
