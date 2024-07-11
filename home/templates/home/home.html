@@ -1,46 +1,45 @@
 {% extends 'base.html' %}
 
 {% block title %}Home - Harmonia Sinfonia{% endblock %}
-{% load static %}
+
 {% block content %}
-  <div class="main-content">
-    <!-- Main Heading and Subheading -->
-    <div class="container text-center my-5">
-      <h2 class="subheading">Cheshire's Premier Amateur Orchestra</h2>
-      <h1 class="display-3">Harmonia Sinfonia</h1>
-    </div>
-
-    <!-- Hero Section -->
-    <header class="hero-section d-flex align-items-center justify-content-center">
-      <div class="container text-center hero-content">
-        <img src="{% static 'images/orchestra.png' %}" class="img-fluid" alt="Orchestra Image">
-      </div>
-    </header>
-
-    <!-- Learn More Section -->
-    <section class="learn-more-section py-5 text-center">
-      <div class="container">
-        <h1>Welcome to Harmonia Sinfonia</h1>
-        <p>Harmonia Sinfonia is Cheshire's premier amateur orchestra, bringing together musicians of all levels to share their passion for music, improve their skills, and perform beautiful orchestral works.</p>
-        <p>Our mission is to foster a love of music, encourage musical growth, engage with the community, and promote inclusivity.</p>
-        <a href="{% url 'home:learn_more' %}" class="btn btn-primary mt-4">Learn More About Us</a>
-      </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter-section py-5 bg-light">
-      <div class="container text-center">
-        <h2 class="mb-4">Subscribe to Our Newsletter</h2>
-        <form method="post" action="{% url 'newsletter:subscribe' %}" class="row g-3 justify-content-center">
-          {% csrf_token %}
-          <div class="col-auto">
-            <input type="email" name="email" class="form-control" placeholder="Enter your email" required />
-          </div>
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-          </div>
-        </form>
-      </div>
-    </section>
+  <!-- Main Heading and Subheading -->
+  <div class="container text-center my-5">
+    <h2 class="subheading">Cheshire's Premier Amateur Orchestra</h2>
+    <h1 class="display-3">Harmonia Sinfonia</h1>
   </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section d-flex align-items-center justify-content-center">
+    <div class="container text-center hero-content">
+      <img src="{% static 'images/orchestra.png' %}" class="img-fluid" alt="Orchestra Image">
+    </div>
+  </section>
+
+  <!-- Learn More Section -->
+  <section class="learn-more-section py-5 text-center">
+    <div class="container">
+      <h1>Welcome to Harmonia Sinfonia</h1>
+      <p>Harmonia Sinfonia is Cheshire's premier amateur orchestra, bringing together musicians of all levels to share their passion for music, improve their skills, and perform beautiful orchestral works.</p>
+      <p>Our mission is to foster a love of music, encourage musical growth, engage with the community, and promote inclusivity.</p>
+      <a href="{% url 'home:learn_more' %}" class="btn btn-primary mt-4">Learn More About Us</a>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">Subscribe to Our Newsletter</h2>
+      <form method="post" action="{% url 'newsletter:subscribe' %}" class="row g-3 justify-content-center">
+        {% csrf_token %}
+        <div class="col-auto">
+          <input type="email" name="email" class="form-control" placeholder="Enter your email" required />
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </section>
 {% endblock %}
+
