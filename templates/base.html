@@ -64,9 +64,11 @@
                                         <a class="dropdown-item {% if not notification.read %}font-weight-bold{% endif %}" href="{% url 'profiles:notifications_list' %}">
                                             {{ notification.message }}
                                         </a>
-                                        <form method="post" action="{% url 'delete_notification' notification.id %}">
+                                        <form method="post" action="{% url 'profiles:delete_notification' notification.id %}" class="m-0 p-0">
                                             {% csrf_token %}
-                                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                            <button type="submit" class="btn btn-link p-0 m-0 align-baseline">
+                                                <i class="bi bi-x-circle text-danger"></i>
+                                            </button>
                                         </form>
                                     </li>
                                 {% endfor %}
@@ -122,4 +124,5 @@
     {% block extra_js %}{% endblock %}
 </body>
 </html>
+
 
