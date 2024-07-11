@@ -15,7 +15,7 @@ body {
 }
 
 body {
-    background-color: var(--soft-gray);
+    background-color: var(--cream);
     color: var(--soft-gray);
     display: flex;
     flex-direction: column;
