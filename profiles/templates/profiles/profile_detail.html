@@ -1,27 +1,55 @@
 {% extends 'base.html' %}
-
-{% block content %}
-    <h2>{{ user_profile.user.username }}'s Profile</h2>
-    {% if user_profile.user.username %}
-        <a href="{% url 'profiles:edit_profile' username=user_profile.user.username %}">Edit Profile</a>
-    {% else %}
-        <p>Username is not available.</p>
-    {% endif %}
-{% endblock %}
+{% load static %}
 
 {% block title %}Profile Detail - Harmonia Sinfonia{% endblock %}
 
-{% block additional_content %}
+{% block content %}
 <div class="container mt-5">
-    <h1 class="mb-4">Profile</h1>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">{{ user_profile.display_name }}</h5>
-            <p class="card-text">{{ user_profile.bio }}</p>
-            {% if user_profile.profile_pic %}
-                <img src="{{ user_profile.profile_pic.url }}" class="img-fluid mt-2" alt="Profile Picture">
-            {% endif %}
+    <h1 class="mb-4">{{ user_profile.user.username }}'s Profile</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                {% if user_profile.profile_pic %}
+                <img src="{{ user_profile.profile_pic.url }}" class="card-img-top" alt="{{ user_profile.display_name }}">
+                {% else %}
+                <img src="{% static 'images/default_profile_pic.png' %}" class="card-img-top" alt="{{ user_profile.display_name }}">
+                {% endif %}
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ user_profile.display_name }}</h5>
+                    <p class="card-text">{{ user_profile.user.email }}</p>
+                    {% if user_profile.user.username %}
+                    <a href="{% url 'profiles:edit_profile' username=user_profile.user.username %}" class="btn btn-primary">Edit Profile</a>
+                    {% else %}
+                    <p>Username is not available.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">About</h5>
+                    <p class="card-text">{{ user_profile.bio }}</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Followers</h5>
+                    {% if user_profile.followers.all %}
+                    <ul class="list-group list-group-flush">
+                        {% for follower in user_profile.followers.all %}
+                        <li class="list-group-item">
+                            <a href="{% url 'profiles:profile_detail' username=follower.username %}">{{ follower.username }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p class="card-text">No followers yet.</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
