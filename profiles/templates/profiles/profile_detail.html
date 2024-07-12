@@ -17,10 +17,8 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">{{ user_profile.display_name }}</h5>
                     <p class="card-text">{{ user_profile.user.email }}</p>
-                    {% if user_profile.user.username %}
+                    {% if request.user.is_staff %}
                     <a href="{% url 'profiles:edit_profile' username=user_profile.user.username %}" class="btn btn-primary">Edit Profile</a>
-                    {% else %}
-                    <p>Username is not available.</p>
                     {% endif %}
                 </div>
             </div>
@@ -28,7 +26,7 @@
         <div class="col-md-8">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">About</h5>
+                    <h5 class="card-title">Bio</h5>
                     <p class="card-text">{{ user_profile.bio }}</p>
                 </div>
             </div>
@@ -52,4 +50,5 @@
     </div>
 </div>
 {% endblock %}
+
 

@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import Profile, Notification
 from posts.models import Post
 from .forms import UserProfileForm, SearchForm
+
+
+def is_admin(user):
+    return user.is_staff
 
 
 @login_required
@@ -70,6 +74,7 @@ def delete_notification(request, notification_id):
 
 
 @login_required
+@user_passes_test(is_admin)
 def edit_profile(request, username):
     user_profile = get_object_or_404(Profile, user__username=username)
 
