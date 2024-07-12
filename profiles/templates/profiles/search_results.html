@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Search Results</h1>
+    <form method="get" action="{% url 'search' %}">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <hr>
+    {% if query %}
+        <h2>Results for "{{ query }}"</h2>
+        <div class="mt-4">
+            {% if filter_by != 'posts' %}
+                <h3>Users</h3>
+                {% if user_results %}
+                    <ul>
+                        {% for profile in user_results %}
+                            <li>
+                                <a href="{% url 'profiles:profile_detail' username=profile.user.username %}">{{ profile.user.username }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No users found.</p>
+                {% endif %}
+            {% endif %}
+            {% if filter_by != 'users' %}
+                <h3>Posts</h3>
+                {% if post_results %}
+                    <ul>
+                        {% for post in post_results %}
+                            <li>
+                                <a href="{% url 'posts:post_detail' post.pk %}">{{ post.content|truncatewords:20 }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No posts found.</p>
+                {% endif %}
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
