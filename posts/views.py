@@ -122,11 +122,16 @@ def flag_comment(request, comment_id):
     if request.method == 'POST':
         form = FlagForm(request.POST)
         if form.is_valid():
-            flag = form.save(commit=False)
-            flag.comment = comment
-            flag.user = request.user
+            flag = Flag.objects.create(
+                post=comment.post,
+                user=request.user,
+                reason=form.cleaned_data['reason']
+            )
             flag.save()
-            return redirect('posts:post_detail')
+            messages.success(request, "Comment flagged successfully.")
+            return redirect('posts:post_detail', pk=comment.post.pk)
+        else:
+            messages.error(request, "Please provide a reason for flagging.")
     else:
         form = FlagForm()
-    return render(request, 'posts/flag_comment.html', {'form': form})
+    return render(request, 'posts/flag_comment.html', {'form': form, 'comment': comment})
