@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import Profile, Notification
-from .forms import UserProfileForm
+from .forms import UserProfileForm, SearchForm
 
 
 @login_required
