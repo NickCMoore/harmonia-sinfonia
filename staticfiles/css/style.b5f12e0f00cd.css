@@ -39,7 +39,7 @@ header {
 .hero-section {
     flex-grow: 1;
     position: relative;
-    background-image: url('/static/images/orchestra.png');
+    background-image: url("/static/images/orchestra.556706d76bc7.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
