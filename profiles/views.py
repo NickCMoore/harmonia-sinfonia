@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import Profile, Notification
+from .models import Profile, Notification, Post
 from .forms import UserProfileForm, SearchForm
 
 
@@ -82,3 +82,30 @@ def edit_profile(request, username):
         form = UserProfileForm(instance=user_profile)
 
     return render(request, 'profiles/edit_profile.html', {'form': form})
+
+
+def search_view(request):
+    form = SearchForm(request.GET or None)
+    query = None
+    filter_by = None
+    user_results = []
+    post_results = []
+
+    if form.is_valid():
+        query = form.cleaned_data['query']
+        filter_by = form.cleaned_data.get('filter_by')
+
+        if filter_by == 'users' or not filter_by:
+            user_results = Profile.objects.filter(
+                user__username__icontains=query)
+        if filter_by == 'posts' or not filter_by:
+            post_results = Post.objects.filter(content__icontains=query)
+
+    context = {
+        'form': form,
+        'query': query,
+        'filter_by': filter_by,
+        'user_results': user_results,
+        'post_results': post_results,
+    }
+    return render(request, 'search_results.html', context)
