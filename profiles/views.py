@@ -78,6 +78,11 @@ def delete_notification(request, notification_id):
 def edit_profile(request, username):
     user_profile = get_object_or_404(Profile, user__username=username)
 
+    if request.user != user_profile.user and not request.user.is_staff:
+        messages.error(
+            request, "You do not have permission to edit this profile.")
+        return redirect('profiles:profile_detail', username=username)
+
     if request.method == 'POST':
         form = UserProfileForm(
             request.POST, request.FILES, instance=user_profile)

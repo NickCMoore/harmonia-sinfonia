@@ -17,7 +17,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">{{ user_profile.display_name }}</h5>
                     <p class="card-text">{{ user_profile.user.email }}</p>
-                    {% if request.user.is_staff %}
+                    {% if request.user == user_profile.user or request.user.is_staff %}
                     <a href="{% url 'profiles:edit_profile' username=user_profile.user.username %}" class="btn btn-primary">Edit Profile</a>
                     {% endif %}
                 </div>
@@ -50,5 +50,6 @@
     </div>
 </div>
 {% endblock %}
+
 
 
