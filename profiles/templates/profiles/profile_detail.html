@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>{{ user_profile.username }}'s Profile</h2>
-    <a href="{% url 'profiles:edit_profile' username=user_profile.username %}">Edit Profile</a>
+    <h2>{{ user_profile.user.username }}'s Profile</h2>
+    {% if user_profile.user.username %}
+        <a href="{% url 'profiles:edit_profile' username=user_profile.user.username %}">Edit Profile</a>
+    {% else %}
+        <p>Username is not available.</p>
+    {% endif %}
 {% endblock %}
 
 {% block title %}Profile Detail - Harmonia Sinfonia{% endblock %}
@@ -12,13 +16,12 @@
     <h1 class="mb-4">Profile</h1>
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">{{ profile.display_name }}</h5>
-            <p class="card-text">{{ profile.bio }}</p>
-            {% if profile.profile_pic %}
-                <img src="{{ profile.profile_pic.url }}" class="img-fluid mt-2" alt="Profile Picture">
+            <h5 class="card-title">{{ user_profile.display_name }}</h5>
+            <p class="card-text">{{ user_profile.bio }}</p>
+            {% if user_profile.profile_pic %}
+                <img src="{{ user_profile.profile_pic.url }}" class="img-fluid mt-2" alt="Profile Picture">
             {% endif %}
         </div>
     </div>
 </div>
 {% endblock %}
-
