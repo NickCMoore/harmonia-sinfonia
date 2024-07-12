@@ -1,36 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container mt-5 p-4 bg-light rounded">
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="text-dark">{{ event.title }}</h1>
-  </div>
-  <p class="text-dark">{{ event.content }}</p>
-  <p class="text-dark"><strong>Date:</strong> {{ event.date }}</p>
-  <p class="text-dark"><strong>Time:</strong> {{ event.time }}</p>
-  {% if event.image %}
-  <img src="{{ event.image.url }}" class="img-fluid mt-2" alt="{{ event.title }}">
-  {% endif %}
-  <div class="mt-3">
-    <p class="text-dark"><strong>Total Likes:</strong> {{ event.total_likes }}</p>
-    {% if user.is_authenticated %}
-    <form method="post" action="{% url 'events:like_event' event.id %}">
-      {% csrf_token %}
-      <button type="submit" class="btn btn-danger">
-        <i class="bi bi-hand-thumbs-up me-1"></i> 
-        {% if user in event.liked_by.all %}
-          Unlike
-        {% else %}
-          Like
-        {% endif %}
-        {{ event.liked_by.count }} likes
-      </button>
-    </form>
-    {% else %}
-    <p><a href="{% url 'authentication:login' %}">Log in</a> to like this event.</p>
-    {% endif %}
-  </div>
-  <a href="{% url 'events:event_list' %}" class="btn btn-secondary mt-4">Back to Events</a>
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">{{ event.title }}</h1>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{ event.date }} at {{ event.time }}</h5>
+                    <p class="card-text">{{ event.content }}</p>
+                    {% if event.image %}
+                        <img src="{{ event.image.url }}" class="img-fluid" alt="{{ event.title }}">
+                    {% endif %}
+                    <p class="card-text"><small class="text-muted">Posted on {{ event.date }}</small></p>
+                    <div class="mt-3">
+                        <p class="text-dark"><strong>Total Likes:</strong> {{ event.total_likes }}</p>
+                        {% if user.is_authenticated %}
+                        <form method="post" action="{% url 'events:like_event' event.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary">
+                                {% if user in event.liked_by.all %}
+                                    Unlike
+                                {% else %}
+                                    Like
+                                {% endif %}
+                                {{ event.liked_by.count }} likes
+                            </button>
+                        </form>
+                        {% else %}
+                        <p><a href="{% url 'authentication:login' %}">Log in</a> to like this event.</p>
+                        {% endif %}
+                    </div>
+                    <a href="{% url 'events:event_list' %}" class="btn btn-secondary mt-4">Back to Events</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
-
