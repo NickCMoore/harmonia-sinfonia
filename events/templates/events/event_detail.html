@@ -7,12 +7,12 @@
         <div class="col-12 col-md-8">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">{{ event.date }} at {{ event.time }}</h5>
+                    <h5 class="card-title">{{ event.date|date:"F j, Y" }} at {{ event.time|date:"P" }}</h5>
                     <p class="card-text">{{ event.content }}</p>
                     {% if event.image %}
                         <img src="{{ event.image.url }}" class="img-fluid" alt="{{ event.title }}">
                     {% endif %}
-                    <p class="card-text"><small class="text-muted">Posted on {{ event.date }}</small></p>
+                    <p class="card-text"><small class="text-muted">Posted on {{ event.date|date:"F j, Y" }}</small></p>
                     <div class="mt-3">
                         <p class="text-dark"><strong>Total Likes:</strong> {{ event.total_likes }}</p>
                         {% if user.is_authenticated %}
