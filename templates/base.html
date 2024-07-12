@@ -45,6 +45,11 @@
                     </li>
                     {% endif %}
                 </ul>
+                <!-- Search Form -->
+                <form class="d-flex" method="get" action="{% url 'search:search' %}">
+                    <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
                 <!-- Conditional Authenticated User Links -->
                 {% if user.is_authenticated %}
                 <ul class="navbar-nav ml-auto">
@@ -124,5 +129,3 @@
     {% block extra_js %}{% endblock %}
 </body>
 </html>
-
-
