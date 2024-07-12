@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Flag Comment{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Flag Comment</h2>
+    <p>Please tell us why you think this comment should be flagged:</p>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-danger">Submit Flag</button>
+    </form>
+</div>
+{% endblock %}

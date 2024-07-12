@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import flag_comment
 
 app_name = 'posts'
 
@@ -16,4 +17,5 @@ urlpatterns = [
          views.toggle_upvote_comment, name='toggle_upvote_comment'),
     path('post/<int:pk>/edit/', views.edit_post_view, name='edit_post'),
     path('post/<int:post_id>/flag/', views.flag_post, name='flag_post'),
+    path('comments/<int:comment_id>/flag/', flag_comment, name='flag_comment'),
 ]

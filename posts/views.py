@@ -114,3 +114,19 @@ def flag_post(request, post_id):
     else:
         form = FlagForm()
     return render(request, 'posts/flag_post.html', {'form': form, 'post': post})
+
+
+@login_required
+def flag_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    if request.method == 'POST':
+        form = FlagForm(request.POST)
+        if form.is_valid():
+            flag = form.save(commit=False)
+            flag.comment = comment
+            flag.user = request.user
+            flag.save()
+            return redirect('posts:post_detail')
+    else:
+        form = FlagForm()
+    return render(request, 'posts/flag_comment.html', {'form': form})
