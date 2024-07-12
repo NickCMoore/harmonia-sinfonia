@@ -15,4 +15,5 @@ urlpatterns = [
     path('comment/<int:pk>/toggle_upvote/',
          views.toggle_upvote_comment, name='toggle_upvote_comment'),
     path('post/<int:pk>/edit/', views.edit_post_view, name='edit_post'),
+    path('post/<int:post_id>/flag/', views.flag_post, name='flag_post'),
 ]

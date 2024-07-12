@@ -27,6 +27,10 @@
                                 {% endif %}
                             </button>
                         </form>
+                        <form method="post" action="{% url 'posts:flag_post' post.pk %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-warning">Flag as Inappropriate</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -53,6 +57,10 @@
                                         {% endif %}
                                     </button>
                                     <span>{{ comment.total_upvotes }}</span>
+                                </form>
+                                <form method="post" action="{% url 'posts:flag_comment' comment.pk %}" style="display: inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-warning btn-sm">Flag as Inappropriate</button>
                                 </form>
                             </div>
                         </div>

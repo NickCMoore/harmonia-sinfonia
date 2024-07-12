@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Post, Comment
-from .forms import PostForm, CommentForm
+from .models import Post, Comment, Flag
+from .forms import PostForm, CommentForm, FlagForm
 from django.http import HttpResponseForbidden
 
 
@@ -100,3 +100,17 @@ def edit_post_view(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'posts/edit_post.html', {'form': form})
+
+
+@login_required
+def flag_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.method == 'POST':
+        form = FlagForm(request.POST)
+        if form.is_valid():
+            Flag.objects.create(post=post, user=request.user,
+                                reason=form.cleaned_data['reason'])
+            return redirect('posts:post_detail', pk=post_id)
+    else:
+        form = FlagForm()
+    return render(request, 'posts/flag_post.html', {'form': form, 'post': post})
