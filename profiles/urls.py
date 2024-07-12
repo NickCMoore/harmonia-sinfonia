@@ -15,4 +15,5 @@ urlpatterns = [
     path('notifications/delete/<int:notification_id>/',
          views.delete_notification, name='delete_notification'),
     path('<str:username>/edit/', views.edit_profile, name='edit_profile'),
+    path('search/', views.search_view, name='search'),
 ]

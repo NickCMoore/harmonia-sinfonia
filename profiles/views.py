@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import Profile, Notification, Post
+from .models import Profile, Notification
+from posts.models import Post
 from .forms import UserProfileForm, SearchForm
 
 
@@ -108,4 +109,4 @@ def search_view(request):
         'user_results': user_results,
         'post_results': post_results,
     }
-    return render(request, 'search_results.html', context)
+    return render(request, 'profiles/search_results.html', context)
