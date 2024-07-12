@@ -90,7 +90,7 @@ h2 {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: var(--soft-gray);
+    color: var(--deep-blue);
     margin-left: 15px;
 }
 
@@ -169,4 +169,32 @@ h2 {
 .learn-more-section .btn-primary:hover {
     background-color: var(--dark-burgundy);
     border-color: var(--dark-burgundy);
+}
+
+/* Following List Styles */
+.following-list {
+    margin-top: 8rem;
+}
+
+.following-list h2 {
+    margin-bottom: 2rem;
+    color: var(--deep-blue);
+    font-size: 1.5em;
+}
+
+.following-list .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--deep-blue);
+    text-decoration: underline;
+}
+
+.following-list .list-group-item:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.following-list .list-group-item i {
+    color: var(--soft-gray);
 }

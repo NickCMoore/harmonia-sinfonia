@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="following-list">
+<div class="container following-list">
     <h2>Following</h2>
-    <ul>
+    <div class="list-group">
         {% for user in following %}
-            <li><a href="{% url 'profiles:profile_detail' user.username %}">{{ user.username }}</a></li>
+        <a href="{% url 'profiles:profile_detail' user.username %}" class="list-group-item list-group-item-action">
+            {{ user.username }}
+            <i class="bi bi-person"></i>
+        </a>
         {% endfor %}
-    </ul>
+    </div>
 </div>
 {% endblock %}
