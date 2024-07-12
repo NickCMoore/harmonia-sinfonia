@@ -74,25 +74,23 @@ def delete_notification(request, notification_id):
 
 
 @login_required
-@user_passes_test(is_admin)
 def edit_profile(request, username):
     user_profile = get_object_or_404(Profile, user__username=username)
 
-    if request.user != user_profile.user and not request.user.is_staff:
+    if request.user == user_profile.user or request.user.is_staff:
+        if request.method == 'POST':
+            form = UserProfileForm(
+                request.POST, request.FILES, instance=user_profile)
+            if form.is_valid():
+                form.save()
+                return redirect('profiles:profile_detail', username=username)
+        else:
+            form = UserProfileForm(instance=user_profile)
+        return render(request, 'profiles/edit_profile.html', {'form': form})
+    else:
         messages.error(
             request, "You do not have permission to edit this profile.")
         return redirect('profiles:profile_detail', username=username)
-
-    if request.method == 'POST':
-        form = UserProfileForm(
-            request.POST, request.FILES, instance=user_profile)
-        if form.is_valid():
-            form.save()
-            return redirect('profiles:profile_detail', username=username)
-    else:
-        form = UserProfileForm(instance=user_profile)
-
-    return render(request, 'profiles/edit_profile.html', {'form': form})
 
 
 def search_view(request):

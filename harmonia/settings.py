@@ -104,6 +104,10 @@ TEMPLATES = [
     },
 ]
 
+LOGIN_URL = 'authentication:login'
+LOGIN_REDIRECT_URL = 'home:home'
+LOGOUT_REDIRECT_URL = 'home:home'
+
 
 WSGI_APPLICATION = 'harmonia.wsgi.application'
 
