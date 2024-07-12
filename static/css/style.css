@@ -198,3 +198,7 @@ h2 {
 .following-list .list-group-item i {
     color: var(--soft-gray);
 }
+
+.notification-bell {
+    color: red;
+}
