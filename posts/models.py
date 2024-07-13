@@ -25,6 +25,7 @@ class Comment(models.Model):
     is_deleted = models.BooleanField(default=False)
     upvotes = models.ManyToManyField(
         User, related_name='comment_upvotes', blank=True)
+    is_flagged = models.BooleanField(default=False)
 
     def total_upvotes(self):
         return self.upvotes.count()
