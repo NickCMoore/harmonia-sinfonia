@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Post, Comment, Flag
 from .forms import PostForm, CommentForm, FlagForm
@@ -135,32 +135,3 @@ def flag_comment(request, comment_id):
     else:
         form = FlagForm()
     return render(request, 'posts/flag_comment.html', {'form': form, 'comment': comment})
-
-
-@user_passes_test(lambda u: u.is_staff)
-def flagged_content_review(request):
-    flagged_posts = Post.objects.filter(is_flagged=True)
-    flagged_comments = Comment.objects.filter(is_flagged=True)
-    context = {
-        'flagged_posts': flagged_posts,
-        'flagged_comments': flagged_comments,
-    }
-    return render(request, 'posts/flagged_content_review.html', context)
-
-
-@user_passes_test(lambda u: u.is_staff)
-def unflag_post(request, post_id):
-    post = get_object_or_404(Post, id=post_id)
-    post.is_flagged = False
-    post.save()
-    messages.success(request, 'The post has been unflagged.')
-    return redirect('flagged_content_review')
-
-
-@user_passes_test(lambda u: u.is_staff)
-def unflag_comment(request, comment_id):
-    comment = get_object_or_404(Comment, id=comment_id)
-    comment.is_flagged = False
-    comment.save()
-    messages.success(request, 'The comment has been unflagged.')
-    return redirect('flagged_content_review')
