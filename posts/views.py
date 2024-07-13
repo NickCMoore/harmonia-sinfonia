@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import Post, Comment, Flag
 from .forms import PostForm, CommentForm, FlagForm
 from django.http import HttpResponseForbidden
+from django.db import IntegrityError
 
 
 def post_list_view(request):
@@ -108,8 +109,12 @@ def flag_post(request, post_id):
     if request.method == 'POST':
         form = FlagForm(request.POST)
         if form.is_valid():
-            Flag.objects.create(post=post, user=request.user,
-                                reason=form.cleaned_data['reason'])
+            try:
+                Flag.objects.create(
+                    post=post, user=request.user, reason=form.cleaned_data['reason'])
+                messages.success(request, "Post flagged successfully.")
+            except IntegrityError:
+                messages.error(request, "You have already flagged this post.")
             return redirect('posts:post_detail', pk=post_id)
     else:
         form = FlagForm()
@@ -122,13 +127,16 @@ def flag_comment(request, comment_id):
     if request.method == 'POST':
         form = FlagForm(request.POST)
         if form.is_valid():
-            flag = Flag.objects.create(
-                post=comment.post,
-                user=request.user,
-                reason=form.cleaned_data['reason']
-            )
-            flag.save()
-            messages.success(request, "Comment flagged successfully.")
+            try:
+                Flag.objects.create(
+                    post=comment.post,
+                    user=request.user,
+                    reason=form.cleaned_data['reason']
+                )
+                messages.success(request, "Comment flagged successfully.")
+            except IntegrityError:
+                messages.error(
+                    request, "You have already flagged this comment.")
             return redirect('posts:post_detail', pk=comment.post.pk)
         else:
             messages.error(request, "Please provide a reason for flagging.")
