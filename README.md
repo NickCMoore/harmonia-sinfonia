@@ -603,13 +603,13 @@ This project uses Heroku, a platform that allows developers to build, run, and o
    - Navigate to the `Settings` tab.
    - Click `Reveal Config Vars` and set the following variables:
 
-     python```
+     ```python
      Key               Value
      CLOUDINARY_URL    your_cloudinary_api_key
      DATABASE_URL      your_elephantsql_database_url
      DISABLE_COLLECTSTATIC 1 (remove this for final deployment)
      SECRET_KEY        your_secret_key
-     python```
+     ```
 
 3. **Prepare for Deployment:**
    - Ensure you have the following files in your project:
@@ -743,10 +743,10 @@ Click below to create your own workspace using this repository:
 
 [Open in Gitpod](https://gitpod.io/#https://github.com/NickCMoore/harmonia-sinfonia)
 
-# Credits
+## Credits
 
-## Code
+### Code
 
-# Acknowledgements
+## Acknowledgements
 
-[Back to top](#contents)
+[Back to top](#table-of-contents)
