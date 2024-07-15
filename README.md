@@ -419,6 +419,14 @@ Harmonia Sinfonia's design prioritises user experience by ensuring the platform 
 
 - Dropdown and Page: Accessible via a bell icon in the navigation bar, with a dedicated page for a comprehensive list.
 
+### Responsive Design
+
+The platform is fully responsive, providing a seamless experience on both desktop and mobile devices:
+
+- Flexible Grid System: Uses Bootstrap’s grid system for a fluid layout.
+- Mobile Navigation: Collapses into a hamburger menu on smaller screens.
+- Touch-Friendly Elements: Designed with sufficient spacing for touch interaction.
+
 ### Colour Scheme
 
 - `#3B0D11` (Dark Burgundy): Used for the hover state of primary buttons.
