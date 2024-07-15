@@ -1,12 +1,31 @@
 # **_Harmonia Sinfonia_**
 
-## Background
+## Rationale and Purpose
 
-Welcome to [Harmonia Sinfonia](https://harmonia-sinfonia-ec3a4797e71d.herokuapp.com/), a dedicated platform designed to connect orchestra members in a seamless and engaging way. As a musician, I understand the importance of staying connected and informed outside of rehearsals and performances. Harmonia Sinfonia aims to bridge this gap by providing a space where members can share content, communicate privately, and stay updated on all orchestra-related activities.
+Welcome to Harmonia Sinfonia, a dedicated platform designed to connect orchestra members in a seamless and engaging way. As a musician, I understand the unique challenges faced by orchestra members in staying connected and informed outside of rehearsals and performances.
 
-This project combines my passion for music and technology, aiming to foster a vibrant community where members can collaborate, support each other, and enhance their musical journey. Whether members want to share the latest performance, discuss music pieces, or simply stay in touch with fellow musicians, Harmonia Sinfonia is here to support them.
+## Problem Statement
 
-Feel free to view the project [here](https://harmonia-sinfonia-ec3a4797e71d.herokuapp.com/).
+Orchestra members often face significant challenges in staying connected and informed outside of rehearsals and performances. Traditional methods of communication, such as email or sporadic meetings, can be inefficient and fail to create a cohesive sense of community. Additionally, there is no centralised platform for members to share content, discuss music, or coordinate events effectively. These issues can lead to missed opportunities for collaboration, a lack of engagement, and difficulty in organising events and rehearsals efficiently.
+
+## Target Audience
+
+Harmonia Sinfonia is specifically designed for:
+
+- Orchestra Members: Musicians of all levels who are part of an orchestra and need a centralised platform to stay connected with their peers.
+- Music Enthusiasts: Individuals who are passionate about orchestral music and want to engage in discussions, share content, and collaborate on musical pieces.
+- Orchestra Administrators: Individuals responsible for organising and managing orchestra activities, including rehearsals, performances, and events.
+
+## Solution
+
+Harmonia Sinfonia aims to address these issues by providing a dedicated platform where orchestra members can:
+
+- Stay Connected: Promote continuous and streamlined communication among members through posts, comments, and private messaging.
+- Share Content: Easily share posts, music pieces, and other relevant content within the community, enhancing collaboration and engagement.
+- Engage and Collaborate: Generate discussions, likes, and comments to foster a vibrant community and encourage member interaction.
+- Coordinate Activities: Efficiently organise and manage events, rehearsals, and performances, ensuring that all members are informed and involved.
+
+By solving these problems, Harmonia Sinfonia aims to enhance the overall experience for orchestra members, ensuring they remain engaged, informed, and connected. This platform not only facilitates better communication and collaboration but also strengthens the sense of community among members, ultimately contributing to a more cohesive and productive orchestra.
 
 # Table of Contents
 
@@ -58,16 +77,6 @@ For a detailed view of the project management and task progression, refer to the
 
 ## Problem Statement
 
-Orchestra members often face challenges in staying connected and informed outside of rehearsals and performances. Traditional methods of communication, such as email or sporadic meetings, can be inefficient and don't create a sense of community. Also, there is no centralised platform for members to share content, discuss music, or coordinate events effectively.
-
-Harmonia Sinfonia aims to address these issues by providing a dedicated platform where orchestra members can:
-
-- Stay Connected: Promote continuous and streamlined communication among members.
-- Share Content: Easily share posts, music pieces, and other relevant content within the community.
-- Engage and Collaborate: Generate discussions, likes, and comments to enhance member interaction.
-- Coordinate Activities: Efficiently organise and manage events, rehearsals, and performances.
-
-By solving these problems, Harmonia Sinfonia aims to enhance the overall experience for orchestra members, ensuring they remain engaged, informed, and connected.
 
 ## Wireframes
 
