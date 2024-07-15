@@ -386,7 +386,55 @@ To simplify updates to the global colour scheme, I used CSS :root variables. Thi
 
 The site utilises Bootstrap for its responsive grid system and components. Bootstrap's classes and components were customised using the defined color variables to ensure consistency across the site. For example, the navbar, buttons, and form elements are styled to match the brand colors, enhancing the cohesive look and feel.
 
-## Libraries
+## Tools and Technologies
+
+### Content and Design:
+
+- HTML: Used for the main site content.
+- CSS: Used for the main site design and layout.
+- CSS Variables: Used for reusable styles throughout the site.
+- Bootstrap: Used as the front-end CSS framework for modern responsiveness and pre-built components.
+
+### Interactivity:
+
+Django Templating and Forms: Used for handling user interactions and form submissions, replacing the need for JavaScript for basic interactivity.
+
+### Backend Development:
+
+- Python: Used as the back-end programming language.
+- Django: Used as the Python framework for the site.
+- asgiref: Used to provide ASGI (Asynchronous Server Gateway Interface) compatibility.
+- psycopg2-binary: Used to connect to the PostgreSQL database.
+- django-allauth: Used for user authentication.
+- django-crispy-forms: Used to style Django forms with Bootstrap.
+- django-summernote: Used for WYSIWYG editor in Django admin.
+- django-environ: Used for environment variable management.
+- django-heroku: Used for easy Heroku deployment.
+- gunicorn: Used as the WSGI HTTP server for deploying the site.
+- Version Control and Development Environment:
+
+- Git: Used for version control (git add, git commit, git push).
+- GitHub: Used for secure online code storage.
+- VSCode: Used as a cloud-based IDE for development.
+- autopep8: Used for automatically formatting Python code to conform to PEP 8.
+
+### Deployment and Hosting:
+
+- Heroku: Used for hosting the deployed back-end site.
+- whitenoise: Used for serving static files in production.
+
+### Graphics and Design:
+
+- Balsamiq: Used to design my site wireframes.
+
+### Utilities and Additional Tools:
+
+- Markdown Builder by Tim Nelson: Used to help generate the Markdown files.
+- WebAIM Contrast Checker: Used to check contrast between colours on the site.
+- Code Spell Checker: Used to check for typos in my README and TESTING files.
+- Python Decouple: Used to manage environment variables.
+- virtualenv: Used to create isolated Python environments.
+- Werkzeug: Used for debugging and serving during development.
 
 # Features
 
