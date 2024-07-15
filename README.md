@@ -1,14 +1,16 @@
 # **_Harmonia Sinfonia_**
 
-## Rationale and Purpose
+## Overview
+
+### Rationale and Purpose
 
 Welcome to Harmonia Sinfonia, a dedicated platform designed to connect orchestra members in a seamless and engaging way. As a musician, I understand the unique challenges faced by orchestra members in staying connected and informed outside of rehearsals and performances.
 
-## Problem Statement
+### Problem Statement
 
 Orchestra members often face significant challenges in staying connected and informed outside of rehearsals and performances. Traditional methods of communication, such as email or sporadic meetings, can be inefficient and fail to create a cohesive sense of community. Additionally, there is no centralised platform for members to share content, discuss music, or coordinate events effectively. These issues can lead to missed opportunities for collaboration, a lack of engagement, and difficulty in organising events and rehearsals efficiently.
 
-## Target Audience
+### Target Audience
 
 Harmonia Sinfonia is specifically designed for:
 
@@ -16,7 +18,7 @@ Harmonia Sinfonia is specifically designed for:
 - Music Enthusiasts: Individuals who are passionate about orchestral music and want to engage in discussions, share content, and collaborate on musical pieces.
 - Orchestra Administrators: Individuals responsible for organising and managing orchestra activities, including rehearsals, performances, and events.
 
-## Solution
+### Solution
 
 Harmonia Sinfonia aims to address these issues by providing a dedicated platform where orchestra members can:
 
@@ -27,15 +29,18 @@ Harmonia Sinfonia aims to address these issues by providing a dedicated platform
 
 By solving these problems, Harmonia Sinfonia aims to enhance the overall experience for orchestra members, ensuring they remain engaged, informed, and connected. This platform not only facilitates better communication and collaboration but also strengthens the sense of community among members, ultimately contributing to a more cohesive and productive orchestra.
 
-# Table of Contents
+## Table of Contents
 
 - [**Overview**](#overview)
-  - [Background](#background)
+  - [Rationale and Purpose](#rationale-and-purpose)
   - [Problem Statement](#problem-statement)
+  - [Target Audience](#target-audience)
+  - [Solution](#solution)
   - [Wireframes](#wireframes)
   - [Design](#design)
   - [Agile Approach](#agile-approach)
-  - [Database structure](#database-structure)
+  - [Wireframes](#wireframes)
+- [**Design**](#design)
 - [**User Experience**](#user-experience)
   - [User Stories](#user-stories)
 - [**Features**](#features)
@@ -462,19 +467,19 @@ The simple typography on the site was designed for readability and a clean, prof
 
 ## Technologies Used
 
-### Content and Design:
+### Content and Design
 
 - HTML: Used for the main site content.
 - CSS: Used for the main site design and layout.
 - CSS Variables: Used for reusable styles throughout the site.
 - Bootstrap: Used as the front-end CSS framework for modern responsiveness and pre-built components.
 
-### Interactivity:
+### Interactivity
 
 - Django Templating and Forms: Used for handling user interactions and form submissions, replacing the need for JavaScript for basic interactivity.
 - JavaScript: Notifications are managed dynamically using JavaScript to update the bell icon in the navigation bar when users have unread notifications.
 
-### Backend Development:
+### Backend Development
 
 - Python: Used as the back-end programming language.
 - Django: Used as the Python framework for the site.
@@ -493,16 +498,16 @@ The simple typography on the site was designed for readability and a clean, prof
 - VSCode: Used as a cloud-based IDE for development.
 - autopep8: Used for automatically formatting Python code to conform to PEP 8.
 
-### Deployment and Hosting:
+### Deployment and Hosting
 
 - Heroku: Used for hosting the deployed back-end site.
 - whitenoise: Used for serving static files in production.
 
-### Graphics and Design:
+### Graphics and Design
 
 - Balsamiq: Used to design my site wireframes.
 
-### Utilities and Additional Tools:
+### Utilities and Additional Tools
 
 - Markdown Builder by Tim Nelson: Used to help generate the Markdown files.
 - WebAIM Contrast Checker: Used to check contrast between colours on the site.
@@ -587,7 +592,7 @@ To view the testing file, please click [here]().
 
 This project uses Heroku, a platform that allows developers to build, run, and operate applications entirely in the cloud.
 
-#### Deployment Steps:
+#### Deployment Steps
 
 1. **Create a New App:**
    - Go to your Heroku Dashboard.
@@ -612,37 +617,46 @@ This project uses Heroku, a platform that allows developers to build, run, and o
      - `Procfile`
 
    - To install required packages, run:
+
      ```bash
      pip3 install -r requirements.txt
      ```
 
    - To update your `requirements.txt` file with any new packages, run:
+
      ```bash
      pip3 freeze --local > requirements.txt
      ```
 
    - Create a `Procfile` with the following command:
+
      ```bash
      echo web: gunicorn your_app_name.wsgi > Procfile
      ```
+
      Replace `your_app_name` with the name of your primary Django app where `settings.py` is located.
 
 4. **Deploy the Application:**
    - **Automatic Deployment:**
      - In Heroku, go to the `Deploy` tab.
      - Connect your GitHub repository and enable Automatic Deployments.
-   
+
    - **Manual Deployment via Terminal:**
      - Log in to Heroku:
+
        ```bash
        heroku login -i
        ```
+
      - Set Heroku remote:
+
        ```bash
        heroku git:remote -a your_app_name
        ```
+
        Replace `your_app_name` with your Heroku app name.
      - Push your code to Heroku:
+
        ```bash
        git push heroku main
        ```
@@ -660,6 +674,7 @@ To run this project locally, follow these steps:
    - Click on the `Code` button and copy the repository URL.
    - Open Git Bash or Terminal and navigate to your desired directory.
    - Run the following command:
+
      ```bash
      git clone https://github.com/NickCMoore/harmonia-sinfonia.git
      ```
@@ -673,12 +688,14 @@ To run this project locally, follow these steps:
 
 1. **Install Dependencies:**
    - Navigate to the project directory and run:
+
      ```bash
      pip3 install -r requirements.txt
      ```
 
 2. **Set Environment Variables:**
    - Create a file named `env.py` in the root directory with the following content:
+
      ```python
      import os
 
@@ -692,19 +709,26 @@ To run this project locally, follow these steps:
 
 3. **Run the Application:**
    - Make necessary migrations:
+
      ```bash
      python3 manage.py makemigrations
      python3 manage.py migrate
      ```
+
    - Create a superuser:
+
      ```bash
      python3 manage.py createsuperuser
      ```
+
    - Load fixtures (if applicable):
+
      ```bash
      python3 manage.py loaddata file_name.json
      ```
+
    - Start the Django development server:
+
      ```bash
      python3 manage.py runserver
      ```
@@ -722,8 +746,6 @@ Click below to create your own workspace using this repository:
 # Credits
 
 ## Code
-
-## Design
 
 # Acknowledgements
 
