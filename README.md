@@ -75,9 +75,6 @@ Despite working solo on this project, continuous improvement was a key focus. Re
 
 For a detailed view of the project management and task progression, refer to the [GitHub Project board](https://github.com/users/NickCMoore/projects/2).
 
-## Problem Statement
-
-
 ## Wireframes
 
 Creating the wireframes for Harmonia Sinfonia was important in bringing the project to life. These blueprints helped me visualise the platform's structure and flow, ensuring an intuitive user experience.
@@ -584,36 +581,143 @@ The simple typography on the site was designed for readability and a clean, prof
 
 To view the testing file, please click [here]().
 
-# Deployment
+## Deployment
 
-## Local Deployment
+### Heroku Deployment
 
-## Heroku Deployment
+This project uses Heroku, a platform that allows developers to build, run, and operate applications entirely in the cloud.
 
-This project uses Heroku, a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+#### Deployment Steps:
 
-Deployment steps are as follows, after account setup:
+1. **Create a New App:**
+   - Go to your Heroku Dashboard.
+   - Click on `New` in the top-right corner and select `Create new app`.
+   - Enter a unique app name and choose a region (EU or USA), then click `Create App`.
 
-- Select New in the top-right corner of your Heroku Dashboard, and select Create new app from the dropdown menu.
-- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select Create App.
-- From the new app Settings, click Reveal Config Vars, and set the value of KEY to PORT, and the value to 8000 then select add.
-- Further down, to support dependencies, select Add Buildpack.
-- The order of the buildpacks is important, select Python first, then Node.js second. (if they are not in this order, you can drag them to rearrange them)
-- Heroku needs two additional files in order to deploy properly.
-  - requirements.txt
-  - Procfile
+2. **Configure Environment Variables:**
+   - Navigate to the `Settings` tab.
+   - Click `Reveal Config Vars` and set the following variables:
 
-You can install this project's requirements (where applicable) using: pip3 install -r requirements.txt. If you have your own packages that have been installed, then the requirements file needs updated using: pip3 freeze --local > requirements.txt
+     ```
+     Key               Value
+     CLOUDINARY_URL    your_cloudinary_api_key
+     DATABASE_URL      your_elephantsql_database_url
+     DISABLE_COLLECTSTATIC 1 (remove this for final deployment)
+     SECRET_KEY        your_secret_key
+     ```
 
-The Procfile can be created with the following command: echo web: node index.js > Procfile
+3. **Prepare for Deployment:**
+   - Ensure you have the following files in your project:
+     - `requirements.txt`
+     - `Procfile`
 
-For Heroku deployment, follow these steps to connect your GitHub repository to the newly created app:
+   - To install required packages, run:
+     ```bash
+     pip3 install -r requirements.txt
+     ```
 
-- In the Terminal/CLI, connect to Heroku using this command: heroku login -i
-- Set the remote for Heroku: heroku git:remote -a <app_name> (replace app_name with your app, without the angle-brackets)
-- After performing the standard Git add, commit, and push to GitHub, you can now type: git push heroku main
+   - To update your `requirements.txt` file with any new packages, run:
+     ```bash
+     pip3 freeze --local > requirements.txt
+     ```
 
-The frontend terminal should now be connected and deployed to Heroku.
+   - Create a `Procfile` with the following command:
+     ```bash
+     echo web: gunicorn your_app_name.wsgi > Procfile
+     ```
+     Replace `your_app_name` with the name of your primary Django app where `settings.py` is located.
+
+4. **Deploy the Application:**
+   - **Automatic Deployment:**
+     - In Heroku, go to the `Deploy` tab.
+     - Connect your GitHub repository and enable Automatic Deployments.
+   
+   - **Manual Deployment via Terminal:**
+     - Log in to Heroku:
+       ```bash
+       heroku login -i
+       ```
+     - Set Heroku remote:
+       ```bash
+       heroku git:remote -a your_app_name
+       ```
+       Replace `your_app_name` with your Heroku app name.
+     - Push your code to Heroku:
+       ```bash
+       git push heroku main
+       ```
+
+Your project should now be deployed to Heroku!
+
+### Local Deployment
+
+To run this project locally, follow these steps:
+
+#### Clone or Fork the Repository
+
+1. **Cloning:**
+   - Go to the GitHub repository.
+   - Click on the `Code` button and copy the repository URL.
+   - Open Git Bash or Terminal and navigate to your desired directory.
+   - Run the following command:
+     ```bash
+     git clone https://github.com/NickCMoore/harmonia-sinfonia.git
+     ```
+
+2. **Forking:**
+   - Log in to GitHub and locate the repository.
+   - Click on the `Fork` button at the top-right corner.
+   - This will create a copy of the repository in your GitHub account.
+
+#### Set Up Local Environment
+
+1. **Install Dependencies:**
+   - Navigate to the project directory and run:
+     ```bash
+     pip3 install -r requirements.txt
+     ```
+
+2. **Set Environment Variables:**
+   - Create a file named `env.py` in the root directory with the following content:
+     ```python
+     import os
+
+     os.environ.setdefault("CLOUDINARY_URL", "your_cloudinary_api_key")
+     os.environ.setdefault("DATABASE_URL", "your_elephantsql_database_url")
+     os.environ.setdefault("SECRET_KEY", "your_secret_key")
+
+     # Local environment only (do not include in production/deployment!)
+     os.environ.setdefault("DEBUG", "True")
+     ```
+
+3. **Run the Application:**
+   - Make necessary migrations:
+     ```bash
+     python3 manage.py makemigrations
+     python3 manage.py migrate
+     ```
+   - Create a superuser:
+     ```bash
+     python3 manage.py createsuperuser
+     ```
+   - Load fixtures (if applicable):
+     ```bash
+     python3 manage.py loaddata file_name.json
+     ```
+   - Start the Django development server:
+     ```bash
+     python3 manage.py runserver
+     ```
+
+Your local instance of Harmonia Sinfonia should now be running!
+
+### Gitpod Setup
+
+To directly open the project in Gitpod, you need the Gitpod browser extension. Follow the instructions [here](https://www.gitpod.io/docs/browser-extension) to set it up.
+
+Click below to create your own workspace using this repository:
+
+[Open in Gitpod](https://gitpod.io/#https://github.com/NickCMoore/harmonia-sinfonia)
 
 # Credits
 
