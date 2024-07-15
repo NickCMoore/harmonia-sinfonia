@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from profiles.models import Notification
 
 
-@login_required
 def home_view(request):
     user = request.user
     notifications = user.notifications.all()
@@ -18,7 +17,6 @@ def home_view(request):
     return render(request, 'home/home.html', context)
 
 
-@login_required
 def learn_more_view(request):
     user = request.user
     notifications = user.notifications.all()
