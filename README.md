@@ -62,19 +62,19 @@ The development process for Harmonia Sinfonia followed Agile methodology, emphas
 ![GitHub Projects](/documentation/project-management.png)
 ![GitHub Issues)](/documentation/issues.png)
 
-**Project Management**
+### Project Management
 
 GitHub Projects served as the primary Agile tool for managing the development tasks. While GitHub Projects isn't a specialised Agile tool, it was used with the right tags, project creation, and issue assignments (see above) to fit the needs of the project.
 
-**User Stories**
+### User Stories Mapping
 
 User stories were crucial in mapping out the development progress. They were categorised into EPICs A, B, C, D, E, and F based on user types and content specificity. The user stories were organised on a Kanban board, providing a visual representation of the backlog and the current status of tasks. The MoSCoW method was used to prioritise these stories, categorising them into Must have, Should have, Could have, and Won't have, ensuring that the most critical features were developed first.
 
-**Kanban Board**
+### Kanban Board
 
 The basic Kanban board in GitHub Projects (see above) helped visualise the workflow and track the progress of tasks. Tasks moved across columns from the backlog, through development stages, to testing, and finally to completion. This setup provided clarity on the workload and helped in managing the project efficiently.
 
-**Continuous Improvement**
+### Continuous Improvement
 
 Despite working solo on this project, continuous improvement was a key focus. Regular retrospectives allowed reflection on past work, identification of areas for improvement, and brainstorming of solutions. This practice ensured that the development processes and product quality were consistently enhanced.
 
@@ -125,7 +125,7 @@ Below are the wireframes for key sections, illustrating my commitment to a user-
 ![Admin (Desktop)](/documentation/wireframes/admin-desktop.png)
 ![Admin (Mobile)](/documentation/wireframes/admin-mobile.png)
 
-## Design
+## Database Design
 
 ### Data Model Overview
 
@@ -149,7 +149,7 @@ The `Users` model represents the registered users of the platform. Allauth handl
 |     | first_name  | CharField  |       |
 |     | last_name   | CharField  |       |
 
-## Profile
+## Profile Model
 
 The `Profile` model extends the user model to include additional information specific to each user, such as display name, bio, and profile pictures managed via Cloudinary.
 
@@ -162,7 +162,7 @@ The `Profile` model extends the user model to include additional information spe
 |     | bg_pic       | URLField   | URL from Cloudinary |
 |     | followers    | ManyToMany | M2M to Users model  |
 
-## Posts
+## Posts Model
 
 The `Posts` model represents the content shared by users. It includes fields for the post content, optional images managed via Cloudinary, and metadata such as the posting time and like relationships.
 
@@ -266,7 +266,7 @@ The `Events` model represents events or rehearsals posted by the orchestra, incl
 |     | time        | TimeField  |                                |
 |     | image       | URLField   | URL from Cloudinary (optional) |
 
-# User Experience
+## User Experience
 
 ## User Stories
 
@@ -516,9 +516,9 @@ The simple typography on the site was designed for readability and a clean, prof
 - virtualenv: Used to create isolated Python environments.
 - Werkzeug: Used for debugging and serving during development.
 
-# Features
+## Features
 
-## Current Features
+### Current Features
 
 **Homepage**
 
@@ -578,13 +578,13 @@ The simple typography on the site was designed for readability and a clean, prof
 - FAQs/Help Section: Helps users understand how to use different aspects of the platform.
 - Event Pages: For orchestra to post upcoming events or rehearsals with RSVP functionality.
 
-# Technologies used
+## Technologies used
 
-# Bugs
+## Bugs
 
-# Testing
+## Testing
 
-To view the testing file, please click [here]().
+To view the testing file, please click [here](/TESTING.md).
 
 ## Deployment
 
@@ -603,13 +603,13 @@ This project uses Heroku, a platform that allows developers to build, run, and o
    - Navigate to the `Settings` tab.
    - Click `Reveal Config Vars` and set the following variables:
 
-     ```
+     python```
      Key               Value
      CLOUDINARY_URL    your_cloudinary_api_key
      DATABASE_URL      your_elephantsql_database_url
      DISABLE_COLLECTSTATIC 1 (remove this for final deployment)
      SECRET_KEY        your_secret_key
-     ```
+     python```
 
 3. **Prepare for Deployment:**
    - Ensure you have the following files in your project:
