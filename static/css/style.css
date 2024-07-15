@@ -171,7 +171,7 @@ h2 {
 
 .learn-more-section .btn-primary:hover {
     background-color: var(--dark-burgundy);
-    border-color: var(--dark-burgundy);
+    border-color: var (--dark-burgundy);
 }
 
 /* Following List Styles */
@@ -200,6 +200,15 @@ h2 {
 
 .following-list .list-group-item i {
     color: var(--soft-gray);
+}
+
+/* Notification Styles */
+.navbar .badge {
+    display: none;
+}
+
+.navbar .badge[data-unread-count]:not([data-unread-count="0"]) {
+    display: inline-block;
 }
 
 .notification-bell {
