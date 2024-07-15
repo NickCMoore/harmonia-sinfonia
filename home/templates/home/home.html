@@ -22,4 +22,16 @@
       <a href="{% url 'home:learn_more' %}" class="btn btn-primary mt-4">Learn More About Us</a>
     </div>
   </section>
+
+  <!-- Subscription Form Section -->
+  <section class="subscription-section py-5 text-center">
+    <div class="container">
+      <h2>Subscribe to our Newsletter</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mt-4">Subscribe</button>
+      </form>
+    </div>
+  </section>
 {% endblock %}
