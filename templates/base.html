@@ -91,7 +91,6 @@
                         <ul class="dropdown-menu" aria-labelledby="userDropdown">
                             {% if user.profile.is_suspended %}
                                 <li><a class="dropdown-item text-danger" href="#">Account Suspended</a></li>
-                                <li><span class="dropdown-item text-muted">{{ user.profile.suspension_reason }}</span></li>
                                 <li><hr class="dropdown-divider"></li>
                             {% endif %}
                             <li><a class="dropdown-item" href="{% url 'profiles:profile_detail' username=user.username %}">Profile</a></li>
