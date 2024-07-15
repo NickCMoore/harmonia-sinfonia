@@ -5,6 +5,7 @@ from .models import Post, Comment, Flag
 from .forms import PostForm, CommentForm, FlagForm
 from django.http import HttpResponseForbidden
 from django.db import IntegrityError
+from django.contrib.contenttypes.models import ContentType
 
 
 def post_list_view(request):
@@ -110,8 +111,15 @@ def flag_post(request, post_id):
         form = FlagForm(request.POST)
         if form.is_valid():
             try:
+                content_type = ContentType.objects.get_for_model(Post)
                 Flag.objects.create(
-                    post=post, user=request.user, reason=form.cleaned_data['reason'])
+                    content_type=content_type,
+                    object_id=post.id,
+                    user=request.user,
+                    reason=form.cleaned_data['reason']
+                )
+                post.is_flagged = True
+                post.save()
                 messages.success(request, "Post flagged successfully.")
             except IntegrityError:
                 messages.error(request, "You have already flagged this post.")
@@ -128,18 +136,20 @@ def flag_comment(request, comment_id):
         form = FlagForm(request.POST)
         if form.is_valid():
             try:
+                content_type = ContentType.objects.get_for_model(Comment)
                 Flag.objects.create(
-                    post=comment.post,
+                    content_type=content_type,
+                    object_id=comment.id,
                     user=request.user,
                     reason=form.cleaned_data['reason']
                 )
+                comment.is_flagged = True
+                comment.save()
                 messages.success(request, "Comment flagged successfully.")
             except IntegrityError:
                 messages.error(
                     request, "You have already flagged this comment.")
             return redirect('posts:post_detail', pk=comment.post.pk)
-        else:
-            messages.error(request, "Please provide a reason for flagging.")
     else:
         form = FlagForm()
     return render(request, 'posts/flag_comment.html', {'form': form, 'comment': comment})
