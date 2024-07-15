@@ -35,9 +35,12 @@ Feel free to view the project [here](https://harmonia-sinfonia-ec3a4797e71d.hero
 
 The development process for Harmonia Sinfonia followed Agile methodology, emphasising continuous improvement throughout the development lifecycle.
 
+![GitHub Projects](/documentation/project-management.png)
+![GitHub Issues)](/documentation/issues.png)
+
 **Project Management**
 
-GitHub Projects served as the primary Agile tool for managing the development tasks. While GitHub Projects isn't a specialised Agile tool, it was used with the right tags, project creation, and issue assignments to fit the needs of the project.
+GitHub Projects served as the primary Agile tool for managing the development tasks. While GitHub Projects isn't a specialised Agile tool, it was used with the right tags, project creation, and issue assignments (see above) to fit the needs of the project.
 
 **User Stories**
 
@@ -45,7 +48,7 @@ User stories were crucial in mapping out the development progress. They were cat
 
 **Kanban Board**
 
-The basic Kanban board in GitHub Projects helped visualise the workflow and track the progress of tasks. Tasks moved across columns from the backlog, through development stages, to testing, and finally to completion. This setup provided clarity on the workload and helped in managing the project efficiently.
+The basic Kanban board in GitHub Projects (see above) helped visualise the workflow and track the progress of tasks. Tasks moved across columns from the backlog, through development stages, to testing, and finally to completion. This setup provided clarity on the workload and helped in managing the project efficiently.
 
 **Continuous Improvement**
 
@@ -394,7 +397,7 @@ The simple typography on the site was designed for readability and a clean, prof
 - **Font Sizes:**
 *Base Font Size: 16px for body text.
 *Headings: Scaled sizes create a visual hierarchy (e.g., h1 is 2.5em, h2 is 1.5em).
-- *Font Weights:*
+- **Font Weights:**
 *Bold: For headings and important text.
 *Normal: For regular body text.
 - **Text Colors:**
@@ -404,7 +407,7 @@ The simple typography on the site was designed for readability and a clean, prof
 *Centered Text: For headers and key sections.
 *Left-aligned Text: For body content.
 
-## Tools and Technologies
+## Technologies Used
 
 ### Content and Design:
 
