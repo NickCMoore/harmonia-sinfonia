@@ -370,15 +370,15 @@ I aimed to maintain a clean and simple design on this site to avoid distracting 
 
 ### Colour Scheme
 
-#3B0D11 (Dark Burgundy): Used for the hover state of primary buttons.
-#FFF1E6 (Cream): Used for the site background, button text, and footer text.
-#2E4057 (Deep Blue): Used for the site text, footer background, and primary header color.
-#FFC857 (Golden Yellow): Used for hover state of nav links and primary button background.
-#8D8D92 (Soft Gray): Used for the site background and form container shadows.
+- `#3B0D11` (Dark Burgundy): Used for the hover state of primary buttons.
+- `#FFF1E6` (Cream): Used for the site background, button text, and footer text.
+- `#2E4057` (Deep Blue): Used for the site text, footer background, and primary header color.
+- `#FFC857` (Golden Yellow): Used for hover state of nav links and primary button background.
+- `#8D8D92` (Soft Gray): Used for the site background and form container shadows.
 
 ![Colour Scheme](/documentation/colour-scheme.png)
 
-[coolors.co](Coolors) was used to create the color palette.
+[Coolors](coolors.co) was used to create the color palette.
 
 To simplify updates to the global colour scheme, I used CSS :root variables. This allows for easy changes by updating only one value, rather than searching through the entire CSS file.
 
