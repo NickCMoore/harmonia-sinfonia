@@ -23,19 +23,11 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('is_flagged', 'user', 'title')
     actions = [unflag_posts]
 
-    def get_queryset(self, request):
-        qs = super().get_queryset(request)
-        return qs.filter(is_flagged=True)
-
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('content', 'user', 'post', 'is_flagged')
     list_filter = ('is_flagged', 'user', 'post')
     actions = [unflag_comments]
-
-    def get_queryset(self, request):
-        qs = super().get_queryset(request)
-        return qs.filter(is_flagged=True)
 
 
 admin.site.register(Post, PostAdmin)
