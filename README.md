@@ -378,7 +378,46 @@ Below are the categorised user stories for Harmonia Sinfonia:
 
 ## Design
 
-I aimed to maintain a clean and simple design on this site to avoid distracting the user. The primary colors used throughout the site help establish the Harmonia Sinfonia brand. The soft grey background complements the deep blue used in the navigation menu.
+### Introduction
+
+Harmonia Sinfonia's design prioritises user experience by ensuring the platform is intuitive, accessible, and engaging. Key UX principles applied include:
+
+1. Consistency:
+
+- Navigation: Consistent placement of navigation elements across all pages.
+- Styling: Uniform color schemes, typography, and button styles.
+
+2. Feedback:
+
+- User Actions: Immediate feedback for actions like liking a post or submitting a comment.
+- Form Validation: Real-time validation informs users of errors or successful submissions instantly.
+
+3. Simplicity:
+
+- Clean Layout: Minimalistic design with ample white space and clear section dividers.
+- Direct Interactions: Key actions are easily accessible without unnecessary steps.
+
+### Information Hierarchy
+
+- The platform follows a clear information hierarchy to guide users effortlessly:
+
+1. Homepage:
+
+- Dynamic Feed: Displays recent posts, upcoming events, and featured content prominently.
+- Navigation Bar: Provides quick access to main sections like profiles, events, and posts.
+
+2. Profiles:
+
+- User Profile Page: Displays personal information, posts, and interactions in a well-organized manner.
+
+3. Posts and Interactions:
+
+- Post Layout: Clear structure with user information, post content, and interaction buttons.
+- Comment Threads: Nested comments to show relationships clearly.
+
+4. Notifications:
+
+- Dropdown and Page: Accessible via a bell icon in the navigation bar, with a dedicated page for a comprehensive list.
 
 ### Colour Scheme
 
