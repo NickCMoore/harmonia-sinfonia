@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const bellIcon = document.getElementById('notificationBell');
-    const unreadCount = parseInt(bellIcon.getAttribute('data-unread-count')) || 0;
+    var bell = document.getElementById('notificationBell');
+    var unreadCount = document.getElementById('unreadCount');
 
-    if (unreadCount > 0) {
-        const unreadBadge = document.getElementById('unreadCount');
-        unreadBadge.textContent = unreadCount;
-        unreadBadge.style.display = 'inline-block';
-
-        bellIcon.classList.add('text-danger');
+    if (bell) {
+        var count = bell.getAttribute('data-unread-count');
+        if (count > 0) {
+            unreadCount.textContent = count;
+            unreadCount.style.display = 'inline-block';
+        } else {
+            unreadCount.style.display = 'none';
+        }
     }
 });
