@@ -1,14 +1,18 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
 from profiles.models import Notification
 
 
 def home_view(request):
     user = request.user
-    notifications = user.notifications.all()
-    suspension_notification = notifications.filter(
-        message__icontains='suspended').first()
-    other_notifications = notifications.exclude(message__icontains='suspended')
+    suspension_notification = None
+    other_notifications = None
+
+    if user.is_authenticated:
+        notifications = user.notifications.all()
+        suspension_notification = notifications.filter(
+            message__icontains='suspended').first()
+        other_notifications = notifications.exclude(
+            message__icontains='suspended')
 
     context = {
         'suspension_notification': suspension_notification,
@@ -19,10 +23,15 @@ def home_view(request):
 
 def learn_more_view(request):
     user = request.user
-    notifications = user.notifications.all()
-    suspension_notification = notifications.filter(
-        message__icontains='suspended').first()
-    other_notifications = notifications.exclude(message__icontains='suspended')
+    suspension_notification = None
+    other_notifications = None
+
+    if user.is_authenticated:
+        notifications = user.notifications.all()
+        suspension_notification = notifications.filter(
+            message__icontains='suspended').first()
+        other_notifications = notifications.exclude(
+            message__icontains='suspended')
 
     context = {
         'suspension_notification': suspension_notification,
