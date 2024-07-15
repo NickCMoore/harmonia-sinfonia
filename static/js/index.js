@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var unreadCount = document.getElementById('notificationBell').dataset.unreadCount;
-    var notificationBell = document.getElementById('notificationBell');
-    var unreadCountBadge = document.getElementById('unreadCount');
+    const bellIcon = document.getElementById('notificationBell');
+    const unreadCount = parseInt(bellIcon.getAttribute('data-unread-count')) || 0;
 
     if (unreadCount > 0) {
-        notificationBell.classList.add('notification-bell');
-        unreadCountBadge.style.display = 'block';
-        unreadCountBadge.textContent = unreadCount;
-    } else {
-        notificationBell.classList.remove('notification-bell');
-        unreadCountBadge.style.display = 'none';
+        const unreadBadge = document.getElementById('unreadCount');
+        unreadBadge.textContent = unreadCount;
+        unreadBadge.style.display = 'inline-block';
+
+        bellIcon.classList.add('text-danger');
     }
 });
