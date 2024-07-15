@@ -419,6 +419,7 @@ The simple typography on the site was designed for readability and a clean, prof
 ### Interactivity:
 
 - Django Templating and Forms: Used for handling user interactions and form submissions, replacing the need for JavaScript for basic interactivity.
+- JavaScript: Notifications are managed dynamically using JavaScript to update the bell icon in the navigation bar when users have unread notifications.
 
 ### Backend Development:
 
