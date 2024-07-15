@@ -64,7 +64,7 @@ p {
 }
 
 footer {
-    background-color: var(--deep-blue);
+    background-color: var(--cream);
     color: var(--cream);
     flex-shrink: 0;
     width: 100%;
@@ -74,7 +74,6 @@ footer {
 
 footer p {
     color: var(--cream);
-    margin: 0;
     padding: 10px 0;
 }
 
