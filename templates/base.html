@@ -62,35 +62,33 @@
                             <span id="unreadCount" class="badge bg-danger position-absolute top-0 start-100 translate-middle p-2 rounded-circle" style="display: none;"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% if user.notifications.exists %}
-                                {% for notification in user.notifications.all %}
-                                    {% if forloop.first and notification.message contains 'suspended' %}
-                                    <li class="d-flex justify-content-between align-items-center">
-                                        <a class="dropdown-item text-danger font-weight-bold" href="{% url 'profiles:notifications_list' %}">
-                                            {{ notification.message }}
-                                        </a>
-                                        <form method="post" action="{% url 'profiles:delete_notification' notification.id %}" class="m-0 p-0">
-                                            {% csrf_token %}
-                                            <button type="submit" class="btn btn-link p-0 m-0 align-baseline">
-                                                <i class="bi bi-x-circle text-danger"></i>
-                                            </button>
-                                        </form>
-                                    </li>
-                                    {% else %}
-                                    <li class="d-flex justify-content-between align-items-center">
-                                        <a class="dropdown-item {% if not notification.read %}font-weight-bold{% endif %}" href="{% url 'profiles:notifications_list' %}">
-                                            {{ notification.message }}
-                                        </a>
-                                        <form method="post" action="{% url 'profiles:delete_notification' notification.id %}" class="m-0 p-0">
-                                            {% csrf_token %}
-                                            <button type="submit" class="btn btn-link p-0 m-0 align-baseline">
-                                                <i class="bi bi-x-circle text-danger"></i>
-                                            </button>
-                                        </form>
-                                    </li>
-                                    {% endif %}
-                                {% endfor %}
-                            {% else %}
+                            {% if suspension_notification %}
+                                <li class="d-flex justify-content-between align-items-center">
+                                    <a class="dropdown-item text-danger font-weight-bold" href="{% url 'profiles:notifications_list' %}">
+                                        {{ suspension_notification.message }}
+                                    </a>
+                                    <form method="post" action="{% url 'profiles:delete_notification' suspension_notification.id %}" class="m-0 p-0">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">
+                                            <i class="bi bi-x-circle text-danger"></i>
+                                        </button>
+                                    </form>
+                                </li>
+                            {% endif %}
+                            {% for notification in other_notifications %}
+                            <li class="d-flex justify-content-between align-items-center">
+                                <a class="dropdown-item {% if not notification.read %}font-weight-bold{% endif %}" href="{% url 'profiles:notifications_list' %}">
+                                    {{ notification.message }}
+                                </a>
+                                <form method="post" action="{% url 'profiles:delete_notification' notification.id %}" class="m-0 p-0">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-link p-0 m-0 align-baseline">
+                                        <i class="bi bi-x-circle text-danger"></i>
+                                    </button>
+                                </form>
+                            </li>
+                            {% endfor %}
+                            {% if not suspension_notification and not other_notifications %}
                                 <li><a class="dropdown-item" href="#">No notifications</a></li>
                             {% endif %}
                             <li><hr class="dropdown-divider"></li>
