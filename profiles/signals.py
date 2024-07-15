@@ -16,11 +16,16 @@ def save_user_profile(sender, instance, **kwargs):
 
 
 @receiver(post_save, sender=Profile)
-def send_suspension_notification(sender, instance, **kwargs):
+def handle_profile_save(sender, instance, **kwargs):
     if instance.is_suspended:
-        message = f'Your account has been suspended. Reason: {instance.suspension_reason}'
-        Notification.objects.get_or_create(
-            recipient=instance.user,
-            sender=None,
-            defaults={'message': message}
-        )
+        send_suspension_notification(instance.user, instance.suspension_reason)
+
+
+def send_suspension_notification(user, reason):
+    admin_user = User.objects.filter(is_superuser=True).first()
+    message = f'Your account has been suspended. Reason: {reason}'
+    Notification.objects.create(
+        recipient=user,
+        sender=admin_user,
+        message=message,
+    )

@@ -82,6 +82,15 @@
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{% url 'profiles:notifications_list' %}">View all notifications</a></li>
                         </ul>
+                    </li>m>
+                                    </li>
+                                {% endfor %}
+                            {% else %}
+                                <li><a class="dropdown-item" href="#">No notifications</a></li>
+                            {% endif %}
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'profiles:notifications_list' %}">View all notifications</a></li>
+                        </ul>
                     </li>
                     <!-- User Dropdown -->
                     <li class="nav-item dropdown">
