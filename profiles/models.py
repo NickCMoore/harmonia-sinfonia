@@ -17,6 +17,8 @@ class Profile(models.Model):
     followers = models.ManyToManyField(
         User, related_name='following', blank=True)
     slug = models.SlugField(max_length=255, blank=True)
+    is_suspended = models.BooleanField(default=False)
+    suspension_reason = models.TextField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:

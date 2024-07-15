@@ -8,8 +8,7 @@ admin.site.register(Notification)
 
 def synchronize_profile_ids(modeladmin, request, queryset):
     for user in queryset:
-        profile, created = Profile.objects.get_or_create(
-            user=user, defaults={'id': user.id})
+        profile, created = Profile.objects.get_or_create(user=user)
 
         if not created and profile.id != user.id:
             Profile.objects.filter(id=user.id).delete()
