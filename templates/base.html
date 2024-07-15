@@ -63,7 +63,20 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% if user.notifications.exists %}
-                                {% for notification in user.notifications.all|slice:":5" %}
+                                {% for notification in user.notifications.all %}
+                                    {% if forloop.first and notification.message contains 'suspended' %}
+                                    <li class="d-flex justify-content-between align-items-center">
+                                        <a class="dropdown-item text-danger font-weight-bold" href="{% url 'profiles:notifications_list' %}">
+                                            {{ notification.message }}
+                                        </a>
+                                        <form method="post" action="{% url 'profiles:delete_notification' notification.id %}" class="m-0 p-0">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-link p-0 m-0 align-baseline">
+                                                <i class="bi bi-x-circle text-danger"></i>
+                                            </button>
+                                        </form>
+                                    </li>
+                                    {% else %}
                                     <li class="d-flex justify-content-between align-items-center">
                                         <a class="dropdown-item {% if not notification.read %}font-weight-bold{% endif %}" href="{% url 'profiles:notifications_list' %}">
                                             {{ notification.message }}
@@ -75,6 +88,7 @@
                                             </button>
                                         </form>
                                     </li>
+                                    {% endif %}
                                 {% endfor %}
                             {% else %}
                                 <li><a class="dropdown-item" href="#">No notifications</a></li>
@@ -89,12 +103,13 @@
                             {{ user.username }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                            {% if user.profile.is_suspended %}
+                            <li><a class="dropdown-item text-danger" href="#">Account Suspended</a></li>
+                            {% else %}
                             <li><a class="dropdown-item" href="{% url 'profiles:profile_detail' username=user.username %}">Profile</a></li>
                             <li><a class="dropdown-item" href="{% url 'profiles:following_list' %}">Following</a></li>
-                            {% if user.profile.is_suspended %}
-                            <li><a class="dropdown-item text-danger" href="#">Account Suspended: {{ user.profile.suspension_reason }}</a></li>
-                            {% endif %}
                             <li><hr class="dropdown-divider"></li>
+                            {% endif %}
                             <li>
                                 <form action="{% url 'authentication:logout' %}" method="post">
                                     {% csrf_token %}
