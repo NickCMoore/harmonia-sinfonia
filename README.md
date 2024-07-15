@@ -386,6 +386,24 @@ To simplify updates to the global colour scheme, I used CSS :root variables. Thi
 
 The site utilises Bootstrap for its responsive grid system and components. Bootstrap's classes and components were customised using the defined color variables to ensure consistency across the site. For example, the navbar, buttons, and form elements are styled to match the brand colors, enhancing the cohesive look and feel.
 
+### Typography
+
+The simple typography on the site was designed for readability and a clean, professional look.
+
+- **Font Family:** Arial, sans-serif is used for its clarity and wide acceptance.
+- **Font Sizes:**
+*Base Font Size: 16px for body text.
+*Headings: Scaled sizes create a visual hierarchy (e.g., h1 is 2.5em, h2 is 1.5em).
+- *Font Weights:*
+*Bold: For headings and important text.
+*Normal: For regular body text.
+- **Text Colors:**
+*Primary Text Color: `#2E4057` (Deep Blue) for most text.
+*Footer Text Color: `#FFF1E6` (Cream) for footer text, contrasting with the #2E4057 background.
+- **Text Alignment:**
+*Centered Text: For headers and key sections.
+*Left-aligned Text: For body content.
+
 ## Tools and Technologies
 
 ### Content and Design:
@@ -397,7 +415,7 @@ The site utilises Bootstrap for its responsive grid system and components. Boots
 
 ### Interactivity:
 
-Django Templating and Forms: Used for handling user interactions and form submissions, replacing the need for JavaScript for basic interactivity.
+- Django Templating and Forms: Used for handling user interactions and form submissions, replacing the need for JavaScript for basic interactivity.
 
 ### Backend Development:
 
