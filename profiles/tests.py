@@ -8,10 +8,10 @@ from django.utils import timezone
 class ProfileTests(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='testuser', password='12345')
-        self.profile = Profile.objects.create(user=self.user, display_name='Test User')
-        self.notification = Notification.objects.create(recipient=self.user, message='Test notification')
         self.user2 = User.objects.create_user(username='testuser2', password='12345')
-        self.profile2 = Profile.objects.create(user=self.user2, display_name='Test User 2')
+        self.profile, created = Profile.objects.get_or_create(user=self.user, display_name='Test User')
+        self.profile2, created = Profile.objects.get_or_create(user=self.user2, display_name='Test User 2')
+        self.notification = Notification.objects.create(recipient=self.user, message='Test notification')
         self.post = Post.objects.create(content='Test post content', user=self.user)
 
     def test_profile_list_view(self):
