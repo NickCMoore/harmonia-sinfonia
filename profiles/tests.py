@@ -66,3 +66,12 @@ class ProfileTests(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertFalse(Notification.objects.filter(id=self.notification.id).exists())
 
+    def test_edit_profile(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.post(reverse('profiles:edit_profile', args=[self.user.username]), {
+            'display_name': 'Updated User'
+        })
+        self.assertEqual(response.status_code, 302)
+        self.profile.refresh_from_db()
+        self.assertEqual(self.profile.display_name, 'Updated User')
+
