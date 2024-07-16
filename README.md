@@ -2,6 +2,34 @@
 
 ## Overview
 
+## Table of Contents
+
+- [**Overview**](#overview)
+  - [Rationale and Purpose](#rationale-and-purpose)
+  - [Problem Statement](#problem-statement)
+  - [Target Audience](#target-audience)
+  - [Solution](#solution)
+- [**Design**](#design)
+  - [Wireframes](#wireframes)
+  - [Design](#design)
+  - [Agile Approach](#agile-approach)
+  - [Wireframes](#wireframes)
+
+- [**User Experience**](#user-experience)
+  - [User Stories](#user-stories)
+- [**Features**](#features)
+  - [Current Features](#current-features)
+  - [Future Features](#future-features)
+- [**Technologies Used**](#technologies-used)
+- [**Bugs**](#bugs)
+- [**Testing**](#testing)
+- [**Security**](#security)
+- [**Deployment**](#deployment)
+- [**Credits**](#credits)
+  - [Code](#code)
+  - [Design](#design)
+- [**Acknowledgements**](#acknowledgements)
+
 ### Rationale and Purpose
 
 Welcome to Harmonia Sinfonia, a dedicated platform designed to connect orchestra members in a seamless and engaging way. As a musician, I understand the unique challenges faced by orchestra members in staying connected and informed outside of rehearsals and performances.
@@ -28,33 +56,6 @@ Harmonia Sinfonia aims to address these issues by providing a dedicated platform
 - Coordinate Activities: Efficiently organise and manage events, rehearsals, and performances, ensuring that all members are informed and involved.
 
 By solving these problems, Harmonia Sinfonia aims to enhance the overall experience for orchestra members, ensuring they remain engaged, informed, and connected. This platform not only facilitates better communication and collaboration but also strengthens the sense of community among members, ultimately contributing to a more cohesive and productive orchestra.
-
-## Table of Contents
-
-- [**Overview**](#overview)
-  - [Rationale and Purpose](#rationale-and-purpose)
-  - [Problem Statement](#problem-statement)
-  - [Target Audience](#target-audience)
-  - [Solution](#solution)
-  - [Wireframes](#wireframes)
-  - [Design](#design)
-  - [Agile Approach](#agile-approach)
-  - [Wireframes](#wireframes)
-- [**Design**](#design)
-- [**User Experience**](#user-experience)
-  - [User Stories](#user-stories)
-- [**Features**](#features)
-  - [Current Features](#current-features)
-  - [Future Features](#future-features)
-- [**Technologies Used**](#technologies-used)
-- [**Bugs**](#bugs)
-- [**Testing**](#testing)
-- [**Security**](#security)
-- [**Deployment**](#deployment)
-- [**Credits**](#credits)
-  - [Code](#code)
-  - [Design](#design)
-- [**Acknowledgements**](#acknowledgements)
 
 ## Agile Approach
 
@@ -126,7 +127,92 @@ Below are the wireframes for key sections, illustrating my commitment to a user-
 ![Admin (Desktop)](/documentation/wireframes/admin-desktop.png)
 ![Admin (Mobile)](/documentation/wireframes/admin-mobile.png)
 
-## Database Design
+## Design
+
+### Introduction
+
+Harmonia Sinfonia's design prioritises user experience by ensuring the platform is intuitive, accessible, and engaging. Key UX principles applied include:
+
+1. Consistency:
+
+- Navigation: Consistent placement of navigation elements across all pages.
+- Styling: Uniform color schemes, typography, and button styles.
+
+2. Feedback:
+
+- User Actions: Immediate feedback for actions like liking a post or submitting a comment.
+- Form Validation: Real-time validation informs users of errors or successful submissions instantly.
+
+3. Simplicity:
+
+- Clean Layout: Minimalistic design with ample white space and clear section dividers.
+- Direct Interactions: Key actions are easily accessible without unnecessary steps.
+
+### Information Hierarchy
+
+- The platform follows a clear information hierarchy to guide users effortlessly:
+
+1. Homepage:
+
+- Dynamic Feed: Displays recent posts, upcoming events, and featured content prominently.
+- Navigation Bar: Provides quick access to main sections like profiles, events, and posts.
+
+2. Profiles:
+
+- User Profile Page: Displays personal information, posts, and interactions in a well-organized manner.
+
+3. Posts and Interactions:
+
+- Post Layout: Clear structure with user information, post content, and interaction buttons.
+- Comment Threads: Nested comments to show relationships clearly.
+
+4. Notifications:
+
+- Dropdown and Page: Accessible via a bell icon in the navigation bar, with a dedicated page for a comprehensive list.
+
+### Responsive Design
+
+The platform is fully responsive, providing a seamless experience on both desktop and mobile devices:
+
+- Flexible Grid System: Uses Bootstrap’s grid system for a fluid layout.
+- Mobile Navigation: Collapses into a hamburger menu on smaller screens.
+- Touch-Friendly Elements: Designed with sufficient spacing for touch interaction.
+
+### Colour Scheme
+
+- `#3B0D11` (Dark Burgundy): Used for the hover state of primary buttons.
+- `#FFF1E6` (Cream): Used for the site background, button text, and footer text.
+- `#2E4057` (Deep Blue): Used for the site text, footer background, and primary header color.
+- `#FFC857` (Golden Yellow): Used for hover state of nav links and primary button background.
+- `#8D8D92` (Soft Gray): Used for the site background and form container shadows.
+
+![Colour Scheme](/documentation/colour-scheme.png)
+
+[Coolors](coolors.co) was used to create the color palette.
+
+To simplify updates to the global colour scheme, I used CSS :root variables. This allows for easy changes by updating only one value, rather than searching through the entire CSS file.
+
+### Integration with Bootstrap
+
+The site utilises Bootstrap for its responsive grid system and components. Bootstrap's classes and components were customised using the defined color variables to ensure consistency across the site. For example, the navbar, buttons, and form elements are styled to match the brand colors, enhancing the cohesive look and feel.
+
+### Typography
+
+The simple typography on the site was designed for readability and a clean, professional look.
+
+- **Font Family:** Arial, sans-serif is used for its clarity and wide acceptance.
+- **Font Sizes:**
+*Base Font Size: 16px for body text.
+*Headings: Scaled sizes create a visual hierarchy (e.g., h1 is 2.5em, h2 is 1.5em).
+- **Font Weights:**
+*Bold: For headings and important text.
+*Normal: For regular body text.
+- **Text Colors:**
+*Primary Text Color: `#2E4057` (Deep Blue) for most text.
+*Footer Text Color: `#FFF1E6` (Cream) for footer text, contrasting with the #2E4057 background.
+- **Text Alignment:**
+*Centered Text: For headers and key sections.
+*Left-aligned Text: For body content.## Database Design
 
 ### Data Model Overview
 
@@ -138,7 +224,7 @@ The structure of the database is illustrated using an Entity-Relationship Diagra
 
 In this project, I used Django's built in Allauth library to handle user authentication, registration, and account management. Allauth is an authentication solution that supports aspects such as email verification and social authentication. Also, the use of the Cloudinary library was designed to manage and optimise media assets such as images and videos.
 
-## Users (Allauth User Model)
+### Users (Allauth User Model)
 
 The `Users` model represents the registered users of the platform. Allauth handles the creation and management of this model.
 
@@ -150,7 +236,7 @@ The `Users` model represents the registered users of the platform. Allauth handl
 |     | first_name  | CharField  |       |
 |     | last_name   | CharField  |       |
 
-## Profile Model
+### Profile Model
 
 The `Profile` model extends the user model to include additional information specific to each user, such as display name, bio, and profile pictures managed via Cloudinary.
 
@@ -163,7 +249,7 @@ The `Profile` model extends the user model to include additional information spe
 |     | bg_pic       | URLField   | URL from Cloudinary |
 |     | followers    | ManyToMany | M2M to Users model  |
 
-## Posts Model
+### Posts Model
 
 The `Posts` model represents the content shared by users. It includes fields for the post content, optional images managed via Cloudinary, and metadata such as the posting time and like relationships.
 
@@ -176,7 +262,7 @@ The `Posts` model represents the content shared by users. It includes fields for
 |     | likes       | ManyToMany    | M2M to Users model             |
 |     | is_flagged  | BooleanField  |                                |
 
-## Comments
+### Comments
 
 The `Comments` model allows users to comment on posts. Each comment is linked to a user and a post, and can also receive likes.
 
@@ -188,7 +274,7 @@ The `Comments` model allows users to comment on posts. Each comment is linked to
 |     | likes       | ManyToMany    | M2M to Users model |
 | FK  | post_id     | ForeignKey    | FK to Posts model  |
 
-## Likes
+### Likes
 
 The `Likes` model represents the likes on posts and comments, linking them to users.
 
@@ -198,7 +284,7 @@ The `Likes` model represents the likes on posts and comments, linking them to us
 | FK  | post_id     | ForeignKey | FK to Posts model    |
 | FK  | comment_id  | ForeignKey | FK to Comments model |
 
-## Follows
+### Follows
 
 The `Follows` model captures the follow relationships between users, indicating who follows whom.
 
@@ -207,7 +293,7 @@ The `Follows` model captures the follow relationships between users, indicating 
 | FK  | follower_id | ForeignKey | FK to Users model |
 | FK  | followed_id | ForeignKey | FK to Users model |
 
-## Messages
+### Messages
 
 The `Messages` model handles private messaging between users, including the content of the messages and the timestamps.
 
@@ -218,7 +304,7 @@ The `Messages` model handles private messaging between users, including the cont
 |     | content     | TextField     |                   |
 |     | sent_at     | DateTimeField |                   |
 
-## Notifications
+### Notifications
 
 The `Notifications` model manages notifications sent to users, such as likes, comments, and new messages.
 
@@ -233,7 +319,7 @@ The `Notifications` model manages notifications sent to users, such as likes, co
 |     | date              | DateTimeField |                      |
 |     | user_has_seen     | BooleanField  |                      |
 
-## Flags
+### Flags
 
 The `Flags` model allows users to flag posts and comments for review, including the reason for flagging and the timestamp.
 
@@ -245,7 +331,7 @@ The `Flags` model allows users to flag posts and comments for review, including 
 |     | reason      | TextField     |                      |
 |     | flagged_on  | DateTimeField |                      |
 
-## Admins
+### Admins
 
 The `Admins` model extends the user model to include additional permissions specific to admin users.
 
@@ -254,7 +340,7 @@ The `Admins` model extends the user model to include additional permissions spec
 | FK  | user_id     | ForeignKey | FK to Users model |
 |     | permissions | TextField  |                   |
 
-## Events
+### Events
 
 The `Events` model represents events or rehearsals posted by the orchestra, including optional images managed via Cloudinary.
 
@@ -379,93 +465,6 @@ Below are the categorised user stories for Harmonia Sinfonia:
 5. **Content Moderation Tools:**
    - _Explanation:_ As an admin, I can use content moderation tools so that I can manage and filter content effectively on the platform. `(COULD HAVE)`
 
-## Design
-
-### Introduction
-
-Harmonia Sinfonia's design prioritises user experience by ensuring the platform is intuitive, accessible, and engaging. Key UX principles applied include:
-
-1. Consistency:
-
-- Navigation: Consistent placement of navigation elements across all pages.
-- Styling: Uniform color schemes, typography, and button styles.
-
-2. Feedback:
-
-- User Actions: Immediate feedback for actions like liking a post or submitting a comment.
-- Form Validation: Real-time validation informs users of errors or successful submissions instantly.
-
-3. Simplicity:
-
-- Clean Layout: Minimalistic design with ample white space and clear section dividers.
-- Direct Interactions: Key actions are easily accessible without unnecessary steps.
-
-### Information Hierarchy
-
-- The platform follows a clear information hierarchy to guide users effortlessly:
-
-1. Homepage:
-
-- Dynamic Feed: Displays recent posts, upcoming events, and featured content prominently.
-- Navigation Bar: Provides quick access to main sections like profiles, events, and posts.
-
-2. Profiles:
-
-- User Profile Page: Displays personal information, posts, and interactions in a well-organized manner.
-
-3. Posts and Interactions:
-
-- Post Layout: Clear structure with user information, post content, and interaction buttons.
-- Comment Threads: Nested comments to show relationships clearly.
-
-4. Notifications:
-
-- Dropdown and Page: Accessible via a bell icon in the navigation bar, with a dedicated page for a comprehensive list.
-
-### Responsive Design
-
-The platform is fully responsive, providing a seamless experience on both desktop and mobile devices:
-
-- Flexible Grid System: Uses Bootstrap’s grid system for a fluid layout.
-- Mobile Navigation: Collapses into a hamburger menu on smaller screens.
-- Touch-Friendly Elements: Designed with sufficient spacing for touch interaction.
-
-### Colour Scheme
-
-- `#3B0D11` (Dark Burgundy): Used for the hover state of primary buttons.
-- `#FFF1E6` (Cream): Used for the site background, button text, and footer text.
-- `#2E4057` (Deep Blue): Used for the site text, footer background, and primary header color.
-- `#FFC857` (Golden Yellow): Used for hover state of nav links and primary button background.
-- `#8D8D92` (Soft Gray): Used for the site background and form container shadows.
-
-![Colour Scheme](/documentation/colour-scheme.png)
-
-[Coolors](coolors.co) was used to create the color palette.
-
-To simplify updates to the global colour scheme, I used CSS :root variables. This allows for easy changes by updating only one value, rather than searching through the entire CSS file.
-
-### Integration with Bootstrap
-
-The site utilises Bootstrap for its responsive grid system and components. Bootstrap's classes and components were customised using the defined color variables to ensure consistency across the site. For example, the navbar, buttons, and form elements are styled to match the brand colors, enhancing the cohesive look and feel.
-
-### Typography
-
-The simple typography on the site was designed for readability and a clean, professional look.
-
-- **Font Family:** Arial, sans-serif is used for its clarity and wide acceptance.
-- **Font Sizes:**
-*Base Font Size: 16px for body text.
-*Headings: Scaled sizes create a visual hierarchy (e.g., h1 is 2.5em, h2 is 1.5em).
-- **Font Weights:**
-*Bold: For headings and important text.
-*Normal: For regular body text.
-- **Text Colors:**
-*Primary Text Color: `#2E4057` (Deep Blue) for most text.
-*Footer Text Color: `#FFF1E6` (Cream) for footer text, contrasting with the #2E4057 background.
-- **Text Alignment:**
-*Centered Text: For headers and key sections.
-*Left-aligned Text: For body content.
-
 ## Technologies Used
 
 ### Content and Design
@@ -578,8 +577,6 @@ The simple typography on the site was designed for readability and a clean, prof
 - Contact Page: Form to contact site administrators or support.
 - FAQs/Help Section: Helps users understand how to use different aspects of the platform.
 - Event Pages: For orchestra to post upcoming events or rehearsals with RSVP functionality.
-
-## Technologies used
 
 ## Bugs
 
