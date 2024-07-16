@@ -88,3 +88,10 @@ I validated my CSS file using the recommended CSS Jigsaw Validator.
 |------------|--------|----------------------------------|------------------------------------------------|------------------------------|
 | style.css  | Pass   | Not applicable    | ![Validation Pass](documentation/testing/css-pass.png) | No issues  |
 
+### JavaScript
+
+![JShint Validator](https://jshint.com/) was used to validate the JS.
+
+| File       | Result | Issue                            | Screenshot                                      | Notes                        |
+|------------|--------|----------------------------------|------------------------------------------------|------------------------------|
+| index.js  | Pass   | Not applicable    | ![JS Pass](documentation/testing/js-pass.png) | No issues  |
