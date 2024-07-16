@@ -26,3 +26,21 @@ class HomeTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertNotContains(response, self.notification1.message)
         self.assertNotContains(response, self.notification2.message)
+
+    def test_home_view_post_subscription(self):
+        response = self.client.post(reverse('home:home'), {'email': 'newsubscriber@example.com'})
+        self.assertRedirects(response, reverse('home:home'))
+        self.assertTrue(Subscriber.objects.filter(email='newsubscriber@example.com').exists())
+
+    def test_learn_more_view_authenticated(self):
+        self.client.login(username='testuser', password='password')
+        response = self.client.get(reverse('home:learn_more'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, self.notification1.message)
+        self.assertContains(response, self.notification2.message)
+
+    def test_learn_more_view_unauthenticated(self):
+        response = self.client.get(reverse('home:learn_more'))
+        self.assertEqual(response.status_code, 200)
+        self.assertNotContains(response, self.notification1.message)
+        self.assertNotContains(response, self.notification2.message)
