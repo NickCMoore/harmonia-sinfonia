@@ -75,3 +75,10 @@ class ProfileTests(TestCase):
         self.profile.refresh_from_db()
         self.assertEqual(self.profile.display_name, 'Updated User')
 
+    def test_search_view(self):
+        response = self.client.get(reverse('profiles:search_view'), {'query': 'Test'})
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'profiles/search_results.html')
+        self.assertContains(response, self.profile.display_name)
+        self.assertContains(response, self.post.content)
+
