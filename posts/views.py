@@ -6,11 +6,16 @@ from .forms import PostForm, CommentForm, FlagForm
 from django.http import HttpResponseForbidden
 from django.db import IntegrityError
 from django.contrib.contenttypes.models import ContentType
+from django.core.paginator import Paginator
 
 
 def post_list_view(request):
     posts = Post.objects.all().order_by('-posted_on')
-    return render(request, 'posts/post_list.html', {'posts': posts})
+    paginator = Paginator(posts, 10)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'posts/post_list.html', {'page_obj': page_obj})
 
 
 def post_detail_view(request, pk):
