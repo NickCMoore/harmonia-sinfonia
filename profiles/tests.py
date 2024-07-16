@@ -38,3 +38,18 @@ class ProfileTests(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertFalse(self.user in self.profile2.followers.all())
 
+    def test_following_list(self):
+        self.client.login(username='testuser', password='12345')
+        self.profile2.followers.add(self.user)
+        response = self.client.get(reverse('profiles:following_list'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'profiles/following_list.html')
+        self.assertContains(response, self.profile2.display_name)
+
+    def test_notifications_list(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.get(reverse('profiles:notifications_list'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'profiles/notifications_list.html')
+        self.assertContains(response, self.notification.message)
+
