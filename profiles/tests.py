@@ -53,3 +53,16 @@ class ProfileTests(TestCase):
         self.assertTemplateUsed(response, 'profiles/notifications_list.html')
         self.assertContains(response, self.notification.message)
 
+    def test_mark_notification_as_read(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.post(reverse('profiles:mark_notification_as_read', args=[self.notification.id]))
+        self.assertEqual(response.status_code, 302)
+        self.notification.refresh_from_db()
+        self.assertTrue(self.notification.read)
+
+    def test_delete_notification(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.post(reverse('profiles:delete_notification', args=[self.notification.id]))
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(Notification.objects.filter(id=self.notification.id).exists())
+
