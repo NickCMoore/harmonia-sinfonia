@@ -174,5 +174,39 @@ The following table provides a detailed overview of the testing performed for ea
 
 This comprehensive testing ensures that all user stories are fully implemented and functioning correctly, providing a robust and user-friendly platform for all members of Harmonia Sinfonia.
 
+## Automated Testing
 
+Automated testing is a crucial part of ensuring the stability and reliability of the Harmonia Sinfonia platform. This section outlines the automated tests implemented for various parts of the application, along with the results.
 
+### Automated Test Implementation
+
+I used Django's built-in testing framework to create automated tests for our application. Below are the key components tested:
+
+1. **Profiles App**
+2. **Posts App**
+3. **Events App**
+4. **Home App**
+5. **Authentication App**
+
+Each app's testing includes views, models, and forms to ensure all functionalities work as expected.
+
+### Running the Tests
+
+To run the tests, use the following command in the terminal:
+
+```sh
+python3 manage.py test
+```
+
+### Test Results
+
+| App            | Test Result | Screenshot | Comments |
+|----------------|-------------|------------|----------|
+| Profiles       | Failed      | ![screenshot](documentation/testing/automated-testing/profiles-fail.png)          | Some tests failed, highlighting issues in the user profiles functionalities. |
+| Profiles       | Passed      | ![screenshot](documentation/testing/automated-testing/profiles-pass.png)          | All tests passed successfully, ensuring that the profile-related functionalities are working correctly. |
+| Posts         | Passed      |  ![screenshot](documentation/testing/automated-testing/posts-pass.png)          | All tests passed successfully, ensuring that the post-related functionalities are working correctly. |
+| Events         | Failed     |  ![screenshot](documentation/testing/automated-testing/events-fail.png)          | Some tests failed, due to issues in the URL patterns initially. |
+| Events         | Passed      |  ![screenshot](documentation/testing/automated-testing/events-pass.png)          | All tests passed successfully, ensuring that the post-related functionalities are working correctly. |
+| Home         | Failed     |  ![screenshot](documentation/testing/automated-testing/home-fail.png)          | Some tests failed, due to issues in the URL patterns initially. |
+| Home         | Passed      |  ![screenshot](documentation/testing/automated-testing/home-pass.png)          | All tests passed successfully, ensuring that the post-related functionalities are working correctly. |
+| Authentication | Passed      | ![screenshot](documentation/testing/automated-testing/authentication.png)           | All tests passed successfully, confirming that the authentication functionalities are working correctly. |
