@@ -32,4 +32,28 @@ class PostTests(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Post.objects.count(), 2)
 
+    def test_delete_post_view(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.post(reverse('posts:delete_post', args=[self.post.pk]))
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(Post.objects.count(), 0)
+
+    def test_toggle_like_view(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.post(reverse('posts:toggle_like', args=[self.post.pk]))
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(self.user in self.post.likes.all())
+
+    def test_delete_comment_view(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.post(reverse('posts:delete_comment', args=[self.comment.pk]))
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(Comment.objects.count(), 0)
+
+    def test_toggle_upvote_comment(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.post(reverse('posts:toggle_upvote_comment', args=[self.comment.pk]))
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(self.user in self.comment.upvotes.all())
+
     
