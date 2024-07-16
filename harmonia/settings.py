@@ -130,7 +130,7 @@ DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL)
 }
 
-if 'test' in sys.argv:
+if 'test' in sys.argv or 'pytest' in sys.argv:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
