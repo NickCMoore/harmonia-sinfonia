@@ -1,0 +1,245 @@
+/* Base Colors */
+:root {
+    --dark-burgundy: #3B0D11;
+    --cream: #FFF1E6;
+    --golden-yellow: #FFC857;
+    --deep-blue: #2E4057;
+    --soft-gray: #8D8D92;
+}
+
+/* Global Styles */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--soft-gray);
+    color: var(--deep-blue);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--deep-blue);
+    color: var(--cream);
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Paragraph Styles */
+p {
+    color: var(--deep-blue);
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cream);
+    padding: 20px;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    flex-grow: 1;
+    position: relative;
+    background-image: url("/static/images/orchestra.556706d76bc7.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--cream);
+}
+
+.hero-section .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--cream);
+}
+
+.hero-section .subheading {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    color: var(--golden-yellow);
+}
+
+.hero-section .display-3 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--deep-blue);
+    color: var(--cream);
+    flex-shrink: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+}
+
+footer p {
+    color: var(--cream);
+    padding: 10px 0;
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid var(--deep-blue);
+    text-align: center;
+    color: var(--deep-blue);
+}
+
+h2 {
+    color: var(--deep-blue);
+    font-size: 1.5em;
+}
+
+/* Container Styles */
+.container.text-center.my-5 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Navbar Styles */
+.navbar-light .navbar-brand img {
+    max-height: 50px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--deep-blue);
+    margin-left: 15px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--golden-yellow);
+}
+
+.navbar-nav .nav-item+.nav-item {
+    border-left: 1px solid #ccc;
+    padding-left: 15px;
+    margin-left: 5px;
+}
+
+.navbar-nav .navbar-text {
+    margin-left: 15px;
+}
+
+.navbar .badge {
+    display: none;
+}
+
+.navbar .badge[data-unread-count]:not([data-unread-count="0"]) {
+    display: inline-block;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--golden-yellow);
+    border-color: var(--golden-yellow);
+    color: var(--deep-blue);
+    margin-right: 10px;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-burgundy);
+    border-color: var(--dark-burgundy);
+}
+
+.btn-secondary {
+    margin-left: 10px;
+}
+
+.learn-more-section .btn-primary {
+    background-color: var(--golden-yellow);
+    border-color: var(--golden-yellow);
+    margin-top: 20px;
+}
+
+.learn-more-section .btn-primary:hover {
+    background-color: var(--dark-burgundy);
+    border-color: var(--dark-burgundy);
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--deep-blue);
+}
+
+/* Learn More Section Styles */
+.learn-more-section {
+    background-color: var(--cream);
+    color: var(--deep-blue);
+    padding: 60px 0;
+}
+
+/* Following List Styles */
+.following-list {
+    margin-top: 8rem;
+}
+
+.following-list h2 {
+    margin-bottom: 2rem;
+    color: var(--deep-blue);
+    font-size: 1.5em;
+}
+
+.following-list .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--deep-blue);
+    text-decoration: underline;
+}
+
+.following-list .list-group-item:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.following-list .list-group-item i {
+    color: var(--soft-gray);
+}
+
+/* Notification Styles */
+.notification-bell {
+    color: inherit;
+}
+
+.notification-bell.has-unread {
+    color: red;
+}
+
+.alert-container {
+    margin-top: 20px;
+}
+
+.alert {
+    margin-bottom: 10px;
+}
