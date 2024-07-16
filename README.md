@@ -66,7 +66,7 @@ Below are the wireframes for key sections, illustrating my commitment to a user-
 
 ### Homepage
 
-![Homepage (Desktop)](/documentation/wireframes/homepage-desktop.png)
+![Homepage (Desktop)](/documentation/wireframes/homepage-desktop.png) 
 ![Homepage (Mobile)](/documentation/wireframes/homepage-mobile.png)
 
 ### Posts
@@ -443,12 +443,12 @@ Below are the categorised user stories for Harmonia Sinfonia:
 
 The development process for Harmonia Sinfonia followed Agile methodology, emphasising continuous improvement throughout the development lifecycle.
 
-![GitHub Projects](/documentation/project-management.png)
-![GitHub Issues)](/documentation/issues.png)
-
 ### Project Management
 
-GitHub Projects served as the primary Agile tool for managing the development tasks. While GitHub Projects isn't a specialised Agile tool, it was used with the right tags, project creation, and issue assignments (see above) to fit the needs of the project.
+GitHub Projects served as the primary Agile tool for managing the development tasks. While GitHub Projects isn't a specialised Agile tool, it was used with the right tags, project creation, and issue assignments to fit the needs of the project.
+
+![GitHub Projects](/documentation/project-management.png)
+![GitHub Issues)](/documentation/issues.png)
 
 ### User Stories Mapping
 
@@ -490,12 +490,14 @@ For a detailed view of the project management and task progression, refer to the
 - django-environ: Used for environment variable management.
 - django-heroku: Used for easy Heroku deployment.
 - gunicorn: Used as the WSGI HTTP server for deploying the site.
+
 - Version Control and Development Environment:
 
-- Git: Used for version control (git add, git commit, git push).
-- GitHub: Used for secure online code storage.
-- VSCode: Used as a cloud-based IDE for development.
-- autopep8: Used for automatically formatting Python code to conform to PEP 8.
+   - Git: Used for version control (git add, git commit, git push).
+   - GitHub: Used for secure online code storage.
+   - VSCode: Used as a cloud-based IDE for development. 
+   
+- autopep8 & Flake8 : Used for automatically formatting Python code to conform to PEP 8.
 
 ### Deployment and Hosting
 
