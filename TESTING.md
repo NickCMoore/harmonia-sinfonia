@@ -46,5 +46,5 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Page | W3C URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | [W3C]() | ![screenshot]() | Pass: No Errors |
+| Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fharmonia-sinfonia-ec3a4797e71d.herokuapp.com%2F) | ![screenshot](/documentation/testing/home-fail.png) | Fail: Two Errors |
 
