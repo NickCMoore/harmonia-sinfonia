@@ -49,6 +49,7 @@ By solving these problems, Harmonia Sinfonia aims to enhance the overall experie
 - [**Technologies Used**](#technologies-used)
 - [**Bugs**](#bugs)
 - [**Testing**](#testing)
+- [**Security**](#security)
 - [**Deployment**](#deployment)
 - [**Credits**](#credits)
   - [Code](#code)
@@ -585,6 +586,33 @@ The simple typography on the site was designed for readability and a clean, prof
 ## Testing
 
 To view the testing file, please click [here](/TESTING.md).
+
+## Security
+
+### Password and Secret Key Management
+
+- Environment Variables: All sensitive data, such as passwords and secret keys, are stored in environment variables to prevent exposure. The .gitignore file ensures these files are not tracked by version control.
+
+### User Authentication and Permissions
+
+- Role-Based Access Control: Uses Django’s authentication system to manage user roles and permissions. These views are protected using the @login_required decorator.
+
+### Data Validation and Error Handling
+
+- Form Validation: User inputs are validated using Django forms to prevent malicious input.
+- Error Handling: Custom error pages provide user-friendly messages without exposing sensitive information.
+
+### Deployment Security
+
+- DEBUG Mode: DEBUG is set to False in production to prevent detailed error pages from being displayed.
+- HTTPS: Ensures secure communication between server and client.
+
+### Sensitive Information Handling
+
+- Secret Management: Secrets like API keys and database credentials are managed through environment variables, not included in the repository.
+- Configuration Management: Settings are organised and separated for different environments.
+
+These security measures aim to ensure that Harmonia Sinfonia protects user data, maintains secure interactions, and adheres to best practices in web security.
 
 ## Deployment
 
