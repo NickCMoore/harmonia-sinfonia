@@ -67,7 +67,7 @@ p {
 
 footer {
     background-color: var(--deep-blue);
-    color: var(--deep-blue);
+    color: var(--cream);
     flex-shrink: 0;
     width: 100%;
     text-align: center;
@@ -75,7 +75,7 @@ footer {
 }
 
 footer p {
-    color: var(--deep-blue);
+    color: var(--cream);
     padding: 10px 0;
 }
 
@@ -188,7 +188,7 @@ h2 {
 
 .following-list h2 {
     margin-bottom: 2rem;
-    color: var(--deep-blue);
+    color: var (--deep-blue);
     font-size: 1.5em;
 }
 
@@ -219,5 +219,9 @@ h2 {
 }
 
 .notification-bell {
+    color: inherit;
+}
+
+.notification-bell.has-unread {
     color: red;
 }
