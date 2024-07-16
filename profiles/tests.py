@@ -14,3 +14,17 @@ class ProfileTests(TestCase):
         self.profile2 = Profile.objects.create(user=self.user2, display_name='Test User 2')
         self.post = Post.objects.create(content='Test post content', user=self.user)
 
+    def test_profile_list_view(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.get(reverse('profiles:profile_list'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'profiles/profile_list.html')
+        self.assertContains(response, self.profile.display_name)
+
+    def test_profile_detail_view(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.get(reverse('profiles:profile_detail', args=[self.user.username]))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'profiles/profile_detail.html')
+        self.assertContains(response, self.profile.display_name)
+
