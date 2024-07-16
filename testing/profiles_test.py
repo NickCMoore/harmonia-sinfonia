@@ -30,3 +30,21 @@ class AuthenticationTest(unittest.TestCase):
         time.sleep(2)
 
         self.assertIn('Home', driver.title)
+
+    def test_user_login(self):
+        driver = self.driver
+        driver.get('http://localhost:8000/login/')
+        
+        username_input = driver.find_element(By.NAME, 'username')
+        password_input = driver.find_element(By.NAME, 'password')
+
+        username_input.send_keys('testuser')
+        password_input.send_keys('testpassword123')
+
+        password_input.send_keys(Keys.RETURN)
+        time.sleep(2)
+
+        self.assertIn('Feed', driver.page_source)
+
+if __name__ == "__main__":
+    unittest.main()
