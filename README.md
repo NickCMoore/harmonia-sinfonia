@@ -77,7 +77,7 @@ The basic Kanban board in GitHub Projects (see above) helped visualise the workf
 
 ### Continuous Improvement
 
-Despite working solo on this project, continuous improvement was a key focus. Regular retrospectives allowed reflection on past work, identification of areas for improvement, and brainstorming of solutions. This practice ensured that the development processes and product quality were consistently enhanced.
+Despite working solo on this project, continuous improvement was a key focus. Regular retrospectives allowed reflection on past work, identification of areas for improvement, and thinking through possible solutions. This practice ensured that the development processes and product quality were consistently enhanced.
 
 For a detailed view of the project management and task progression, refer to the [GitHub Project board](https://github.com/users/NickCMoore/projects/2).
 
