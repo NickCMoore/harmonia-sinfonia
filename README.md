@@ -1,20 +1,21 @@
 # **_Harmonia Sinfonia_**
 
-## Overview
+Welcome to Harmonia Sinfonia, a dedicated platform designed to connect orchestra members in a seamless and engaging way. As a musician, I understand the unique challenges faced by orchestra members in staying connected and informed outside of rehearsals and performances.
 
 ## Table of Contents
 
 - [**Overview**](#overview)
-  - [Rationale and Purpose](#rationale-and-purpose)
   - [Problem Statement](#problem-statement)
   - [Target Audience](#target-audience)
   - [Solution](#solution)
-- [**Design**](#design)
+- [**Design & Planning**](#design--planning)
+  - [Problem Statement](#problem-statement)
+  - [Target Audience](#target-audience)
+  - [Solution](#solution)
   - [Wireframes](#wireframes)
-  - [Design](#design)
+  - [Design Rationale](#design-rationale)
+  - [Data Model Design](#data-model-design)
   - [Agile Approach](#agile-approach)
-  - [Wireframes](#wireframes)
-
 - [**User Experience**](#user-experience)
   - [User Stories](#user-stories)
 - [**Features**](#features)
@@ -30,9 +31,7 @@
   - [Design](#design)
 - [**Acknowledgements**](#acknowledgements)
 
-### Rationale and Purpose
-
-Welcome to Harmonia Sinfonia, a dedicated platform designed to connect orchestra members in a seamless and engaging way. As a musician, I understand the unique challenges faced by orchestra members in staying connected and informed outside of rehearsals and performances.
+## Design & Planning
 
 ### Problem Statement
 
@@ -56,31 +55,6 @@ Harmonia Sinfonia aims to address these issues by providing a dedicated platform
 - Coordinate Activities: Efficiently organise and manage events, rehearsals, and performances, ensuring that all members are informed and involved.
 
 By solving these problems, Harmonia Sinfonia aims to enhance the overall experience for orchestra members, ensuring they remain engaged, informed, and connected. This platform not only facilitates better communication and collaboration but also strengthens the sense of community among members, ultimately contributing to a more cohesive and productive orchestra.
-
-## Agile Approach
-
-The development process for Harmonia Sinfonia followed Agile methodology, emphasising continuous improvement throughout the development lifecycle.
-
-![GitHub Projects](/documentation/project-management.png)
-![GitHub Issues)](/documentation/issues.png)
-
-### Project Management
-
-GitHub Projects served as the primary Agile tool for managing the development tasks. While GitHub Projects isn't a specialised Agile tool, it was used with the right tags, project creation, and issue assignments (see above) to fit the needs of the project.
-
-### User Stories Mapping
-
-User stories were crucial in mapping out the development progress. They were categorised into EPICs A, B, C, D, E, and F based on user types and content specificity. The user stories were organised on a Kanban board, providing a visual representation of the backlog and the current status of tasks. The MoSCoW method was used to prioritise these stories, categorising them into Must have, Should have, Could have, and Won't have, ensuring that the most critical features were developed first.
-
-### Kanban Board
-
-The basic Kanban board in GitHub Projects (see above) helped visualise the workflow and track the progress of tasks. Tasks moved across columns from the backlog, through development stages, to testing, and finally to completion. This setup provided clarity on the workload and helped in managing the project efficiently.
-
-### Continuous Improvement
-
-Despite working solo on this project, continuous improvement was a key focus. Regular retrospectives allowed reflection on past work, identification of areas for improvement, and thinking through possible solutions. This practice ensured that the development processes and product quality were consistently enhanced.
-
-For a detailed view of the project management and task progression, refer to the [GitHub Project board](https://github.com/users/NickCMoore/projects/2).
 
 ## Wireframes
 
@@ -127,7 +101,7 @@ Below are the wireframes for key sections, illustrating my commitment to a user-
 ![Admin (Desktop)](/documentation/wireframes/admin-desktop.png)
 ![Admin (Mobile)](/documentation/wireframes/admin-mobile.png)
 
-## Design
+## Design Rationale
 
 ### Introduction
 
@@ -214,7 +188,7 @@ The simple typography on the site was designed for readability and a clean, prof
 *Centered Text: For headers and key sections.
 *Left-aligned Text: For body content.## Database Design
 
-### Data Model Overview
+## Data Model Design
 
 The structure of the database is illustrated using an Entity-Relationship Diagram (ERD). This diagram demonstrates how different entities within the Harmonia Sinfonia platform are interrelated, providing an overview of the data flow and the connections between various models.
 
@@ -464,6 +438,31 @@ Below are the categorised user stories for Harmonia Sinfonia:
 
 5. **Content Moderation Tools:**
    - _Explanation:_ As an admin, I can use content moderation tools so that I can manage and filter content effectively on the platform. `(COULD HAVE)`
+
+## Agile Approach
+
+The development process for Harmonia Sinfonia followed Agile methodology, emphasising continuous improvement throughout the development lifecycle.
+
+![GitHub Projects](/documentation/project-management.png)
+![GitHub Issues)](/documentation/issues.png)
+
+### Project Management
+
+GitHub Projects served as the primary Agile tool for managing the development tasks. While GitHub Projects isn't a specialised Agile tool, it was used with the right tags, project creation, and issue assignments (see above) to fit the needs of the project.
+
+### User Stories Mapping
+
+User stories were crucial in mapping out the development progress. They were categorised into EPICs A, B, C, D, E, and F based on user types and content specificity. The user stories were organised on a Kanban board, providing a visual representation of the backlog and the current status of tasks. The MoSCoW method was used to prioritise these stories, categorising them into Must have, Should have, Could have, and Won't have, ensuring that the most critical features were developed first.
+
+### Kanban Board
+
+The basic Kanban board in GitHub Projects (see above) helped visualise the workflow and track the progress of tasks. Tasks moved across columns from the backlog, through development stages, to testing, and finally to completion. This setup provided clarity on the workload and helped in managing the project efficiently.
+
+### Continuous Improvement
+
+Despite working solo on this project, continuous improvement was a key focus. Regular retrospectives allowed reflection on past work, identification of areas for improvement, and thinking through possible solutions. This practice ensured that the development processes and product quality were consistently enhanced.
+
+For a detailed view of the project management and task progression, refer to the [GitHub Project board](https://github.com/users/NickCMoore/projects/2).
 
 ## Technologies Used
 
