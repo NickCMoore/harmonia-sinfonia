@@ -109,11 +109,11 @@ I used Google Chrome's Lighthouse tool to perform audits on performance, accessi
 
 | Page             | Desktop Screenshot                                  | Mobile Screenshot                                  | Notes               |
 |------------------|-----------------------------------------------------|---------------------------------------------------|---------------------|
-| Home             | ![screenshot](documentation/testing/lighthouse/home-lighthouse.png) | ![screenshot](documentation/testing/lighthouse/home-mobile.png) | No major issues     |
+| Home             | ![screenshot](documentation/testing/lighthouse/home-lighthouse.png) | ![screenshot](documentation/testing/lighthouse/home-mobile.png) | Mobile Performance Issue   |
 | Learn More       | ![screenshot](documentation/testing/lighthouse/learnmore.png) | ![screenshot](documentation/testing/lighthouse/learnmore-mobile.png) | No major issues     |
 | Sign Up          | ![screenshot](documentation/testing/lighthouse/signup.png) | ![screenshot](documentation/testing/lighthouse/signup-mobile.png) | Some minor issues   |
 | Log In          | ![screenshot](documentation/testing/lighthouse/login.png) | ![screenshot](documentation/testing/lighthouse/login-mobile.png) | Some minor issues   |
-| Events List      | ![screenshot](documentation/testing/lighthouse/eventslist.png) | ![screenshot](documentation/testing/lighthouse/eventslist-mobile.png) | No major issues     |
+| Events List      | ![screenshot](documentation/testing/lighthouse/eventslist.png) | ![screenshot](documentation/testing/lighthouse/eventslist-mobile.png) | Performance Issues     |
 | Events Detail    | ![screenshot](documentation/testing/lighthouse/eventsdetail.png) | ![screenshot](documentation/testing/lighthouse/eventsdetail-mobile.png) | No major issues     |
 | Post List        | ![screenshot](documentation/testing/lighthouse/postlist.png) | ![screenshot](documentation/testing/lighthouse/postlist-mobile.png) | Some minor issues   |
 | Post Detail      | ![screenshot](documentation/testing/lighthouse/postdetail.png) | ![screenshot](documentation/testing/lighthouse/postdetail-mobile.png) | No major issues     |
@@ -121,12 +121,11 @@ I used Google Chrome's Lighthouse tool to perform audits on performance, accessi
 | Edit Post        | ![screenshot](documentation/testing/lighthouse/editpost.png) | ![screenshot](documentation/testing/lighthouse/editpost-mobile.png) | No major issues     |
 | Flag Post        | ![screenshot](documentation/testing/lighthouse/flagpost.png) | ![screenshot](documentation/testing/lighthouse/flagpost-mobile.png) | No major issues     |
 | Flag Comment     | ![screenshot](documentation/testing/lighthouse/flagcomment.png) | ![screenshot](documentation/testing/lighthouse/flagcomment-mobile.png) | Some minor issues   |
-| Profile Detail   | ![screenshot](documentation/testing/lighthouse/profiledetail.png) | ![screenshot](documentation/testing/lighthouse/profiledetail-mobile.png) | No major issues     |
+| Profile Detail   | ![screenshot](documentation/testing/lighthouse/profiledetail.png) | ![screenshot](documentation/testing/lighthouse/profiledetail-mobile.png) | Mobile Performance Issue     |
 | Edit Profile     | ![screenshot](documentation/testing/lighthouse/editprofile.png) | ![screenshot](documentation/testing/lighthouse/editprofile-mobile.png) | No major issues     |
 | Following List   | ![screenshot](documentation/testing/lighthouse/followinglist.png) | ![screenshot](documentation/testing/lighthouse/followinglist-mobile.png) | No major issues     |
 | Notifications List | ![screenshot](documentation/testing/lighthouse/notificationslist.png) | ![screenshot](documentation/testing/lighthouse/notificationslist-mobile.png) | No major issues     |
-| Profile List     | ![screenshot](documentation/testing/lighthouse-profilelist-desktop.png) | ![screenshot](documentation/testing/lighthouse-profilelist-mobile.png) | No major issues     |
-| Profile List     | ![screenshot](documentation/testing/lighthouse/profilelist.png) | ![screenshot](documentation/testing/lighthouse/profilelist-mobile.png) | No major issues     |
+| Profile List     | ![screenshot](documentation/testing/lighthouse/profilelist.png) | ![screenshot](documentation/testing/lighthouse/profilelist-mobile.png) | Mobile Performance Issue    |
 | Search Results   | ![screenshot](documentation/testing/lighthouse/searchresults.png) | ![screenshot](documentation/testing/lighthouse/searchresults-mobile.png) | No major issues     |
 
 ## Manual Testing
