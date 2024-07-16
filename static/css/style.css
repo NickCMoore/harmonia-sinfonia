@@ -225,3 +225,11 @@ h2 {
 .notification-bell.has-unread {
     color: red;
 }
+
+.alert-container {
+    margin-top: 20px;
+}
+
+.alert {
+    margin-bottom: 10px;
+}

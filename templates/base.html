@@ -58,7 +58,7 @@
                     <!-- Notifications Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle position-relative" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i id="notificationBell" class="bi bi-bell notification-bell" data-unread-count="{{ unread_count|default:0 }}"></i>
+                            <i id="notificationBell" class="bi bi-bell" data-unread-count="{{ unread_count|default:0 }}"></i>
                             <span id="unreadCount" class="badge bg-danger position-absolute top-0 start-100 translate-middle p-2 rounded-circle"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -134,6 +134,16 @@
 
     <!-- Main Content Area -->
     <div class="container main-content py-4">
+        <!-- Display Messages -->
+        {% if messages %}
+        <div class="alert-container">
+            {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
         {% block content %}{% endblock %}
     </div>
 
