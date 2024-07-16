@@ -66,4 +66,22 @@ class PostTests(TestCase):
         self.post.refresh_from_db()
         self.assertEqual(self.post.title, 'Updated Post')
 
+    def test_flag_post(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.post(reverse('posts:flag_post', args=[self.post.pk]), {
+            'reason': 'Inappropriate content'
+        })
+        self.assertEqual(response.status_code, 302)
+        self.post.refresh_from_db()
+        self.assertTrue(self.post.is_flagged)
+
+    def test_flag_comment(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.post(reverse('posts:flag_comment', args=[self.comment.pk]), {
+            'reason': 'Inappropriate content'
+        })
+        self.assertEqual(response.status_code, 302)
+        self.comment.refresh_from_db()
+        self.assertTrue(self.comment.is_flagged)
+
     
