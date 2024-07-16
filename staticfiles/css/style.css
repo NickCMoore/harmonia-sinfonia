@@ -188,7 +188,7 @@ h2 {
 
 .following-list h2 {
     margin-bottom: 2rem;
-    color: var (--deep-blue);
+    color: var(--deep-blue);
     font-size: 1.5em;
 }
 
