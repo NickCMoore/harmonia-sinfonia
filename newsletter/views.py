@@ -5,11 +5,15 @@ from .forms import NewsletterForm
 from django.core.exceptions import ValidationError
 
 class SubscribeView(View):
+    """Handle newsletter subscription views."""
+
     def get(self, request):
+        """Display the subscription form."""
         form = NewsletterForm()
         return render(request, 'newsletter/subscribe.html', {'form': form})
 
     def post(self, request):
+        """Handle the subscription form submission."""
         form = NewsletterForm(request.POST)
         if form.is_valid():
             try:
