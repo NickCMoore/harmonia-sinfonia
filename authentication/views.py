@@ -5,6 +5,9 @@ from django.contrib import messages
 from django.core.exceptions import ValidationError
 
 def login_view(request):
+    """
+    Handle the login process for users.
+    """
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -22,6 +25,9 @@ def login_view(request):
     return render(request, "authentication/login.html", {"form": form})
 
 def signup_view(request):
+    """
+    Handle the signup process for new users.
+    """
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -39,6 +45,9 @@ def signup_view(request):
     return render(request, "authentication/signup.html", {"form": form})
 
 def logout_view(request):
+    """
+    Handle the logout process for users.
+    """
     try:
         logout(request)
         messages.success(request, "Successfully logged out!")

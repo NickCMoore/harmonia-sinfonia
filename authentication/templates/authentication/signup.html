@@ -5,16 +5,20 @@
 {% block content %}
 <div class="container d-flex justify-content-center align-items-start min-vh-100 mt-5">
   <div class="col-md-8 col-lg-6">
+    <!-- Card Container for the Sign-Up Form -->
     <div class="card shadow-sm">
       <div class="card-body p-4">
         <h2 class="card-title text-center mb-4">Sign Up</h2>
+        <!-- Sign-Up Form -->
         <form method="post" action="{% url 'authentication:signup' %}">
           {% csrf_token %}
+          <!-- Non-field errors -->
           {% if form.non_field_errors %}
           <div class="alert alert-danger">
             {{ form.non_field_errors }}
           </div>
           {% endif %}
+          <!-- Username Field -->
           <div class="mb-4">
             {{ form.username.label_tag }}
             {{ form.username }}
@@ -27,6 +31,7 @@
             </div>
             {% endif %}
           </div>
+          <!-- Password Field -->
           <div class="mb-4">
             {{ form.password1.label_tag }}
             {{ form.password1 }}
@@ -39,6 +44,7 @@
             </div>
             {% endif %}
           </div>
+          <!-- Password Confirmation Field -->
           <div class="mb-4">
             {{ form.password2.label_tag }}
             {{ form.password2 }}
@@ -51,6 +57,7 @@
             </div>
             {% endif %}
           </div>
+          <!-- Submit Button -->
           <button type="submit" class="btn btn-primary w-100">Sign Up</button>
         </form>
       </div>
@@ -58,4 +65,3 @@
   </div>
 </div>
 {% endblock %}
-

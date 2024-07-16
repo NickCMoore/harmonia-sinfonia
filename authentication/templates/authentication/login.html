@@ -4,15 +4,19 @@
 
 {% block content %}
 <div class="container">
+  <!-- Login Form Container -->
   <div class="form-container">
     <h2>Login</h2>
+    <!-- Login Form -->
     <form method="post" action="{% url 'authentication:login' %}">
       {% csrf_token %}
+      <!-- Non-field errors -->
       {% if form.non_field_errors %}
       <div class="alert alert-danger">
         {{ form.non_field_errors }}
       </div>
       {% endif %}
+      <!-- Username Field -->
       <div class="form-group">
         <label for="id_username">Username</label>
         <input type="text" name="username" id="id_username" class="form-control" required>
@@ -22,6 +26,7 @@
         </div>
         {% endif %}
       </div>
+      <!-- Password Field -->
       <div class="form-group">
         <label for="id_password">Password</label>
         <input type="password" name="password" id="id_password" class="form-control" required>
@@ -31,6 +36,7 @@
         </div>
         {% endif %}
       </div>
+      <!-- Submit Button -->
       <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
     </form>
   </div>
