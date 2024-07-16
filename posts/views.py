@@ -157,4 +157,3 @@ def flag_comment(request, comment_id):
     else:
         form = FlagForm()
     return render(request, 'posts/flag_comment.html', {'form': form, 'comment': comment})
-

@@ -95,3 +95,19 @@ I validated my CSS file using the recommended CSS Jigsaw Validator.
 | File       | Result | Issue                            | Screenshot                                      | Notes                        |
 |------------|--------|----------------------------------|------------------------------------------------|------------------------------|
 | index.js  | Pass   | Not applicable    | ![JS Pass](documentation/testing/js-pass.png) | No issues  |
+
+### Python
+
+I used [CI Python Linter](https://pep8ci.herokuapp.com/) and built-in VSCode extensions (Flake8 and autopep8) to validate the Python files. The initial linting brought up several errors, which were primarily related to blank spaces and line spacing issues.
+
+![Initial PEP8 Issues CI Linter](documentation/testing/cipythonlinter.png)
+![Initial PEP8 Issues VSCode](documentation/testing/pythoninitialerrors.png)
+
+After resolving these initial issues, the remaining problems were mostly related to line length, which are advisory and do not necessarily impact functionality.
+
+![Improved PEP8 Issues](documentation/testing/pythonimprovederrors.png)
+
+Given that these line length issues are advisory, I did not refactor all instances where the code exceeded the recommended length. To avoid an excessive number of screenshots for each Python file, I have provided a summary screenshot from the 'Problems' tab within VSCode showing the remaining issues.
+
+
+
