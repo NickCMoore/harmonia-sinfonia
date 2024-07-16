@@ -591,26 +591,30 @@ To view the testing file, please click [here](/TESTING.md).
 
 ### Password and Secret Key Management
 
-- Environment Variables: All sensitive data, such as passwords and secret keys, are stored in environment variables to prevent exposure. The .gitignore file ensures these files are not tracked by version control.
+- **Environment Variables**: All sensitive data, such as passwords and secret keys, are stored in environment variables to prevent exposure. The `.gitignore` file ensures these files are not tracked by version control.
 
 ### User Authentication and Permissions
 
-- Role-Based Access Control: Uses Django’s authentication system to manage user roles and permissions. These views are protected using the @login_required decorator.
+- **Role-Based Access Control**: Uses Django’s authentication system to manage user roles and permissions. These views are protected using the `@login_required` decorator.
 
 ### Data Validation and Error Handling
 
-- Form Validation: User inputs are validated using Django forms to prevent malicious input.
-- Error Handling: Custom error pages provide user-friendly messages without exposing sensitive information.
+- **Form Validation**: User inputs are validated using Django forms to prevent malicious input.
+- **Error Handling**: Custom error pages provide user-friendly messages without exposing sensitive information.
 
 ### Deployment Security
 
-- DEBUG Mode: DEBUG is set to False in production to prevent detailed error pages from being displayed.
-- HTTPS: Ensures secure communication between server and client.
+- **DEBUG Mode**: DEBUG is set to False in production to prevent detailed error pages from being displayed.
+- **HTTPS**: Ensures secure communication between server and client.
 
 ### Sensitive Information Handling
 
-- Secret Management: Secrets like API keys and database credentials are managed through environment variables, not included in the repository.
-- Configuration Management: Settings are organised and separated for different environments.
+- **Secret Management**: Secrets like API keys and database credentials are managed through environment variables, not included in the repository.
+- **Configuration Management**: Settings are organised and separated for different environments.
+
+### CSRF Protection
+
+- **CSRF Tokens**: All forms that modify data include CSRF tokens, which protect against Cross-Site Request Forgery (CSRF) attacks. This token is automatically added by Django to every form and validated upon form submission, ensuring that requests are legitimate and come from authenticated users.
 
 These security measures aim to ensure that Harmonia Sinfonia protects user data, maintains secure interactions, and adheres to best practices in web security.
 
