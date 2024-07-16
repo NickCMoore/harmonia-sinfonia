@@ -28,3 +28,13 @@ class ProfileTests(TestCase):
         self.assertTemplateUsed(response, 'profiles/profile_detail.html')
         self.assertContains(response, self.profile.display_name)
 
+    def test_follow_unfollow(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.post(reverse('profiles:follow_unfollow', args=[self.user2.username]))
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(self.user in self.profile2.followers.all())
+
+        response = self.client.post(reverse('profiles:follow_unfollow', args=[self.user2.username]))
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(self.user in self.profile2.followers.all())
+
