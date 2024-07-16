@@ -2,16 +2,15 @@ from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from django.urls import reverse
 from profiles.models import Notification
-from newsletter.models import Subscriber 
-
+from newsletter.models import Subscriber
 
 class HomeTests(TestCase):
 
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create_user(username='testuser', password='password')
-        self.notification1 = Notification.objects.create(user=self.user, message="Your account has been suspended.")
-        self.notification2 = Notification.objects.create(user=self.user, message="Welcome to the platform!")
+        self.notification1 = Notification.objects.create(recipient=self.user, message="Your account has been suspended.")
+        self.notification2 = Notification.objects.create(recipient=self.user, message="Welcome to the platform!")
         self.subscriber = Subscriber.objects.create(email='subscriber@example.com')
 
     def test_home_view_authenticated(self):
