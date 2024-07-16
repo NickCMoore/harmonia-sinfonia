@@ -56,4 +56,14 @@ class PostTests(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertTrue(self.user in self.comment.upvotes.all())
 
+    def test_edit_post_view(self):
+        self.client.login(username='testuser', password='12345')
+        response = self.client.post(reverse('posts:edit_post', args=[self.post.pk]), {
+            'title': 'Updated Post',
+            'content': 'Updated content'
+        })
+        self.assertEqual(response.status_code, 302)
+        self.post.refresh_from_db()
+        self.assertEqual(self.post.title, 'Updated Post')
+
     
