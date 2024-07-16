@@ -152,9 +152,9 @@ def flag_comment(request, comment_id):
                 comment.save()
                 messages.success(request, "Comment flagged successfully.")
             except IntegrityError:
-                messages.error(
-                    request, "You have already flagged this comment.")
+                messages.error(request, "You have already flagged this comment.")
             return redirect('posts:post_detail', pk=comment.post.pk)
     else:
         form = FlagForm()
     return render(request, 'posts/flag_comment.html', {'form': form, 'comment': comment})
+
