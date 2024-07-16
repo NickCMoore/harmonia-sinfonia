@@ -138,39 +138,39 @@ The following table provides a detailed overview of the testing performed for ea
 
 | User Story | Test Scenario | Expected Outcome | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
-| As a new visitor, I can sign up so that I can join the platform and become a registered member. | Sign up with valid details | User is registered and redirected to home page | Pass | |
-| As a new site user, I would like to clearly see the site's purpose, so that I can decide whether or not to sign up. | Visit homepage and read about the platform | Clear information about the platform's purpose is displayed | Pass | |
+| As a new visitor, I can sign up so that I can join the platform and become a registered member. | Sign up with valid details | User is registered and redirected to home page |  | |
+| As a new site user, I would like to clearly see the site's purpose, so that I can decide whether or not to sign up. | Visit homepage and read about the platform | Clear information about the platform's purpose is displayed |  | |
 
 ### Registered Users (EPIC B)
 
 | User Story | Test Scenario | Expected Outcome | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
-| As a registered user, I can log in so that I can access my account and interact with the platform. | Log in with valid credentials | User is logged in and redirected to their feed | Pass | |
-| As a registered user, I can view posts so that I can see content shared by other orchestra members. | Navigate to feed | Posts from followed members are displayed | Pass | |
-| As a registered user, I can create new posts so that I can share my own content with the orchestra community. | Create a new post with text and image | Post is created and displayed in the feed | Pass | |
-| As a registered user, I can delete my own posts so that I can remove content I no longer want to share. | Delete a post created by the user | Post is removed from the feed | Pass | |
-| As a registered user, I can like posts so that I can express appreciation for content shared by others. | Like a post | Like count increases and like icon changes color | Pass | |
-| As a registered user, I can comment on posts so that I can engage in discussions with other members. | Comment on a post | Comment is added and displayed under the post | Pass | |
-| As a registered user, I can delete my own comments so that I can remove comments I no longer want to share. | Delete a comment made by the user | Comment is removed from the post | Pass | |
-| As a registered user, I can follow/unfollow members so that I can customise my feed and stay updated on specific members. | Follow/unfollow a member | Follow/unfollow action is successful, and feed updates accordingly | Pass | |
-| As a registered user, I can view the timestamp of posts so that I can see when the posts were made for context. | View a post's timestamp | Timestamp is displayed with the post | Pass | |
-| As a registered user, I can receive notifications so that I can stay updated on interactions with my content. | Like a post/comment, receive a message | Notifications are received and displayed | Pass | |
-| As a registered user, I can search for posts and members so that I can quickly find specific content or users. | Use search function | Relevant posts and members are displayed in search results | Pass | |
-| As a registered user, I can edit my profile so that I can update my personal information and preferences. | Edit profile information | Profile is updated with new information | Pass | |
-| As a registered user, I can like comments so that I can show appreciation for other members' comments. | Like a comment | Like count increases and like icon changes color | Pass | |
-| As a registered user, I can expand posts so that I can see the full content of a post without leaving the feed. | Expand a post | Full content of the post is displayed | Pass | |
-| As a registered user, I can send private messages so that I can communicate privately with other members. | Send a private message | Message is sent and displayed in the recipient's inbox | Pass | |
-| As a registered user, I can report or flag inappropriate content so that it can be reviewed by admins for action. | Report a post/comment | Content is flagged and added to admin review | Pass | |
+| As a registered user, I can log in so that I can access my account and interact with the platform. | Log in with valid credentials | User is logged in and redirected to their feed |  | |
+| As a registered user, I can view posts so that I can see content shared by other orchestra members. | Navigate to feed | Posts from followed members are displayed |  | |
+| As a registered user, I can create new posts so that I can share my own content with the orchestra community. | Create a new post with text and image | Post is created and displayed in the feed |  | |
+| As a registered user, I can delete my own posts so that I can remove content I no longer want to share. | Delete a post created by the user | Post is removed from the feed |  | |
+| As a registered user, I can like posts so that I can express appreciation for content shared by others. | Like a post | Like count increases and like icon changes color |  | |
+| As a registered user, I can comment on posts so that I can engage in discussions with other members. | Comment on a post | Comment is added and displayed under the post |  | |
+| As a registered user, I can delete my own comments so that I can remove comments I no longer want to share. | Delete a comment made by the user | Comment is removed from the post |  | |
+| As a registered user, I can follow/unfollow members so that I can customise my feed and stay updated on specific members. | Follow/unfollow a member | Follow/unfollow action is successful, and feed updates accordingly |  | |
+| As a registered user, I can view the timestamp of posts so that I can see when the posts were made for context. | View a post's timestamp | Timestamp is displayed with the post |  | |
+| As a registered user, I can receive notifications so that I can stay updated on interactions with my content. | Like a post/comment, receive a message | Notifications are received and displayed |  | |
+| As a registered user, I can search for posts and members so that I can quickly find specific content or users. | Use search function | Relevant posts and members are displayed in search results |  | |
+| As a registered user, I can edit my profile so that I can update my personal information and preferences. | Edit profile information | Profile is updated with new information |  | |
+| As a registered user, I can like comments so that I can show appreciation for other members' comments. | Like a comment | Like count increases and like icon changes color |  | |
+| As a registered user, I can expand posts so that I can see the full content of a post without leaving the feed. | Expand a post | Full content of the post is displayed |  | |
+| As a registered user, I can send private messages so that I can communicate privately with other members. | Send a private message | Message is sent and displayed in the recipient's inbox |  | |
+| As a registered user, I can report or flag inappropriate content so that it can be reviewed by admins for action. | Report a post/comment | Content is flagged and added to admin review |  | |
 
 ### Admin Users (EPIC C)
 
 | User Story | Test Scenario | Expected Outcome | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
-| As an admin, I can delete posts and comments so that I can remove inappropriate or violating content from the platform. | Delete a flagged post/comment | Post/comment is removed from the platform | Pass | |
-| As an admin, I can review flagged content so that I can manage and moderate reported content effectively. | Review flagged posts/comments | Admin can view and take action on flagged content | Pass | |
-| As an admin, I can unflag content so that I can dismiss flags for content that does not violate guidelines. | Unflag a post/comment | Content is unflagged and removed from the flagged list | Pass | |
-| As an admin, I can suspend user accounts so that I can temporarily block members who repeatedly violate guidelines. | Suspend a user account | User account is suspended and unable to log in | Pass | |
-| As an admin, I can use content moderation tools so that I can manage and filter content effectively on the platform. | Use content moderation tools | Tools function as expected and assist in content management | Pass | |
+| As an admin, I can delete posts and comments so that I can remove inappropriate or violating content from the platform. | Delete a flagged post/comment | Post/comment is removed from the platform |  | |
+| As an admin, I can review flagged content so that I can manage and moderate reported content effectively. | Review flagged posts/comments | Admin can view and take action on flagged content |  | |
+| As an admin, I can unflag content so that I can dismiss flags for content that does not violate guidelines. | Unflag a post/comment | Content is unflagged and removed from the flagged list |  | |
+| As an admin, I can suspend user accounts so that I can temporarily block members who repeatedly violate guidelines. | Suspend a user account | User account is suspended and unable to log in |  | |
+| As an admin, I can use content moderation tools so that I can manage and filter content effectively on the platform. | Use content moderation tools | Tools function as expected and assist in content management |  | |
 
 This comprehensive testing ensures that all user stories are fully implemented and functioning correctly, providing a robust and user-friendly platform for all members of Harmonia Sinfonia.
 
