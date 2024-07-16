@@ -37,3 +37,14 @@ The testing approach includes both manual and automated testing procedures. The 
 - **Bugs**: Tracking and resolving bugs to improve the stability and reliability of the platform.
 
 This structured approach was designed so that Harmonia Sinfonia meets the highest standards of quality, performance, and user satisfaction.
+
+## Validator Testing
+
+### HTML
+
+I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+
+| Page | W3C URL | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Home | [W3C]() | ![screenshot]() | Pass: No Errors |
+

@@ -58,8 +58,6 @@ INSTALLED_APPS = [
     'authentication',
     'comments',
     'feed',
-    'interactions',
-    'messaging',
     'posts',
     'profiles',
     'crispy_forms',
