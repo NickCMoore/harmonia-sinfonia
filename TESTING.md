@@ -13,6 +13,7 @@ Return back to the [README.md](README.md) file.
 3. [Lighthouse Testing](#lighthouse-testing)
 4. [Manual Testing](#manual-testing)
     - [User Story Testing](#user-story-testing)
+    - [Defensive Testing](#defensive-testing)
 6. [Automated Testing](#automated-testing)
 7. [Browser Compatibility](#browser-compatibility)
 8. [Responsiveness](#responsiveness)
@@ -174,7 +175,7 @@ The following table provides a detailed overview of the testing performed for ea
 
 This comprehensive testing ensures that all user stories are fully implemented and functioning correctly, providing a robust and user-friendly platform for all members of Harmonia Sinfonia.
 
-### Defensive Testing
+## Defensive Testing
 
 This document outlines the defensive programming tests conducted for the project. The tests are designed to ensure that the application handles edge cases and provides appropriate feedback to the user.
 
@@ -336,3 +337,15 @@ python3 manage.py test
 | Home         | Failed     |  ![screenshot](documentation/testing/automated-testing/home-fail.png)          | Some tests failed, due to issues in the URL patterns initially. |
 | Home         | Passed      |  ![screenshot](documentation/testing/automated-testing/home-pass.png)          | All tests passed successfully, ensuring that the post-related functionalities are working correctly. |
 | Authentication | Passed      | ![screenshot](documentation/testing/automated-testing/authentication.png)           | All tests passed successfully, confirming that the authentication functionalities are working correctly. |
+
+## Bugs
+
+### Resolved Bugs
+
+During the development of this project, all encountered bugs were resolved and documented through git commit messages labeled as 'FIX'. Although an alternative approach could have been to raise issues through GitHub, I opted to track bugs within the git commit history to maintain a streamlined project management process:
+
+![screenshot](documentation/bugs.png)
+
+### Unresolved Bugs
+
+Bell icon in notifications dropdown does not change colour based on whether there is an unread notification of not.
