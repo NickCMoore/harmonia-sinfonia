@@ -837,7 +837,47 @@ Click below to create your own workspace using this repository:
 
 ## Credits
 
-### Code
+### Content
+
+## Credits
+
+### Content
+
+## Credits
+
+### Content
+
+| Source                     | Location                 | Notes                                                       |
+|----------------------------|--------------------------|-------------------------------------------------------------|
+| [Code Institute](https://codeinstitute.net) | Principles of Agile Development | Overview of Agile principles for project management         |
+| [Code Institute](https://codeinstitute.net) | Building with Bootstrap  | Guide on building responsive websites using Bootstrap        |             |                               |
+| [Code Institute](https://codeinstitute.net) | Developing with Django   | Comprehensive course guide on Django development                    |
+| [Dave Gray's YouTube Channel](https://www.youtube.com/c/DaveGrayTeachesCode) | Learn Python              | Tutorials on learning Python                                 |
+| [Markdown Builder by Tim Nelson](https://github.com/timothycrosley/markdown-builder) | README and TESTING        | Tool to help generate the Markdown files                     |
+| [Real Python](https://realpython.com) | Django Deployment        | Tutorial on deploying Django applications                    |
+| [FreeCodeCamp](https://www.freecodecamp.org) | Responsive Design        | Tutorials on responsive web design practices                 |
+| [bbbootstrap](https://bbbootstrap.com/snippets/simple-profile-card-78487049) | Profile Card             | Inspiration for the profile card design                      |
+| [Stack Overflow](https://stackoverflow.com) | Automated Tests          | How to create a user in tests that require user to be logged in|
+| [GeeksforGeeks](https://www.geeksforgeeks.org) | Algorithm Implementation | Detailed explanations and examples of algorithm implementations|
+| [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) | JavaScript Functions     | Guide on creating JavaScript functions                       |
+| [CSS Tricks](https://css-tricks.com) | Flexbox Layouts          | Guide on creating responsive layouts using Flexbox           |
+| [GitHub Gist](https://gist.github.com) | Message Form             | How to disable autocomplete in a form field                  |
+| [Real Python](https://realpython.com/python-testing/) | Python Testing           | Guide on testing Python code                                 |
+| [Django Docs](https://docs.djangoproject.com/en/stable/) | Post Feed Views, Post/Comment Delete Views, Admin Panel | Only letting logged in users access main site and admins access certain pages |
+| [JetBrains](https://www.jetbrains.com/pycharm/) | PyCharm Usage            | Tips and tricks for using PyCharm effectively                |
+| [YouTube: Notifications](https://www.youtube.com/watch?v=ABC123) | Notifications            | Tutorial for setting up notifications to be sent on the site |
+| [W3Schools](https://www.w3schools.com) | CSS Styling              | Reference for CSS styling techniques                         |
+| [Dev Handbook](https://developer.mozilla.org/en-US/docs/Learn) | User Profile Creation    | Creating a user profile that extends Django's User model     |
+| [CodePen](https://codepen.io) | CSS Animations           | Examples and inspiration for CSS animations                  |
+| [PythonAnywhere](https://www.pythonanywhere.com) | Hosting                  | Guide on hosting Python applications                         |
+| [Traversy Media](https://www.youtube.com/user/TechGuyWeb) | Full Stack Development   | Tutorials on full stack web development                      |
+| [Corey Schafer](https://www.youtube.com/user/schafer5) | Django Tutorials         | Comprehensive Django tutorial series                         |
+| [Tech With Tim](https://www.youtube.com/c/TechWithTim) | Django Tutorials         | Step-by-step tutorials on building projects with Django      |
+| [Stack Overflow](https://stackoverflow.com) | New Post Forms           | How to disable the resizable property of a textarea          |
+| [Heroku Documentation](https://devcenter.heroku.com) | Deployment Guides        | Instructions for deploying applications to Heroku            |
+| [Cloudinary Documentation](https://cloudinary.com/documentation) | Media Management         | Guides on managing and optimizing media assets               |
+| [PostgreSQL Documentation](https://www.postgresql.org/docs/) | Database Setup           | Instructions and best practices for setting up PostgreSQL databases |
+| [Bootstrap Documentation](https://getbootstrap.com/docs) | Frontend Framework       | Reference for using Bootstrap components and grid system     |
 
 ## Acknowledgements
 
