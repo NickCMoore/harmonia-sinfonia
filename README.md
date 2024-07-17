@@ -30,7 +30,6 @@ To view the platform, please [click here](https://harmonia-sinfonia-ec3a4797e71d
 - [**Deployment**](#deployment)
 - [**Credits**](#credits)
   - [Code](#code)
-  - [Design](#design)
 - [**Acknowledgements**](#acknowledgements)
 
 ## Design & Planning
@@ -834,14 +833,6 @@ To directly open the project in Gitpod, you need the Gitpod browser extension. F
 Click below to create your own workspace using this repository:
 
 [Open in Gitpod](https://gitpod.io/#https://github.com/NickCMoore/harmonia-sinfonia)
-
-## Credits
-
-### Content
-
-## Credits
-
-### Content
 
 ## Credits
 
