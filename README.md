@@ -607,6 +607,18 @@ For a detailed view of the project management and task progression, refer to the
 ![Notifications Dropdown](/documentation/features/notificationsdropdown.png)
 ![Notifications List](/documentation/features/notificationslist.png)
 
+**Feedback**
+
+Throughout the site and in the admin panel, there are many feedback mechanisms designed to provide the user with instant feedback on their interactions with the site. The purpose is to make the user journey and experience as smooth and enjoyable as possible.
+
+![Feedback 1](/documentation/features/feedback1.png)
+![Feedback 2](/documentation/features/feedback2.png)
+![Feedback 3](/documentation/features/feedback3.png)
+![Feedback 4](/documentation/features/feedback4.png)
+![Feedback 5](/documentation/features/feedback5.png)
+![Feedback 6](/documentation/features/feedback6.png)
+![Feedback 7](/documentation/features/feedback7.png)
+
 **Admin**
 
 - Dashboard: For administrators to manage users, content, settings, and view analytics.
