@@ -528,55 +528,101 @@ For a detailed view of the project management and task progression, refer to the
 - Acts as the landing page with navigation links, login/sign-up options, and a brief introduction to the platform.
 - Features: Dynamic feed displaying recent posts, upcoming events, and featured content from users.
 
+![Home Page](/documentation/features/homepage.png)
+![Navbar](/documentation/features/navbar.png)
+![Subscribe](/documentation/features/subscribe.png)
+
+**Find Out More Page**
+
+- About Page: Information about the site, its purpose, and the organisation behind it.
+
+![Find Out More](/documentation/features/findoutmore.png)
+
 **Authentication Pages**
 
 - Login Page: Secure login form for returning users.
+
+![Login](/documentation/features/login.png)
+
 - Registration Page: Sign-up form for new users, including necessary fields for profile information.
-- Password Reset: Links and forms to assist users in resetting forgotten passwords.
+
+![Sign Up](/documentation/features/signup.png)
 
 **Profiles**
 
-- User Profile Page: Displays user details, their posts, and interactions.
+- User Profile Page: Displays user details, profile pic, bio, followers and profile editing button.
+
+![Profile View](/documentation/features/profileview.png)
+
 - Edit Profile: Allows users to update their profile information and manage settings.
+
+![Profile Edit](/documentation/features/profileedit.png)
+
+- Member Profiles Page: Page which shows all other orchestra members and the ability to view their profiles.
+
+![Member Profiles](/documentation/features/memberprofiles.png)
 
 **Posts and Interactions**
 
-- Posts Page: A list of posts made by users with options to create, edit, or delete posts if the user has the necessary permissions.
-- Single Post View: Detailed view of each post with comments, likes, and sharing options.
-- Create/Edit Post: Pages/forms where users can add new posts or edit existing ones.
+- Posts Page: A paginated overview list of posts made by users with options to create a new post, view other post likes and comments.
+
+![Posts List](/documentation/features/postsview.png)
+
+
+- Single Post View: Detailed view of each post with comments, likes, and flagging options.
+
+![Post Detail](/documentation/features/postsdetail.png)
+
+- Create/Edit Post: Pages/forms where users can add new posts.
+
+![Post Detail](/documentation/features/createnewpost.png)
+
+**Events**
+
+- List of all events currently run by the orchestra, with image, title, post date and learn more button.
+
+![Events List](/documentation/features/events.png)
+
+- Individual event page which gives an overview of the event, a picture, the option to like the event and the the date the event was posted on the site.
+
+![Events Detail](/documentation/features/eventsdetail.png)
 
 **Comments**
 
 - Linked on Post Pages: Users can view comments related to a post and add their own; editable if posted by the user.
+
+![Comments](/documentation/features/comments.png)
 
 **Search**
 
 - Search Page: Allows users to search for posts, other users, or content within the site.
 - Advanced Search Options: Filters to refine search results based on categories, date, relevance, etc.
 
-**Messaging**
-
-- Inbox: A private messaging system where users can view conversations.
-- Compose Message: Form to send new messages to other users.
-- Message View: Detailed view of conversation threads.
+![Search](/documentation/features/search.png)
 
 **Notifications**
 
 - Notifications Dropdown/Bar: Real-time updates on interactions like new messages, post likes, comments, or other relevant user activities.
 
-**Feed**
-
-- Dynamic Feed: Aggregates content from followed users and groups, showing recent posts, comments, and perhaps highlights of popular discussions or trending topics.
+![Notifications Dropdown](/documentation/features/notificationsdropdown.png)
+![Notifications List](/documentation/features/notificationslist.png)
 
 **Admin**
 
 - Dashboard: For administrators to manage users, content, settings, and view analytics.
+
+![Admin Dashboard](/documentation/features/admindash.png)
+
 - User Management: Admin tools for managing user accounts, permissions, and roles.
+
+![User Management](/documentation/features/usermanagement.png)
+
 - Content Moderation: Tools to review and manage posts, comments, and user submissions.
+
+![Content Moderation](/documentation/features/contentmod.png)
 
 ## Future Features
 
-- About Page: Information about the site, its purpose, and the organisation behind it.
 - Contact Page: Form to contact site administrators or support.
 - FAQs/Help Section: Helps users understand how to use different aspects of the platform.
 - Event Pages: For orchestra to post upcoming events or rehearsals with RSVP functionality.
