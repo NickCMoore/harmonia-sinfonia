@@ -133,7 +133,7 @@ I used Google Chrome's Lighthouse tool to perform audits on performance, accessi
 
 ### User Story Testing
 
-The following table provides a detailed overview of the testing performed for each user story to ensure that the platform meets all requirements and provides a seamless user experience. The tests were performed by an independent user (aside from the Admin User Story testing)
+The following table provides a detailed overview of the testing performed for each user story to ensure that the platform meets all requirements and provides a seamless user experience. The tests were performed by an independent user (aside from the Admin User Story testing). Feedback comments have been left as received.
 
 ### New Visitors (EPIC A)
 
