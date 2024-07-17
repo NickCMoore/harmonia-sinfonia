@@ -175,21 +175,25 @@ The following table provides a detailed overview of the testing performed for ea
 
 This comprehensive testing ensures that all user stories are fully implemented and functioning correctly, providing a robust and user-friendly platform for all members of Harmonia Sinfonia.
 
+## Defensive Testing
+
+The defensive testing was carried out by an independent tester in order to provide impartial testing.
+
 ### Home Page
 
 | User Action         | Expected Result            | Pass/Fail | Comments |
 |---------------------|----------------------------|-----------|----------|
 | Click on Logo       | Redirect to Home page      |     P     |          |
-| Invalid URL Access  | Show 404 error page        |     P?    |          |
+| Invalid URL Access  | Show 404 error page        |     P    |          |
 
 ### Sign Up
 
 | User Action                                     | Expected Result                           | Pass/Fail | Comments |
 |-------------------------------------------------|-------------------------------------------|-----------|----------|
 | Click on Sign Up button on home page            | Redirect to Sign Up page                  |     P     |          |
-| Enter invalid email address                     | Field validation error                    |     F     |  only needs @        |
+| Enter invalid username format                     | Field validation error                    |     P     |          |
 | Enter mismatched passwords                      | Field validation error                    |     P     |          |
-| Enter valid email and passwords                 | Redirect to feed page                     |     P     |  i was logged in as Susan but then the Olivia account overrode and I was logged in as Olivia. When log out and log back in , takes me to intro page, not post page        |
+| Enter valid email and passwords                 | Redirect to home page                     |     P     |  Was logged in as one user but then the another existing account overrode and was logged in as the other account. When log out and log back in , taken to intro page, not post page        |
 | Submit form without entering any data           | Field validation errors                   |    P      |          |
 
 ### Log In
@@ -197,17 +201,17 @@ This comprehensive testing ensures that all user stories are fully implemented a
 | User Action                 | Expected Result                            | Pass/Fail | Comments |
 |-----------------------------|--------------------------------------------|-----------|----------|
 | Click on the Login button on home page | Redirect to Login page |      P     | |
-| Enter invalid email address | Field validation error |     N/A      | Do you mean invalid username?|
+| Enter invalid username | Field validation error |     P      | |
 | Enter invalid password | Field validation error |     P     | Error says credentials are invalid - no differentiation between username or password error|
-| Enter valid credentials | Redirect to feed page |     F     | takes to home page|
-| Click Forgot Password | Redirect to password reset page |     F      |No option to choose forget password |
+| Enter valid credentials | Redirect to home page |     P     | takes to home page|
+| Click Forgot Password | Redirect to password reset page |     F      |No option to choose forget password. Dev comment - functionality not added in this release |
 
 ### Log Out
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Click Logout button          | Confirm logout prompt                                 |      F    |   Just logs me out     |
-| Click Confirm Logout button  | Redirect to home page                                 |      F    |    goes to home page      |
+| Click Logout button          | Confirm logout prompt                                 |      F    |   Just logs me out. Dev comment - functionality not added in this release    |
+| Click Confirm Logout button  | Redirect to home page                                 |      F    |    goes to home page. Dev comment - functionality not added in this release      |
 
 ### Profile
 
@@ -215,10 +219,10 @@ This comprehensive testing ensures that all user stories are fully implemented a
 |------------------------------|-------------------------------------------------------|-----------|----------|
 | Click on Profile button in nav | Redirect to Profile page                            |     P     |          |
 | Click on the Edit icon       | Redirect to edit profile page                         |     P     |          |
-| Click on the Back To Feed button | Redirect to feed page                             |     F     |          |
+| Click on the Back To Feed button | Redirect to feed page                             |     F     |  Dev comment - functionality not added in this release        |
 | Click on followers           | Redirect to followers list page                       |     ?     |  unable to test        |
 | Click on a post              | Redirect to the individual post page                  |    P      |          |
-| Click delete icon on own post | Redirect to post delete confirmation page           |     P?     | Deleted but no confirmation page         |
+| Click delete icon on own post | Redirect to post delete confirmation page           |     P     | Deleted but no confirmation page         |
 | Submit post form without content | Prompt to enter content                          |    P       |          |
 | Brute force URL to edit another user's profile | Error message                     |           |  Don't know how to test    |
 
@@ -226,8 +230,8 @@ This comprehensive testing ensures that all user stories are fully implemented a
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Click on follow button       | Follow user, button changes to unfollow               |      F    | Notification to profile owner |
-| Click on unfollow button     | Unfollow user, button changes to follow               |      F    |          |
+| Click on follow button       | Follow user, button changes to unfollow               |      F    | Notification to profile owner. Dev comment - functionality not added in this release |
+| Click on unfollow button. Dev comment - functionality not added in this release     | Unfollow user, button changes to follow               |      F    |          |
 
 ### Post Interaction
 
@@ -264,18 +268,18 @@ This comprehensive testing ensures that all user stories are fully implemented a
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
 | Click on Notifications button when no notifications | No action                        |   P        |          |
-| Click on Notifications button when there are notifications | Show notifications dropdown |           |   Couldnt test       |
+| Click on Notifications button when there are notifications | Show notifications dropdown |           |   Couldnt test. Dev tested and functional       |
 | Click on notification item   | Redirect to relevant page, remove notification from list |      F     |     Could not click on notification for any additional detail. No difference between read and unread     |
 
 ### Admin Panel
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Click on Admin Panel button in nav | Redirect to Admin Panel page with flagged posts list |           | Button only visible to admins |
+| Click on Admin Panel button in nav | Redirect to Admin Panel page with flagged posts list |           | Button only visible to admins. Dev comment - Opted to take admins to admin panel homepage and not flagged posts list |
 | Brute force URL to access Admin Panel as a regular user | Error message              |           |          |
-| Click delete icon on post in admin panel | Redirect to post delete confirmation page   |           |          |
-| Click flag button on flagged post | Unflag post, remove from admin panel               |           |          |
-| Click on user's name on flagged post | Redirect to user's profile                   |           |          |
+| Click delete icon on post in admin panel | Redirect to post delete confirmation page   |      P     |          |
+| Click flag button on flagged post | Unflag post, remove from admin panel               |     P      |          |
+| Click on user's name on flagged post | Redirect to user's profile                   |    F       |    Taken to user page      |
 
 ### Events
 
@@ -295,8 +299,6 @@ This comprehensive testing ensures that all user stories are fully implemented a
 | Access internal error page   | Show 500 error page                                   |           | Don't know how to test        |
 
 This comprehensive defensive programming test plan ensures that the Harmonia Sinfonia project handles edge cases effectively and provides appropriate feedback to the user, enhancing the overall user experience and maintaining application stability.
-
-
 
 ## Automated Testing
 
