@@ -332,6 +332,12 @@ python3 manage.py test
 | Home         | Passed      |  ![screenshot](documentation/testing/automated-testing/home-pass.png)          | All tests passed successfully, ensuring that the post-related functionalities are working correctly. |
 | Authentication | Passed      | ![screenshot](documentation/testing/automated-testing/authentication.png)           | All tests passed successfully, confirming that the authentication functionalities are working correctly. |
 
+### JavaScript Testing
+
+The following automated tests were run to test the index.js file using Jest. All tests passed.
+
+![JavaScript Testing](documentation/testing/automated-testing/jstest.png)
+
 ## Browser Compatibility
 
 | Browser                  | Screenshot                                        | Comments |
