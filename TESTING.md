@@ -338,6 +338,15 @@ python3 manage.py test
 | Home         | Passed      |  ![screenshot](documentation/testing/automated-testing/home-pass.png)          | All tests passed successfully, ensuring that the post-related functionalities are working correctly. |
 | Authentication | Passed      | ![screenshot](documentation/testing/automated-testing/authentication.png)           | All tests passed successfully, confirming that the authentication functionalities are working correctly. |
 
+## Browser Compatibility
+
+| Browser                  | Screenshot                                        | Comments |
+|------------------------------|-------------------------------------------------------|-----------|
+| Brave | ![screenshot](documentation/testing/browser-testing/brave.png)       |  Works well         |
+| Chrome | ![screenshot](documentation/testing/browser-testing/chrome.png)     |  Looks fine      |
+| Firefox |  ![screenshot](documentation/testing/browser-testing/firefox.png)    |  All fine      |
+| Edge |  ![screenshot](documentation/testing/browser-testing/edge.png)   |  Runs well      |
+
 ## Bugs
 
 ### Resolved Bugs
@@ -348,4 +357,4 @@ During the development of this project, all encountered bugs were resolved and d
 
 ### Unresolved Bugs
 
-Bell icon in notifications dropdown does not change colour based on whether there is an unread notification of not.
+- Bell icon in notifications dropdown does not change colour based on whether there is an unread notification of not.
