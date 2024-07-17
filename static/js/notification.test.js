@@ -10,3 +10,13 @@ document.body.innerHTML = `
 `;
 
 require('./notification.js');
+
+
+test('displays unread badge and adds class when there are unread notifications', () => {
+    const bellIcon = document.getElementById('notificationBell');
+    const unreadBadge = document.getElementById('unreadCount');
+
+    expect(unreadBadge.textContent).toBe('3');
+    expect(unreadBadge.style.display).toBe('inline-block');
+    expect(bellIcon.classList.contains('has-unread')).toBe(true);
+});
