@@ -20,3 +20,15 @@ test('displays unread badge and adds class when there are unread notifications',
     expect(unreadBadge.style.display).toBe('inline-block');
     expect(bellIcon.classList.contains('has-unread')).toBe(true);
 });
+
+test('hides unread badge and removes class when there are no unread notifications', () => {
+    const bellIcon = document.getElementById('notificationBell');
+    bellIcon.setAttribute('data-unread-count', '0');
+
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+
+    const unreadBadge = document.getElementById('unreadCount');
+
+    expect(unreadBadge.style.display).toBe('none');
+    expect(bellIcon.classList.contains('has-unread')).toBe(false);
+});
