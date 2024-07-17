@@ -174,6 +174,152 @@ The following table provides a detailed overview of the testing performed for ea
 
 This comprehensive testing ensures that all user stories are fully implemented and functioning correctly, providing a robust and user-friendly platform for all members of Harmonia Sinfonia.
 
+### Defensive Testing
+
+# Defensive Programming Test Plan
+
+This document outlines the defensive programming tests conducted for the project. The tests are designed to ensure that the application handles edge cases and provides appropriate feedback to the user.
+
+## Defensive Programming Tests
+
+### Home Page
+
+| User Action         | Expected Result            | Pass/Fail | Comments |
+|---------------------|----------------------------|-----------|----------|
+| Click on Logo       | Redirect to Home page      | Pass      |          |
+| Invalid URL Access  | Show 404 error page        | Pass      |          |
+
+### Sign Up
+
+| User Action                                     | Expected Result                           | Pass/Fail | Comments |
+|-------------------------------------------------|-------------------------------------------|-----------|----------|
+| Click on Sign Up button on home page            | Redirect to Sign Up page                  | Pass      |          |
+| Enter invalid email address                     | Field validation error                    | Pass      |          |
+| Enter mismatched passwords                      | Field validation error                    | Pass      |          |
+| Enter valid email and passwords                 | Redirect to feed page                     | Pass      |          |
+| Submit form without entering any data           | Field validation errors                   | Pass      |          |
+
+### Log In
+
+| User Action                 | Expected Result                            | Pass/Fail | Comments |
+|-----------------------------|--------------------------------------------|-----------|----------|
+| Click on the Login button on home page | Redirect to Login page | Pass | |
+| Enter invalid email address | Field validation error | Pass | |
+| Enter invalid password | Field validation error | Pass | |
+| Enter valid credentials | Redirect to feed page | Pass | |
+| Click Forgot Password | Redirect to password reset page | Pass | |
+
+### Password Reset
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Enter invalid email address  | Field validation error                                | Pass      |          |
+| Enter valid email address    | Send email with reset instructions                    | Pass      |          |
+
+### Log Out
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Click Logout button          | Confirm logout prompt                                 | Pass      |          |
+| Click Confirm Logout button  | Redirect to home page                                 | Pass      |          |
+
+### Profile
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Click on Profile button in nav | Redirect to Profile page                            | Pass      |          |
+| Click on the Edit icon       | Redirect to edit profile page                         | Pass      |          |
+| Click on the Back To Feed button | Redirect to feed page                            | Pass      |          |
+| Click on followers           | Redirect to followers list page                       | Pass      |          |
+| Click on a post              | Redirect to the individual post page                  | Pass      |          |
+| Click delete icon on own post | Redirect to post delete confirmation page           | Pass      |          |
+| Submit post form without content | Prompt to enter content                          | Pass      |          |
+| Brute force URL to edit another user's profile | Error message                     | Pass      |          |
+
+### Follow/Unfollow
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Click on follow button       | Follow user, button changes to unfollow               | Pass      | Notification to profile owner |
+| Click on unfollow button     | Unfollow user, button changes to follow               | Pass      |          |
+
+### Post Interaction
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Click on a post              | Redirect to the individual post page                  | Pass      |          |
+| Click the like button on a post | Like the post, increase like count                 | Pass      | Notification to post author |
+| Click the like button on a liked post | Unlike the post, decrease like count        | Pass      |          |
+| Click flag button            | Show message, flag post for review                    | Pass      | Post added to admin review list |
+| Submit post form without content | Prompt to enter content                          | Pass      |          |
+| Brute force URL to delete another user's post | Error message                     | Pass      |          |
+
+### Comment Interaction
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Type text into comment form and click send | Create comment under post               | Pass      | Notification to post author |
+| Click like button on a comment | Like the comment, increase like count               | Pass      | Notification to comment author |
+| Click like button on a liked comment | Unlike the comment, decrease like count   | Pass      |          |
+| Click delete icon on own comment | Redirect to comment delete confirmation page  | Pass      |          |
+| Brute force URL to delete another user's comment | Error message               | Pass      |          |
+| Click edit icon on own comment | Redirect to comment edit page                     | Pass      |          |
+| Brute force URL to edit another user's comment | Error message                    | Pass      |          |
+
+### Search
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Type text into search form and click search icon | Show results for users and posts       | Pass      |          |
+| Click on a user's name in search results | Redirect to user's profile                  | Pass      |          |
+
+### Notifications
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Click on Notifications button when no notifications | No action                        | Pass      |          |
+| Click on Notifications button when there are notifications | Show notifications dropdown | Pass      |          |
+| Click on notification item   | Redirect to relevant page, remove notification from list | Pass |          |
+
+### Admin Panel
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Click on Admin Panel button in nav | Redirect to Admin Panel page with flagged posts list | Pass | Button only visible to admins |
+| Brute force URL to access Admin Panel as a regular user | Error message              | Pass      |          |
+| Click delete icon on post in admin panel | Redirect to post delete confirmation page   | Pass      |          |
+| Click flag button on flagged post | Unflag post, remove from admin panel               | Pass      |          |
+| Click on user's name on flagged post | Redirect to user's profile                   | Pass      |          |
+
+### Events
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Click on Events link in nav  | Redirect to Events page                               | Pass      |          |
+| Click on an event            | Redirect to event detail page                         | Pass      |          |
+| Click like button on an event | Like the event, increase like count                 | Pass      | Notification to event author |
+| Click like button on a liked event | Unlike the event, decrease like count         | Pass      |          |
+
+### Messaging
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Click on Messages button in nav | Redirect to inbox                                 | Pass      |          |
+| Click on New Conversation button | Redirect to create message thread page           | Pass      |          |
+| Type valid username and click continue | Redirect to message thread with user       | Pass      |          |
+| Type invalid username and click continue | Show error message                       | Pass      |          |
+| Send message in thread       | Send message to other user                           | Pass      | Notification to recipient |
+| Click on other user's name in thread | Redirect to user's profile                   | Pass      |          |
+
+### General Error Handling
+
+| User Action                  | Expected Result                                       | Pass/Fail | Comments |
+|------------------------------|-------------------------------------------------------|-----------|----------|
+| Access non-existent page     | Show 404 error page                                   | Pass      |          |
+| Access forbidden page        | Show 403 error page                                   | Pass      |          |
+| Access internal error page   | Show 500 error page                                   | Pass      |          |
+
+
 ## Automated Testing
 
 Automated testing is a crucial part of ensuring the stability and reliability of the Harmonia Sinfonia platform. This section outlines the automated tests implemented for various parts of the application, along with the results.
