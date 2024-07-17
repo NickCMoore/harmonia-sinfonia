@@ -150,7 +150,7 @@ The following table provides a detailed overview of the testing performed for ea
 | As a registered user, I can view posts so that I can see content shared by other orchestra members. | Navigate to feed | Posts from followed members are displayed |  | |
 | As a registered user, I can create new posts so that I can share my own content with the orchestra community. | Create a new post with text and image | Post is created and displayed in the feed |  | |
 | As a registered user, I can delete my own posts so that I can remove content I no longer want to share. | Delete a post created by the user | Post is removed from the feed |  | |
-| As a registered user, I can like posts so that I can express appreciation for content shared by others. | Like a post | Like count increases and like icon changes color |  | |
+| As a registered user, I can like posts so that I can express appreciation for content shared by others. | Like a post | Like count increases and like icon changes colour |  | |
 | As a registered user, I can comment on posts so that I can engage in discussions with other members. | Comment on a post | Comment is added and displayed under the post |  | |
 | As a registered user, I can delete my own comments so that I can remove comments I no longer want to share. | Delete a comment made by the user | Comment is removed from the post |  | |
 | As a registered user, I can follow/unfollow members so that I can customise my feed and stay updated on specific members. | Follow/unfollow a member | Follow/unfollow action is successful, and feed updates accordingly |  | |
@@ -158,7 +158,7 @@ The following table provides a detailed overview of the testing performed for ea
 | As a registered user, I can receive notifications so that I can stay updated on interactions with my content. | Like a post/comment, receive a message | Notifications are received and displayed |  | |
 | As a registered user, I can search for posts and members so that I can quickly find specific content or users. | Use search function | Relevant posts and members are displayed in search results |  | |
 | As a registered user, I can edit my profile so that I can update my personal information and preferences. | Edit profile information | Profile is updated with new information |  | |
-| As a registered user, I can like comments so that I can show appreciation for other members' comments. | Like a comment | Like count increases and like icon changes color |  | |
+| As a registered user, I can like comments so that I can show appreciation for other members' comments. | Like a comment | Like count increases and like icon changes colour |  | |
 | As a registered user, I can expand posts so that I can see the full content of a post without leaving the feed. | Expand a post | Full content of the post is displayed |  | |
 | As a registered user, I can send private messages so that I can communicate privately with other members. | Send a private message | Message is sent and displayed in the recipient's inbox |  | |
 | As a registered user, I can report or flag inappropriate content so that it can be reviewed by admins for action. | Report a post/comment | Content is flagged and added to admin review |  | |
@@ -368,4 +368,4 @@ During the development of this project, all encountered bugs were resolved and d
 
 ### Unresolved Bugs
 
-- Bell icon in notifications dropdown does not change colour based on whether there is an unread notification of not.
+- Notification Bell Icon Colour: The bell icon in the notifications dropdown does not change colour to indicate whether there are unread notifications or not. This functionality was planned but not fully implemented. Future updates will address this.

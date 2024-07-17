@@ -496,7 +496,7 @@ For a detailed view of the project management and task progression, refer to the
    - Git: Used for version control (git add, git commit, git push).
    - GitHub: Used for secure online code storage.
    - VSCode: Used as a cloud-based IDE for development. 
-   
+
 - autopep8 & Flake8 : Used for automatically formatting Python code to conform to PEP 8.
 
 ### Deployment and Hosting
@@ -580,6 +580,8 @@ For a detailed view of the project management and task progression, refer to the
 - Event Pages: For orchestra to post upcoming events or rehearsals with RSVP functionality.
 
 ## Bugs
+
+To view information about bug tracking and management, please click [here](/TESTING.md).
 
 ## Testing
 
