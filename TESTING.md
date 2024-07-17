@@ -342,6 +342,17 @@ python3 manage.py test
 
 | Browser                  | Screenshot                                        | Comments |
 |------------------------------|-------------------------------------------------------|-----------|
+| Mobile (iPhone 12 Pro) | ![screenshot](documentation/testing/responsiveness/Mobile-iphone12Pro.png)       |  390 x 844 - Pass        |
+| Tablet (iPad Pro) | ![screenshot](documentation/testing/responsiveness/Tablet-iPadPro.png)     |  1024 x 1366 - Pass      |
+| Desktop |  ![screenshot](documentation/testing/responsiveness/Desktop.png)    |  1280 x 1024 - Pass      |
+| Larger screen (4K) |  ![screenshot](documentation/testing/responsiveness/Large-screen-4K.png)   |  1920 X 1080 - Pass      |
+
+## Responsiveness
+
+The site was tested at various resolutions on differing devices. Examples of this can be found below utilising DevTools:
+
+| Device                  | Screenshot                                        | Resolution |
+|------------------------------|-------------------------------------------------------|-----------|
 | Brave | ![screenshot](documentation/testing/browser-testing/brave.png)       |  Works well         |
 | Chrome | ![screenshot](documentation/testing/browser-testing/chrome.png)     |  Looks fine      |
 | Firefox |  ![screenshot](documentation/testing/browser-testing/firefox.png)    |  All fine      |
