@@ -175,101 +175,97 @@ The following table provides a detailed overview of the testing performed for ea
 
 This comprehensive testing ensures that all user stories are fully implemented and functioning correctly, providing a robust and user-friendly platform for all members of Harmonia Sinfonia.
 
-## Defensive Testing
-
-This document outlines the defensive programming tests conducted for the project. The tests are designed to ensure that the application handles edge cases and provides appropriate feedback to the user.
-
 ### Home Page
 
 | User Action         | Expected Result            | Pass/Fail | Comments |
 |---------------------|----------------------------|-----------|----------|
-| Click on Logo       | Redirect to Home page      |           |          |
-| Invalid URL Access  | Show 404 error page        |           |          |
+| Click on Logo       | Redirect to Home page      |     P     |          |
+| Invalid URL Access  | Show 404 error page        |     P?    |          |
 
 ### Sign Up
 
 | User Action                                     | Expected Result                           | Pass/Fail | Comments |
 |-------------------------------------------------|-------------------------------------------|-----------|----------|
-| Click on Sign Up button on home page            | Redirect to Sign Up page                  |           |          |
-| Enter invalid email address                     | Field validation error                    |           |          |
-| Enter mismatched passwords                      | Field validation error                    |           |          |
-| Enter valid email and passwords                 | Redirect to feed page                     |           |          |
-| Submit form without entering any data           | Field validation errors                   |           |          |
+| Click on Sign Up button on home page            | Redirect to Sign Up page                  |     P     |          |
+| Enter invalid email address                     | Field validation error                    |     F     |  only needs @        |
+| Enter mismatched passwords                      | Field validation error                    |     P     |          |
+| Enter valid email and passwords                 | Redirect to feed page                     |     P     |  i was logged in as Susan but then the Olivia account overrode and I was logged in as Olivia. When log out and log back in , takes me to intro page, not post page        |
+| Submit form without entering any data           | Field validation errors                   |    P      |          |
 
 ### Log In
 
 | User Action                 | Expected Result                            | Pass/Fail | Comments |
 |-----------------------------|--------------------------------------------|-----------|----------|
-| Click on the Login button on home page | Redirect to Login page |           | |
-| Enter invalid email address | Field validation error |           | |
-| Enter invalid password | Field validation error |           | |
-| Enter valid credentials | Redirect to feed page |           | |
-| Click Forgot Password | Redirect to password reset page |           | |
+| Click on the Login button on home page | Redirect to Login page |      P     | |
+| Enter invalid email address | Field validation error |     N/A      | Do you mean invalid username?|
+| Enter invalid password | Field validation error |     P     | Error says credentials are invalid - no differentiation between username or password error|
+| Enter valid credentials | Redirect to feed page |     F     | takes to home page|
+| Click Forgot Password | Redirect to password reset page |     F      |No option to choose forget password |
 
 ### Log Out
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Click Logout button          | Confirm logout prompt                                 |           |          |
-| Click Confirm Logout button  | Redirect to home page                                 |           |          |
+| Click Logout button          | Confirm logout prompt                                 |      F    |   Just logs me out     |
+| Click Confirm Logout button  | Redirect to home page                                 |      F    |    goes to home page      |
 
 ### Profile
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Click on Profile button in nav | Redirect to Profile page                            |           |          |
-| Click on the Edit icon       | Redirect to edit profile page                         |           |          |
-| Click on the Back To Feed button | Redirect to feed page                            |           |          |
-| Click on followers           | Redirect to followers list page                       |           |          |
-| Click on a post              | Redirect to the individual post page                  |           |          |
-| Click delete icon on own post | Redirect to post delete confirmation page           |           |          |
-| Submit post form without content | Prompt to enter content                          |           |          |
-| Brute force URL to edit another user's profile | Error message                     |           |          |
+| Click on Profile button in nav | Redirect to Profile page                            |     P     |          |
+| Click on the Edit icon       | Redirect to edit profile page                         |     P     |          |
+| Click on the Back To Feed button | Redirect to feed page                             |     F     |          |
+| Click on followers           | Redirect to followers list page                       |     ?     |  unable to test        |
+| Click on a post              | Redirect to the individual post page                  |    P      |          |
+| Click delete icon on own post | Redirect to post delete confirmation page           |     P?     | Deleted but no confirmation page         |
+| Submit post form without content | Prompt to enter content                          |    P       |          |
+| Brute force URL to edit another user's profile | Error message                     |           |  Don't know how to test    |
 
 ### Follow/Unfollow
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Click on follow button       | Follow user, button changes to unfollow               |           | Notification to profile owner |
-| Click on unfollow button     | Unfollow user, button changes to follow               |           |          |
+| Click on follow button       | Follow user, button changes to unfollow               |      F    | Notification to profile owner |
+| Click on unfollow button     | Unfollow user, button changes to follow               |      F    |          |
 
 ### Post Interaction
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Click on a post              | Redirect to the individual post page                  |           |          |
-| Click the like button on a post | Like the post, increase like count                 |           | Notification to post author |
-| Click the like button on a liked post | Unlike the post, decrease like count        |           |          |
-| Click flag button            | Show message, flag post for review                    |           | Post added to admin review list |
-| Submit post form without content | Prompt to enter content                          |           |          |
-| Brute force URL to delete another user's post | Error message                     |           |          |
+| Click on a post              | Redirect to the individual post page                  |     P     |          |
+| Click the like button on a post | Like the post, increase like count                 |     P     | Notification to post author |
+| Click the like button on a liked post | Unlike the post, decrease like count         |      P    |          |
+| Click flag button            | Show message, flag post for review                    |      P    | Post added to admin review list |
+| Submit post form without content | Prompt to enter content                           |       P   |          |
+| Brute force URL to delete another user's post | Error message                     |           |  Dont know how to test        |
 
 ### Comment Interaction
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Type text into comment form and click send | Create comment under post               |           | Notification to post author |
-| Click like button on a comment | Like the comment, increase like count               |           | Notification to comment author |
-| Click like button on a liked comment | Unlike the comment, decrease like count   |           |          |
-| Click delete icon on own comment | Redirect to comment delete confirmation page  |           |          |
-| Brute force URL to delete another user's comment | Error message               |           |          |
-| Click edit icon on own comment | Redirect to comment edit page                     |           |          |
-| Brute force URL to edit another user's comment | Error message                    |           |          |
+| Type text into comment form and click send | Create comment under post               |   P       | Notification to post author |
+| Click like button on a comment | Like the comment, increase like count               |    P       | Increases votes, not likes. Notification to comment author |
+| Click like button on a liked comment | Unlike the comment, decrease like count   |      P     |          |
+| Click delete icon on own comment | Redirect to comment delete confirmation page  |      P     |    No confirmation, just deleted      |
+| Brute force URL to delete another user's comment | Error message               |           |     Dont know how to test     |
+| Click edit icon on own comment | Redirect to comment edit page                     |    P       |          |
+| Brute force URL to edit another user's comment | Error message                    |           |  Dont know how to test        |
 
 ### Search
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Type text into search form and click search icon | Show results for users and posts       |           |          |
-| Click on a user's name in search results | Redirect to user's profile                  |           |          |
+| Type text into search form and click search icon | Show results for users and posts       |     P      |          |
+| Click on a user's name in search results | Redirect to user's profile                  |      P     |          |
 
 ### Notifications
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Click on Notifications button when no notifications | No action                        |           |          |
-| Click on Notifications button when there are notifications | Show notifications dropdown |           |          |
-| Click on notification item   | Redirect to relevant page, remove notification from list |           |          |
+| Click on Notifications button when no notifications | No action                        |   P        |          |
+| Click on Notifications button when there are notifications | Show notifications dropdown |           |   Couldnt test       |
+| Click on notification item   | Redirect to relevant page, remove notification from list |      F     |     Could not click on notification for any additional detail. No difference between read and unread     |
 
 ### Admin Panel
 
@@ -285,20 +281,21 @@ This document outlines the defensive programming tests conducted for the project
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Click on Events link in nav  | Redirect to Events page                               |           |          |
-| Click on an event            | Redirect to event detail page                         |           |          |
-| Click like button on an event | Like the event, increase like count                 |           | Notification to event author |
-| Click like button on a liked event | Unlike the event, decrease like count         |           |          |
+| Click on Events link in nav  | Redirect to Events page                               |   P       |          |
+| Click on an event            | Redirect to event detail page                         |   P       |          |
+| Click like button on an event | Like the event, increase like count                  |    P      | Notification to event author |
+| Click like button on a liked event | Unlike the event, decrease like count         |     P      |   I note total likes are shown on events but not on posts       |
 
 ### General Error Handling
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Access non-existent page     | Show 404 error page                                   |           |          |
-| Access forbidden page        | Show 403 error page                                   |           |          |
-| Access internal error page   | Show 500 error page                                   |           |          |
+| Access non-existent page     | Show 404 error page                                   |           | Don't know how to test         |
+| Access forbidden page        | Show 403 error page                                   |           | Don't know how to test         |
+| Access internal error page   | Show 500 error page                                   |           | Don't know how to test        |
 
 This comprehensive defensive programming test plan ensures that the Harmonia Sinfonia project handles edge cases effectively and provides appropriate feedback to the user, enhancing the overall user experience and maintaining application stability.
+
 
 
 ## Automated Testing
