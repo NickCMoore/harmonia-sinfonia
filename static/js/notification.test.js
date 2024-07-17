@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-require('./notification.js');
+require('./index.js');
 
 test('displays unread badge and adds class when there are unread notifications', () => {
     document.body.innerHTML = `
