@@ -579,17 +579,17 @@ For a detailed view of the project management and task progression, refer to the
 
 **Events**
 
-- List of all events currently run by the orchestra, with image, title, post date and learn more button.
+- Events List: Displays all current events run by the orchestra, including images, titles, post dates, and a learn more button.
 
 ![Events List](/documentation/features/events.png)
 
-- Individual event page which gives an overview of the event, a picture, the option to like the event and the the date the event was posted on the site.
+- Individual Event Page: Provides an overview of the event, a picture, an option to like the event, and the date the event was posted.
 
 ![Events Detail](/documentation/features/eventsdetail.png)
 
 **Comments**
 
-- Linked on Post Pages: Users can view comments related to a post and add their own; editable if posted by the user.
+- Linked on Post Pages: Allows users to view and add comments on posts, with editing capabilities for the author.
 
 ![Comments](/documentation/features/comments.png)
 
@@ -609,7 +609,7 @@ For a detailed view of the project management and task progression, refer to the
 
 **Feedback**
 
-Throughout the site and in the admin panel, there are many feedback mechanisms designed to provide the user with instant feedback on their interactions with the site. The purpose is to make the user journey and experience as smooth and enjoyable as possible.
+Various feedback mechanisms provide users with instant responses to their interactions, enhancing the user experience.
 
 ![Feedback 1](/documentation/features/feedback1.png)
 ![Feedback 2](/documentation/features/feedback2.png)
@@ -840,5 +840,9 @@ Click below to create your own workspace using this repository:
 ### Code
 
 ## Acknowledgements
+
+Particular thanks goes to my mentor, Gareth McGirr, for his invaluable feedback throughout the project and also to my partner, Susan, for taking part in the testing process.
+
+Thanks also to all the developers and communities behind the tools and libraries used in this project.
 
 [Back to top](#table-of-contents)
