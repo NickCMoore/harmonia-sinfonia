@@ -10,15 +10,16 @@ from django.core.paginator import Paginator
 
 
 def post_list_view(request):
+    """Display a list of posts with pagination."""
     posts = Post.objects.all().order_by('-posted_on')
     paginator = Paginator(posts, 10)
-
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'posts/post_list.html', {'page_obj': page_obj})
 
 
 def post_detail_view(request, pk):
+    """Display the details of a specific post and handle comments."""
     post = get_object_or_404(Post, pk=pk)
     comments = post.comments.all()
     if request.method == 'POST':
@@ -37,12 +38,14 @@ def post_detail_view(request, pk):
 
 @login_required
 def create_post_view(request):
+    """Handle the creation of a new post."""
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
             post.save()
+            messages.success(request, 'Post created successfully.')
             return redirect('posts:post_list')
     else:
         form = PostForm()
@@ -51,6 +54,7 @@ def create_post_view(request):
 
 @login_required
 def delete_post_view(request, pk):
+    """Handle the deletion of a post."""
     post = get_object_or_404(Post, pk=pk)
     if post.user == request.user:
         post.delete()
@@ -62,6 +66,7 @@ def delete_post_view(request, pk):
 
 @login_required
 def toggle_like_view(request, pk):
+    """Handle the liking and unliking of a post."""
     post = get_object_or_404(Post, pk=pk)
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
@@ -74,6 +79,7 @@ def toggle_like_view(request, pk):
 
 @login_required
 def delete_comment_view(request, pk):
+    """Handle the deletion of a comment."""
     comment = get_object_or_404(Comment, pk=pk)
     if request.user == comment.user:
         comment.delete()
@@ -85,16 +91,20 @@ def delete_comment_view(request, pk):
 
 @login_required
 def toggle_upvote_comment(request, pk):
+    """Handle the upvoting and removing upvote from a comment."""
     comment = get_object_or_404(Comment, pk=pk)
     if request.user in comment.upvotes.all():
         comment.upvotes.remove(request.user)
+        messages.success(request, 'You removed your upvote.')
     else:
         comment.upvotes.add(request.user)
+        messages.success(request, 'You upvoted the comment.')
     return redirect('posts:post_detail', pk=comment.post.pk)
 
 
 @login_required
 def edit_post_view(request, pk):
+    """Handle the editing of a post."""
     post = get_object_or_404(Post, pk=pk)
     if post.user != request.user:
         return HttpResponseForbidden("You are not allowed to edit this post.")
@@ -111,6 +121,7 @@ def edit_post_view(request, pk):
 
 @login_required
 def flag_post(request, post_id):
+    """Handle the flagging of a post."""
     post = get_object_or_404(Post, id=post_id)
     if request.method == 'POST':
         form = FlagForm(request.POST)
@@ -136,6 +147,7 @@ def flag_post(request, post_id):
 
 @login_required
 def flag_comment(request, comment_id):
+    """Handle the flagging of a comment."""
     comment = get_object_or_404(Comment, id=comment_id)
     if request.method == 'POST':
         form = FlagForm(request.POST)
