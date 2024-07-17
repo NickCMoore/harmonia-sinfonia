@@ -2,6 +2,8 @@
 
 Welcome to Harmonia Sinfonia, a dedicated platform designed to connect orchestra members in a seamless and engaging way. As a musician, I understand the unique challenges faced by orchestra members in staying connected and informed outside of rehearsals and performances.
 
+To view the platform, please ![click here](https://harmonia-sinfonia-ec3a4797e71d.herokuapp.com/).
+
 ## Table of Contents
 
 - [**Overview**](#overview)
