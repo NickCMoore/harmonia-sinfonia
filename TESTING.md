@@ -211,7 +211,7 @@ The defensive testing was carried out by an independent tester in order to provi
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
 | Click Logout button          | Confirm logout prompt                                 |      F    |   Just logs me out. Dev comment - functionality not added in this release    |
-| Click Confirm Logout button  | Redirect to home page                                 |      F    |    goes to home page. Dev comment - functionality not added in this release      |
+| Click Confirm Logout button  | Redirect to home page                                 |      F    |    Goes to home page. Dev comment - functionality not added in this release      |
 
 ### Profile
 
@@ -220,18 +220,17 @@ The defensive testing was carried out by an independent tester in order to provi
 | Click on Profile button in nav | Redirect to Profile page                            |     P     |          |
 | Click on the Edit icon       | Redirect to edit profile page                         |     P     |          |
 | Click on the Back To Feed button | Redirect to feed page                             |     F     |  Dev comment - functionality not added in this release        |
-| Click on followers           | Redirect to followers list page                       |     ?     |  unable to test        |
+| Click on followers           | Redirect to followers list page                       |     P     |  unable to test. Dev comment - tested and working        |
 | Click on a post              | Redirect to the individual post page                  |    P      |          |
 | Click delete icon on own post | Redirect to post delete confirmation page           |     P     | Deleted but no confirmation page         |
 | Submit post form without content | Prompt to enter content                          |    P       |          |
-| Brute force URL to edit another user's profile | Error message                     |           |  Don't know how to test    |
 
 ### Follow/Unfollow
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
 | Click on follow button       | Follow user, button changes to unfollow               |      F    | Notification to profile owner. Dev comment - functionality not added in this release |
-| Click on unfollow button. Dev comment - functionality not added in this release     | Unfollow user, button changes to follow               |      F    |          |
+| Click on unfollow button.      | Unfollow user, button changes to follow               |      F    | Dev comment - functionality not added in this release         |
 
 ### Post Interaction
 
@@ -242,7 +241,6 @@ The defensive testing was carried out by an independent tester in order to provi
 | Click the like button on a liked post | Unlike the post, decrease like count         |      P    |          |
 | Click flag button            | Show message, flag post for review                    |      P    | Post added to admin review list |
 | Submit post form without content | Prompt to enter content                           |       P   |          |
-| Brute force URL to delete another user's post | Error message                     |           |  Dont know how to test        |
 
 ### Comment Interaction
 
@@ -252,9 +250,7 @@ The defensive testing was carried out by an independent tester in order to provi
 | Click like button on a comment | Like the comment, increase like count               |    P       | Increases votes, not likes. Notification to comment author |
 | Click like button on a liked comment | Unlike the comment, decrease like count   |      P     |          |
 | Click delete icon on own comment | Redirect to comment delete confirmation page  |      P     |    No confirmation, just deleted      |
-| Brute force URL to delete another user's comment | Error message               |           |     Dont know how to test     |
 | Click edit icon on own comment | Redirect to comment edit page                     |    P       |          |
-| Brute force URL to edit another user's comment | Error message                    |           |  Dont know how to test        |
 
 ### Search
 
@@ -268,18 +264,17 @@ The defensive testing was carried out by an independent tester in order to provi
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
 | Click on Notifications button when no notifications | No action                        |   P        |          |
-| Click on Notifications button when there are notifications | Show notifications dropdown |           |   Couldnt test. Dev tested and functional       |
-| Click on notification item   | Redirect to relevant page, remove notification from list |      F     |     Could not click on notification for any additional detail. No difference between read and unread     |
+| Click on Notifications button when there are notifications | Show notifications dropdown |           |   Couldn't test. Dev tested and functional       |
+| Click on notification item in dropdown   | Redirect to relevant page, remove notification from list |      F     |     Could not click on notification for any additional detail. No difference between read and unread. Dev comment - tested clicking on notifications from dropdown and works. No t possible to click on notifications to get more detail at this stage     |
 
-### Admin Panel
+### Admin Panel (dev tested)
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Click on Admin Panel button in nav | Redirect to Admin Panel page with flagged posts list |           | Button only visible to admins. Dev comment - Opted to take admins to admin panel homepage and not flagged posts list |
-| Brute force URL to access Admin Panel as a regular user | Error message              |           |          |
+| Click on Admin Panel button in nav | Redirect to Admin Panel page with flagged posts list |     P      | Button only visible to admins. Dev comment - Opted to take admins to admin panel homepage and not flagged posts list |
 | Click delete icon on post in admin panel | Redirect to post delete confirmation page   |      P     |          |
 | Click flag button on flagged post | Unflag post, remove from admin panel               |     P      |          |
-| Click on user's name on flagged post | Redirect to user's profile                   |    F       |    Taken to user page      |
+| Click on user's name on flagged post | Redirect to user's profile.                   |    F       |    Taken to user page. Decided to opt against this feature.      |
 
 ### Events
 
@@ -290,13 +285,13 @@ The defensive testing was carried out by an independent tester in order to provi
 | Click like button on an event | Like the event, increase like count                  |    P      | Notification to event author |
 | Click like button on a liked event | Unlike the event, decrease like count         |     P      |   I note total likes are shown on events but not on posts       |
 
-### General Error Handling
+### General Error Handling (dev tested)
 
 | User Action                  | Expected Result                                       | Pass/Fail | Comments |
 |------------------------------|-------------------------------------------------------|-----------|----------|
-| Access non-existent page     | Show 404 error page                                   |           | Don't know how to test         |
-| Access forbidden page        | Show 403 error page                                   |           | Don't know how to test         |
-| Access internal error page   | Show 500 error page                                   |           | Don't know how to test        |
+| Access non-existent page     | Show 404 error page                                   |           | P       |
+| Access forbidden page        | Show 403 error page                                   |           | P         |
+| Access internal error page   | Show 500 error page                                   |           | P       |
 
 This comprehensive defensive programming test plan ensures that the Harmonia Sinfonia project handles edge cases effectively and provides appropriate feedback to the user, enhancing the overall user experience and maintaining application stability.
 
