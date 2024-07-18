@@ -580,6 +580,7 @@ The development process for Harmonia Sinfonia followed Agile methodology, emphas
 GitHub Projects served as the primary Agile tool for managing the development tasks. While GitHub Projects isn't a specialised Agile tool, it was used with the right tags, project creation, and issue assignments to fit the needs of the project.
 
 ![GitHub Projects](/documentation/project-management.png)
+![GitHub Projects (Final)](/documentation/project-managementfinal.png)
 ![GitHub Issues)](/documentation/issues.png)
 
 ### User Stories Mapping
