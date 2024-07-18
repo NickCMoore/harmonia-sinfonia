@@ -22,6 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'authentication',
     'posts',
     'profiles',
@@ -30,7 +32,6 @@ INSTALLED_APPS = [
     'events',
     'home',
     'newsletter',
-    'whitenoise.runserver_nostatic',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"

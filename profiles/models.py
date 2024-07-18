@@ -2,14 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.utils.crypto import get_random_string
+from cloudinary.models import CloudinaryField
 
 class Profile(models.Model):
     """Model representing a user profile."""
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     display_name = models.CharField(max_length=255)
     bio = models.TextField(blank=True, null=True)
-    profile_pic = models.ImageField(upload_to='profiles/images/', blank=True, null=True)
-    bg_pic = models.ImageField(upload_to='profiles/bg_images/', blank=True, null=True)
+    profile_pic = CloudinaryField('image', blank=True, null=True)
+    bg_pic = CloudinaryField('image', blank=True, null=True)
     followers = models.ManyToManyField(User, related_name='following', blank=True)
     slug = models.SlugField(max_length=255, blank=True)
     is_suspended = models.BooleanField(default=False)
