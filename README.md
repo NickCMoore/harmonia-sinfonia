@@ -350,8 +350,21 @@ Below are the categorised user stories for Harmonia Sinfonia:
 
    - _Explanation:_ As a new visitor, I can sign up so that I can join the platform and become a registered member. `(MUST HAVE)`
 
+   Acceptance Criteria:
+
+      - Registration form includes fields for email, password, and username.
+      - Upon registration, the user receives a verification email with instructions to confirm their account.
+      -Users can log in using their registered email and password after verification.
+
 2. **Site Purpose Clarity:**
    - _Explanation:_ As a new site user, I would like to clearly see the site's purpose, so that I can decide whether or not to sign up. `(MUST HAVE)`
+
+   Acceptance Criteria:
+
+      - Homepage includes a clear explanation of the site's purpose.
+      - Purpose section highlights the community aspects and benefits of joining.
+      - Prominent call-to-action buttons encourage users to sign up or learn more.
+   
 
 ### Registered Users (EPIC B)
 
@@ -359,64 +372,158 @@ Below are the categorised user stories for Harmonia Sinfonia:
 
    - _Explanation:_ As a registered user, I can log in so that I can access my account and interact with the platform. `(MUST HAVE)`
 
+   Acceptance Criteria:
+
+      - Login form includes fields for email and password.
+      - Users can log in using their registered email and password.
+      - Upon successful login, users are redirected to the dashboard or homepage.
+
 2. **View Posts:**
 
    - _Explanation:_ As a registered user, I can view posts so that I can see content shared by other orchestra members. `(MUST HAVE)`
+
+   Acceptance Criteria:
+
+   - Homepage displays a feed of posts from other members.
+   - Each post includes information such as title, content, author's username, timestamp, and like/comment counts.
+   - Posts are paginated with navigation options for easy browsing.
 
 3. **Create New Posts:**
 
    - _Explanation:_ As a registered user, I can create new posts so that I can share my own content with the orchestra community. `(MUST HAVE)`
 
+   Acceptance Criteria:
+
+   - Post creation form includes fields for title and content.
+   - Title and content fields have character limits and validation rules.
+   - Members receive a success message after successfully creating a new post.
+
 4. **Delete Posts:**
 
    - _Explanation:_ As a registered user, I can delete my own posts so that I can remove content I no longer want to share. `(MUST HAVE)`
+
+   Acceptance Criteria:
+
+   - Each post includes an option to delete the post.
+   - Deleting a post prompts the member to confirm the action.
+   - Deleted posts are immediately removed from the member's profile and the feed.
 
 5. **Like Posts:**
 
    - _Explanation:_ As a registered user, I can like posts so that I can express appreciation for content shared by others. `(MUST HAVE)`
 
+   Acceptance Criteria:
+
+   - Each post includes a heart-shaped "like" button.
+   - Like count is updated instantly upon clicking the like button.
+   - Members cannot like their own posts.
+
 6. **Comment on Posts:**
 
    - _Explanation:_ As a registered user, I can comment on posts so that I can engage in discussions with other members. `(MUST HAVE)`
+
+   Acceptance Criteria:
+
+   - Each post includes a comment section for members to leave comments.
+   - Comments are displayed below the post content and sorted by newest first.
+   - Comment fields have character limits and validation rules.
+   - Members receive a success message after successfully submitting a comment.
 
 7. **Delete Comments:**
 
    - _Explanation:_ As a registered user, I can delete my own comments so that I can remove comments I no longer want to share. `(MUST HAVE)`
 
+   Acceptance Criteria:
+
+   - Each comment includes an option to delete the comment.
+   - Deleting a comment prompts the member to confirm the action.
+   - Deleted comments are immediately removed from the post and the member's profile.
+
 8. **Follow/Unfollow Members:**
 
    - _Explanation:_ As a registered user, I can follow/unfollow members so that I can customise my feed and stay updated on specific members. `(MUST HAVE)`
+
+   Acceptance Criteria:
+
+   - Each member profile includes an option to follow/unfollow the member.
+   - Members receive a notification when someone follows them.
+   - Members can view a list of users they are following and unfollow them if needed.
 
 9. **View Post Timestamp:**
 
    - _Explanation:_ As a registered user, I can view the timestamp of posts so that I can see when the posts were made for context. `(MUST HAVE)`
 
+   Acceptance Criteria:
+
+   - Each post includes the date and time it was created.
+   - Timestamp format is standardised and easy to understand.
+
 10. **Notifications:**
 
     - _Explanation:_ As a registered user, I can receive notifications so that I can stay updated on interactions with my content. `(MUST HAVE)`
+
+   Acceptance Criteria:
+
+   - Members receive notifications for new followers, likes, and comments.
+   - Notifications are displayed in a designated section of the website.
+   - Members can mark notifications as read or delete them as needed.
 
 11. **Search Functionality:**
 
     - _Explanation:_ As a registered user, I can search for posts and members so that I can quickly find specific content or users. `(MUST HAVE)`
 
+   Acceptance Criteria:
+
+   - Search functionality is accessible from the navigation menu.
+   - Search results include relevant users and posts based on the search query.
+   - Members can filter search results by user profiles or post content.
+
 12. **Edit Profile:**
 
     - _Explanation:_ As a registered user, I can edit my profile so that I can update my personal information and preferences. `(SHOULD HAVE)`
+
+   Acceptance Criteria:
+
+   - Members can access the profile editing page from their dashboard.
+   - Profile editing page includes fields for updating display name, bio, profile picture, and cover photo.
+   - Changes to profile information are saved immediately and reflected across the site.
 
 13. **Like Comments:**
 
     - _Explanation:_ As a registered user, I can like comments so that I can show appreciation for other members' comments. `(SHOULD HAVE)`
 
+   Acceptance Criteria:
+
+   - Each comment includes an option to like the comment.
+   - Like count for comments is updated instantly upon clicking the like button.
+
 14. **Expand Posts:**
 
     - _Explanation:_ As a registered user, I can expand posts so that I can see the full content of a post without leaving the feed. `(SHOULD HAVE)`
+
+   Acceptance Criteria:
+
+   - Each post includes an option to expand the post for full view.
+   - Expanded posts display additional options such as editing or deleting the post.
 
 15. **Private Messaging:**
 
     - _Explanation:_ As a registered user, I can send private messages so that I can communicate privately with other members. `(COULD HAVE)`
 
+   Acceptance Criteria:
+
+   - Members can access the private messaging feature from their dashboard or user profile.
+   - Messaging system includes options for composing and sending messages to other members.
+   - Members can block or report other members directly from the messaging interface.
+
 16. **Reporting/Flagging:**
     - _Explanation:_ As a registered user, I can report or flag inappropriate content so that it can be reviewed by admins for action. `(COULD HAVE)`
+
+   Acceptance Criteria:
+
+   - Each post/comment includes an option to report or flag the content.
+   - Reporting a post/comment opens a dialog box for providing a reason for the report.
+   - Reported content is flagged for review by site moderators/administrators.
 
 ### Admin Users (EPIC C)
 
@@ -424,20 +531,45 @@ Below are the categorised user stories for Harmonia Sinfonia:
 
    - _Explanation:_ As an admin, I can delete posts and comments so that I can remove inappropriate or violating content from the platform. `(MUST HAVE)`
 
+   Acceptance Criteria:
+
+   - Admin panel includes options to delete posts and comments.
+   - Deleted posts and comments are immediately removed from the platform.
+
 2. **Flagged Content Review:**
 
    - _Explanation:_ As an admin, I can review flagged content so that I can manage and moderate reported content effectively. `(MUST HAVE)`
+
+   Acceptance Criteria:
+
+   - Admin panel includes a section for reviewing flagged content.
+   - Flagged content is categorized based on the reason for flagging.
 
 3. **Unflag Content:**
 
    - _Explanation:_ As an admin, I can unflag content so that I can dismiss flags for content that does not violate guidelines. `(MUST HAVE)`
 
+   Acceptance Criteria:
+
+   - Admins have the option to unflag posts and comments from the flagged content review page.
+   - Unflagged content is immediately removed from the list of flagged items.
+
 4. **User Account Suspension:**
 
    - _Explanation:_ As an admin, I can suspend user accounts so that I can temporarily block members who repeatedly violate guidelines. `(SHOULD HAVE)`
 
+   Acceptance Criteria:
+
+   - Admin panel includes options to suspend member accounts.
+   - Suspended members receive a notification about the suspension and the reason for it.
+
 5. **Content Moderation Tools:**
    - _Explanation:_ As an admin, I can use content moderation tools so that I can manage and filter content effectively on the platform. `(COULD HAVE)`
+
+   Acceptance Criteria:
+
+   - Admin panel includes options for content filtering and keyword blocking.
+   - Moderation tools are customisable and configurable based on community needs.
 
 ## Agile Approach
 
