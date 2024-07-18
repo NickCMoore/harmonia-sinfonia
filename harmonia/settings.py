@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security settings
 SECRET_KEY = os.environ.get("SECRET_KEY")
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ["harmonia-sinfonia-ec3a4797e71d.herokuapp.com", "localhost", "127.0.0.1"]
 
 # Application definition
