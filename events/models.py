@@ -13,9 +13,8 @@ class Event(models.Model):
 
     def __str__(self):
         """Return the event title as its string representation."""
-        return self.title or 'Untitled Event'
+        return str(self.title) if self.title else 'Untitled Event'
 
     def total_likes(self):
         """Return the total number of likes for the event."""
         return self.liked_by.count()
-
