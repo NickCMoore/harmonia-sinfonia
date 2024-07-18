@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
-from profiles.models import Notification
 from newsletter.forms import NewsletterForm
 from django.contrib import messages
 from django.core.exceptions import ValidationError
