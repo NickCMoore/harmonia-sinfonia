@@ -16,9 +16,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Cloudinary settings
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME', 'dwgtce0rh'),
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY', '529154848741312'),
-    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET', 'Oujn5xeDlDEn_CuLC05XVd_BS7k')
+    'CLOUD_NAME': 'dwgtce0rh',
+    'API_KEY': '529154848741312',
+    'API_SECRET': 'Oujn5xeDlDEn_CuLC05XVd_BS7k',
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
