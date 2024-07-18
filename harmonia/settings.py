@@ -47,19 +47,15 @@ def get_env_variable(var_name):
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_env_variable("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1',
-                 'harmonia-sinfonia-ec3a4797e71d.herokuapp.com']
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'harmonia-sinfonia-ec3a4797e71d.herokuapp.com']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -75,12 +71,12 @@ INSTALLED_APPS = [
     'events',
     'home',
     'newsletter',
+    'cloudinary',
+    'cloudinary_storage',
 ]
-
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -94,7 +90,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'harmonia.urls'
-
 
 TEMPLATES = [
     {
@@ -116,19 +111,10 @@ LOGIN_URL = 'authentication:login'
 LOGIN_REDIRECT_URL = 'home:home'
 LOGOUT_REDIRECT_URL = 'home:home'
 
-
 WSGI_APPLICATION = 'harmonia.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 DATABASE_URL = os.environ.get("DATABASE_URL")
 if not DATABASE_URL:
     raise ImproperlyConfigured("DATABASE_URL environment variable is not set")
@@ -151,7 +137,6 @@ if 'test' in sys.argv or 'pytest' in sys.argv:
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -169,18 +154,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -192,10 +172,8 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
