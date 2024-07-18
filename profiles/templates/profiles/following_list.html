@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
 
+{% block title %}Following - Harmonia Sinfonia{% endblock %}
+
 {% block content %}
-<div class="container following-list">
-    <h2>Following</h2>
-    <div class="list-group">
-        {% for user in following %}
-        <a href="{% url 'profiles:profile_detail' user.username %}" class="list-group-item list-group-item-action">
-            {{ user.username }}
-            <i class="bi bi-person"></i>
-        </a>
-        {% endfor %}
-    </div>
+<div class="container following-list mt-5">
+    <h2 class="mb-4">Following</h2>
+    {% if following %}
+        <div class="list-group">
+            {% for user in following %}
+            <a href="{% url 'profiles:profile_detail' user.username %}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                {{ user.username }}
+                <i class="bi bi-person"></i>
+            </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-muted">You are not following anyone yet.</p>
+    {% endif %}
 </div>
 {% endblock %}

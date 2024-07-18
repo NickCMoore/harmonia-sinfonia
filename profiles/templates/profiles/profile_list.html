@@ -1,40 +1,36 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block title %}Member Profiles{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
-  <h1 class="mb-4">Member Profiles</h1>
-  <div class="row">
-    {% for profile in profiles %}
-    <div class="col-md-4 mb-3">
-      <div class="card h-100">
-        {% if profile.profile_pic %}
-        <img src="{{ profile.profile_pic.url }}" class="card-img-top" alt="{{ profile.display_name }}">
-        {% else %}
-        <img src="{% static 'images/default_profile_pic.png' %}" class="card-img-top" alt="{{ profile.display_name }}">
-        {% endif %}
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">{{ profile.display_name }}</h5>
-          <p class="card-text text-truncate" style="flex-grow: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-            {{ profile.bio }}
-          </p>
-          <a href="{% url 'profiles:profile_detail' username=profile.user.username %}" class="btn btn-primary mt-auto">View Profile</a>
-          <div class="mt-3">
-            <span class="badge bg-success">{{ profile.followers.count }} followers</span>
-          </div>
+    <h1 class="mb-4">Member Profiles</h1>
+    <div class="row">
+        {% for profile in profiles %}
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                {% if profile.profile_pic %}
+                <img src="{{ profile.profile_pic.url }}" class="card-img-top" alt="{{ profile.display_name }}">
+                {% else %}
+                <img src="{% static 'images/default_profile_pic.png' %}" class="card-img-top" alt="{{ profile.display_name }}">
+                {% endif %}
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ profile.display_name }}</h5>
+                    <p class="card-text text-truncate" style="flex-grow: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        {{ profile.bio }}
+                    </p>
+                    <a href="{% url 'profiles:profile_detail' profile.user.username %}" class="btn btn-primary mt-auto">View Profile</a>
+                    <div class="mt-3">
+                        <span class="badge bg-success">{{ profile.followers.count }} followers</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-  </div>
 </div>
 {% endblock %}
-
-
-
 
 
 

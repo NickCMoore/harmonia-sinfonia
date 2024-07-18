@@ -15,8 +15,8 @@
                 {% endif %}
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">{{ event.title }}</h5>
-                    <p class="card-text">{{ event.description|truncatewords:20 }}</p>
-                    <p class="card-text"><small class="text-muted">{{ event.date }} at {{ event.time }}</small></p>
+                    <p class="card-text">{{ event.content|truncatewords:20 }}</p>
+                    <p class="card-text"><small class="text-muted">{{ event.date|date:"F j, Y" }} at {{ event.time|date:"P" }}</small></p>
                     <div class="mt-auto">
                         <a href="{% url 'events:event_detail' event.pk %}" class="btn btn-primary">Learn More</a>
                     </div>
