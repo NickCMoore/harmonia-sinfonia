@@ -581,7 +581,7 @@ GitHub Projects served as the primary Agile tool for managing the development ta
 
 ![GitHub Projects](/documentation/project-management.png)
 ![GitHub Projects (Final)](/documentation/project-managementfinal.png)
-![GitHub Issues)](/documentation/issues.png)
+![GitHub Issues](/documentation/issues.png)
 
 ### User Stories Mapping
 

@@ -368,4 +368,4 @@ During the development of this project, all encountered bugs were resolved and d
 
 ### Unresolved Bugs
 
-- Notification Bell Icon Colour: The bell icon in the notifications dropdown does not change colour to indicate whether there are unread notifications or not. This functionality was planned but not fully implemented. Future updates will address this.
+- Notification Bell Icon Colour: The bell icon in the notifications dropdown does not always change colour to indicate whether there are unread notifications or not. This functionality was planned but not fully implemented. Future updates will address this.

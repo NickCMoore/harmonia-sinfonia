@@ -1,3 +1,6 @@
+/**
+ * Update notification bell icon and badge based on unread count.
+ */
 document.addEventListener('DOMContentLoaded', function () {
     const bellIcon = document.getElementById('notificationBell');
     if (bellIcon) {
