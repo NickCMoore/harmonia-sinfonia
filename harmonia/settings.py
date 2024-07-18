@@ -2,9 +2,6 @@ import os
 from pathlib import Path
 import dj_database_url
 from django.core.exceptions import ImproperlyConfigured
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 
 # Load environment variables from env.py
 env_path = os.path.join(Path(__file__).resolve().parent.parent, 'env.py')
@@ -13,16 +10,6 @@ if os.path.exists(env_path):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Cloudinary settings
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dwgtce0rh',
-    'API_KEY': '529154848741312',
-    'API_SECRET': 'Oujn5xeDlDEn_CuLC05XVd_BS7k',
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 def get_env_variable(var_name):
     try:
@@ -147,7 +134,14 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Ensure the default static files storage is set correctly
+# Cloudinary settings
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': get_env_variable('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': get_env_variable('CLOUDINARY_API_KEY'),
+    'API_SECRET': get_env_variable('CLOUDINARY_API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
