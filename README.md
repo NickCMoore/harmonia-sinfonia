@@ -872,7 +872,7 @@ Click below to create your own workspace using this repository:
 
 ## Acknowledgements
 
-Particular thanks goes to my mentor, Gareth McGirr, for his invaluable feedback throughout the project and also to my partner, Susan, for taking part in the testing process.
+Particular thanks goes to my mentor, Gareth McGirr, for his invaluable feedback throughout the project and also to my partner, Susan, for patiently taking part in the testing process.
 
 Thanks also to all the developers and communities behind the tools and libraries used in this project.
 
