@@ -15,6 +15,9 @@ import sys
 from pathlib import Path
 import dj_database_url
 from django.core.exceptions import ImproperlyConfigured
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Load environment variables from env.py
 env_path = os.path.join(Path(__file__).resolve().parent.parent, 'env.py')
@@ -24,6 +27,15 @@ if os.path.exists(env_path):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Cloudinary settings
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dwgtce0rh',
+    'API_KEY': '529154848741312',
+    'API_SECRET': 'Oujn5xeDlDEn_CuLC05XVd_BS7k'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 def get_env_variable(var_name):
     try:
@@ -40,7 +52,7 @@ def get_env_variable(var_name):
 SECRET_KEY = get_env_variable("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1',
                  'harmonia-sinfonia-ec3a4797e71d.herokuapp.com']
