@@ -3,14 +3,11 @@ from pathlib import Path
 import dj_database_url
 from django.core.exceptions import ImproperlyConfigured
 
-# Load environment variables from env.py
-env_path = os.path.join(Path(__file__).resolve().parent.parent, 'env.py')
-if os.path.exists(env_path):
-    exec(open(env_path).read())
+# Load environment variables from env.py if it exists
+if os.path.isfile('env.py'):
+    import env
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
+# Function to get environment variables
 def get_env_variable(var_name):
     try:
         return os.environ[var_name]
@@ -18,16 +15,16 @@ def get_env_variable(var_name):
         error_msg = f"The {var_name} setting must not be empty."
         raise ImproperlyConfigured(error_msg)
 
+# Base directory
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# Security settings
 SECRET_KEY = get_env_variable("SECRET_KEY")
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'harmonia-sinfonia-ec3a4797e71d.herokuapp.com']
+DEBUG = True
+ALLOWED_HOSTS = get_env_variable("ALLOWED_HOSTS").split(',')
 
 # Application definition
 INSTALLED_APPS = [
@@ -88,14 +85,7 @@ LOGOUT_REDIRECT_URL = 'home:home'
 WSGI_APPLICATION = 'harmonia.wsgi.application'
 
 # Database
-DATABASE_URL = os.getenv("DATABASE_URL")
-if not DATABASE_URL:
-    raise ImproperlyConfigured("DATABASE_URL environment variable is not set")
-
-# Converts DATABASE_URL to a string if it is bytes-like
-if isinstance(DATABASE_URL, bytes):
-    DATABASE_URL = DATABASE_URL.decode('utf-8')
-
+DATABASE_URL = get_env_variable("DATABASE_URL")
 DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL)
 }
@@ -122,10 +112,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
+# Static files
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
@@ -140,7 +129,6 @@ CLOUDINARY_STORAGE = {
     'API_KEY': get_env_variable('CLOUDINARY_API_KEY'),
     'API_SECRET': get_env_variable('CLOUDINARY_API_SECRET'),
 }
-
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
