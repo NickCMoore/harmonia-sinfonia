@@ -60,26 +60,13 @@
                     <!-- Notifications Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle position-relative" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i id="notificationBell" class="bi bi-bell" data-unread-count="{{ unread_count|default:0 }}"></i>
-                            <span id="unreadCount" class="badge bg-danger position-absolute top-0 start-100 translate-middle p-2 rounded-circle"></span>
+                            <i id="notificationBell" class="bi bi-bell" data-unread-count="{{ unread_notifications|length }}"></i>
+                            <span id="unreadCount" class="badge bg-danger position-absolute top-0 start-100 translate-middle p-2 rounded-circle">{{ unread_notifications|length }}</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% if suspension_notification %}
-                                <li class="d-flex justify-content-between align-items-center">
-                                    <a class="dropdown-item text-danger font-weight-bold" href="{% url 'profiles:notifications_list' %}">
-                                        {{ suspension_notification.message }}
-                                    </a>
-                                    <form method="post" action="{% url 'profiles:delete_notification' suspension_notification.id %}" class="m-0 p-0">
-                                        {% csrf_token %}
-                                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">
-                                            <i class="bi bi-x-circle text-danger"></i>
-                                        </button>
-                                    </form>
-                                </li>
-                            {% endif %}
-                            {% for notification in other_notifications %}
+                            {% for notification in unread_notifications %}
                             <li class="d-flex justify-content-between align-items-center">
-                                <a class="dropdown-item {% if not notification.read %}font-weight-bold{% endif %}" href="{% url 'profiles:notifications_list' %}">
+                                <a class="dropdown-item {% if not notification.read %}font-weight-bold{% endif %}" href="{% url 'profiles:mark_notification_as_read' notification.id %}">
                                     {{ notification.message }}
                                 </a>
                                 <form method="post" action="{% url 'profiles:delete_notification' notification.id %}" class="m-0 p-0">
@@ -90,7 +77,7 @@
                                 </form>
                             </li>
                             {% endfor %}
-                            {% if not suspension_notification and not other_notifications %}
+                            {% if not unread_notifications %}
                                 <li><a class="dropdown-item" href="#">No notifications</a></li>
                             {% endif %}
                             <li><hr class="dropdown-divider"></li>
