@@ -600,10 +600,11 @@ For a detailed view of the project management and task progression, refer to the
 
 **Notifications**
 
-- Notifications Dropdown/Bar: Real-time updates on interactions like new messages, post likes, comments, or other relevant user activities.
+- Notifications Dropdown/Bar: Real-time updates on interactions such as post likes, comments, or other relevant user activities.
 
 ![Notifications Dropdown](/documentation/features/notificationsdropdown.png)
 ![Notifications List](/documentation/features/notificationslist.png)
+![Notifications Bell](/documentation/features/notificationsbell.png)
 
 **Feedback**
 
