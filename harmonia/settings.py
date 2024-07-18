@@ -1,5 +1,5 @@
-import os
 from pathlib import Path
+import os
 import dj_database_url
 
 # Load environment variables from env.py if it exists
@@ -11,8 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security settings
 SECRET_KEY = os.environ.get("SECRET_KEY")
-DEBUG = True
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(',')
+DEBUG = False
+ALLOWED_HOSTS = ["harmonia-sinfonia-ec3a4797e71d.herokuapp.com", "localhost", "127.0.0.1"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -101,9 +101,11 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files configuration
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "static/"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Media files configuration
 MEDIA_URL = '/media/'
