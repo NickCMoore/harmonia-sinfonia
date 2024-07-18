@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.exceptions import ValidationError
 from .models import Event
+from django.core.paginator import Paginator
 
 def event_detail_view(request, pk):
     """Display the details of a specific event."""
@@ -10,9 +11,12 @@ def event_detail_view(request, pk):
     return render(request, 'events/event_detail.html', {'event': event})
 
 def event_list_view(request):
-    """Display a list of all events."""
-    events = Event.objects.all()
-    return render(request, 'events/event_list.html', {'events': events})
+    """Display a list of all events with pagination."""
+    events = Event.objects.all().order_by('-date')
+    paginator = Paginator(events, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'events/event_list.html', {'page_obj': page_obj})
 
 @login_required
 def like_event(request, event_id):

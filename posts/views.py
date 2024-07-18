@@ -13,7 +13,7 @@ from django.core.paginator import Paginator
 def post_list_view(request):
     """Display a list of posts with pagination."""
     posts = Post.objects.all().order_by('-posted_on')
-    paginator = Paginator(posts, 10)
+    paginator = Paginator(posts, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'posts/post_list.html', {'page_obj': page_obj})
