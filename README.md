@@ -637,6 +637,9 @@ Various feedback mechanisms provide users with instant responses to their intera
 - Contact Page: Form to contact site administrators or support.
 - FAQs/Help Section: Helps users understand how to use different aspects of the platform.
 - Event Pages: For orchestra to post upcoming events or rehearsals with RSVP functionality.
+- Messaging System: To enable members to communicate more easily. Not feasible within time constraints of project. For a future release.
+- Expand comments: Posts are previewed in the overview pages and then by clicking on them, can go to more detail. No expansion functionality within the individual post or comment feed yet.
+- Further Content Moderation Tools: No options at the moment for more advanced content filtering and keyword blocking. For a future release.
 
 ## Testing & Bug Tracking
 
