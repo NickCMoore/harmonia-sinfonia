@@ -95,8 +95,8 @@
                             {% else %}
                             <li><a class="dropdown-item" href="{% url 'profiles:profile_detail' username=user.username %}">Profile</a></li>
                             <li><a class="dropdown-item" href="{% url 'profiles:following_list' %}">Following</a></li>
-                            <li><hr class="dropdown-divider"></li>
                             {% endif %}
+                            <li><hr class="dropdown-divider"></li>
                             <li>
                                 <form action="{% url 'authentication:logout' %}" method="post">
                                     {% csrf_token %}
