@@ -24,8 +24,7 @@ To view the platform, please [click here](https://harmonia-sinfonia-ec3a4797e71d
   - [Current Features](#current-features)
   - [Future Features](#future-features)
 - [**Technologies Used**](#technologies-used)
-- [**Bugs**](#bugs)
-- [**Testing**](#testing)
+- [**Testing & Bug Tracking**](#testing--bug-tracking)
 - [**Security**](#security)
 - [**Deployment**](#deployment)
 - [**Credits**](#credits)
@@ -638,13 +637,9 @@ Various feedback mechanisms provide users with instant responses to their intera
 - FAQs/Help Section: Helps users understand how to use different aspects of the platform.
 - Event Pages: For orchestra to post upcoming events or rehearsals with RSVP functionality.
 
-## Bugs
+## Testing & Bug Tracking
 
-To view information about bug tracking and management, please click [here](/TESTING.md).
-
-## Testing
-
-To view the testing file, please click [here](/TESTING.md).
+To view the testing file and information about bug tracking and management, please click [here](/TESTING.md).
 
 ## Security
 
