@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security settings
 SECRET_KEY = os.environ.get("SECRET_KEY")
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ["harmonia-sinfonia-ec3a4797e71d.herokuapp.com", "localhost", "127.0.0.1"]
 
 # Application definition
@@ -106,6 +106,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files configuration
 MEDIA_URL = '/media/'
